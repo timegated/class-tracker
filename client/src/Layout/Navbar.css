@@ -1,0 +1,11 @@
+.main-menu__items {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-menu__item>a {
+    color: #efefef;
+    text-decoration: none;
+    margin: 0 2rem 2rem;
+}

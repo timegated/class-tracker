@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CurrentItems.css";
 
 const CurrentItems = () => {
+    const [element, setElement] = useState({
+        character: '',
+        class: '',
+        guildRank: ''
+    });
+    console.log(element);
     return (
         <form className="current-items__form">
             <label className="current-items__label" htmlFor="Character Name">Character</label>

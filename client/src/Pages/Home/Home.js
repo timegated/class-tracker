@@ -5,8 +5,8 @@ import "./Home.css";
 function Home() {
     return (
         <Fragment>
-            <h3 className="home-page__title">Class Tracker</h3>
-            <p className="home-page__title">The anti-spreadsheet tool</p>
+            <h1 className="home-page__title">Class Tracker</h1>
+            <h3 className="home-page__title">The anti-spreadsheet tool</h3>
             <CurrentItems />
         </Fragment>
     );

@@ -1,0 +1,16 @@
+.current-items__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.current-items__input {
+   flex: 1 0 50%;
+   border: none;
+   margin: .5rem;
+}
+
+.current-items__label {
+    margin: .5rem;
+    font-size: 24px;
+}

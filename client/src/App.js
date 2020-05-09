@@ -4,9 +4,8 @@ import Navbar from "./Layout/Navbar";
 
 function App() {
     return (
-        <div>
+        <div className="main-content">
             <Navbar />
-            <h1 className="title">Class Tracker</h1>
             <Home />
         </div>
     );

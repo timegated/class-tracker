@@ -1,7 +1,9 @@
 import React from "react";
-import Home from "./Pages/Home/Home";
-import About from "./Pages/About/About";
-import Navbar from "./Layout/Navbar";
+import Home from "./components/Pages/Home/Home";
+import About from "./components/Pages/About/About";
+import Navbar from "./components/Layout/Navbar";
+import Login from "./components/Auth/Login";
+import SignUp from "./components/Auth/SignUp";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {

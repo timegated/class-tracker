@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import CurrentItems from "../../components/CurrentItems/CurrentItems";
+import CurrentItems from "../../CurrentItems/CurrentItems";
 import "./Home.css";
 
 function Home() {

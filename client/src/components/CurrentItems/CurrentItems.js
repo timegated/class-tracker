@@ -19,6 +19,8 @@ const CurrentItems = () => {
         <form className="current-items__form">
             <label className="current-items__label" htmlFor="Character Name">Character</label>
             <input className="current-items__input" type="text" name="character"/>
+            <label className="current-items__label" htmlFor="Guild Rank">Guild Rank</label>
+            <input className="current-items__input" type="text" name="guildrank" />
             <label className="current-items__label" htmlFor="Class">Class</label>
             <div className="radio-items">
                 <input type="radio" name="charClass" value="warrior" checked={charClass === "warrior"} onChange={onChange} /> Warrior {" "}
@@ -30,8 +32,6 @@ const CurrentItems = () => {
                 <input type="radio" name="charClass" value="paladin" checked={charClass === "paladin"} onChange={onChange} /> Paladin {" "}
                 <input type="radio" name="charClass" value="rogue" checked={charClass === "rogue"} onChange={onChange} /> Rogue {" "}
             </div>
-            <label className="current-items__label" htmlFor="Guild Rank">Guild Rank</label>
-            <input className="current-items__input" type="text" name="guildrank"/>
         </form>
     );
 };

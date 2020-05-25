@@ -1,3 +1,8 @@
+.main-menu {
+   background: black;
+   width: 100%;
+}
+
 .main-menu__items {
     list-style: none;
     display: flex;

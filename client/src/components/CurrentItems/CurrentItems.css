@@ -1,8 +1,8 @@
 .current-items__form {
     display: flex;
     flex-direction: column;
-    width: 1440px;
-    flex: 1 0 50%;
+    width: 750px;
+    margin: auto;
 }
 
 .current-items__input {

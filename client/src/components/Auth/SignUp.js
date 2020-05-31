@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./Forms.css";
 const SignUp = () => {
     const [user, setUser] = useState({
         userName: "",
@@ -13,22 +13,22 @@ const SignUp = () => {
     };
 
     return (
-        <div>
+        <div className="form-container">
             <h1>SignUp</h1>
             <form>
-                <div>
+                <div className="form-group">
                     <label htmlFor="username">User Name</label>
                     <input type="text" name="username" value={userName} onChange={onChange} required />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="email">E-Mail</label>
                     <input type="text" name="email" value={email} onChange={onChange} required />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="passwordone">Password</label>
                     <input type="password" name="passwordone" value={passwordOne} onChange={onChange} required />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="passwordTwo">Enter Password Again</label>
                     <input type="password" name="passwordtwo" value={passwordTwo} onChange={onChange} required />
                 </div>

@@ -17,7 +17,7 @@ const CurrentItems = () => {
 
     return (
         <form className="current-items__form">
-            <label className="current-items__label" htmlFor="Character Name">Character</label>
+            <label className="current-items__label" htmlFor="Character Name">Character Name</label>
             <input className="current-items__input" type="text" name="character"/>
             <label className="current-items__label" htmlFor="Guild Rank">Guild Rank</label>
             <input className="current-items__input" type="text" name="guildrank" />

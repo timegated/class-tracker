@@ -7,6 +7,7 @@ const SignUp = () => {
         passwordOne: "",
         passwordTwo: ""
     });
+    
     const { userName, email, passwordOne, passwordTwo } = user;
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
@@ -26,11 +27,11 @@ const SignUp = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordone">Password</label>
-                    <input type="password" name="passwordone" value={passwordOne} onChange={onChange} required />
+                    <input type="password" name="passwordOne" value={passwordOne} onChange={onChange} required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordTwo">Enter Password Again</label>
-                    <input type="password" name="passwordtwo" value={passwordTwo} onChange={onChange} required />
+                    <input type="password" name="passwordTwo" value={passwordTwo} onChange={onChange} required />
                 </div>
             </form>
         </div>

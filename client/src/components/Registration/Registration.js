@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CurrentItems.css";
+import "./Registration.css";
 
 const CurrentItems = () => {
     const [player, setPlayer] = useState({
@@ -17,6 +17,7 @@ const CurrentItems = () => {
 
     return (
         <form className="current-items__form">
+            <h1>Initial Registration</h1>
             <label className="current-items__label" htmlFor="Character Name">Character Name</label>
             <input className="current-items__input" type="text" name="character"/>
             <label className="current-items__label" htmlFor="Guild Rank">Guild Rank</label>

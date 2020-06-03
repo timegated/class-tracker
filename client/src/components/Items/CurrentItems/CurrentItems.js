@@ -1,5 +1,5 @@
 import React from "react";
-import "../Registration/Registration";
+import "../../Registration/Registration";
 
 const CurrentItems = () => {
     return (

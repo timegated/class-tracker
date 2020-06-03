@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Registration.css";
 
-const CurrentItems = () => {
+const Registration = () => {
     const [player, setPlayer] = useState({
         characterName: '',
         characterClass: '',
@@ -43,4 +43,4 @@ const CurrentItems = () => {
     );
 };
 
-export default CurrentItems;
+export default Registration;

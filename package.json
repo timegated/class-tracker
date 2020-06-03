@@ -2,7 +2,7 @@
   "name": "class-tracker",
   "version": "1.0.0",
   "description": "Web app for tracking items in game.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",

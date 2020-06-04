@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import PlayerContext from "../../context/player/playerContext";
 import "./Registration.css";
 
 const Registration = () => {
@@ -7,7 +8,10 @@ const Registration = () => {
         characterClass: '',
         guildName: ''
     });
-    
+    const playerContext = useContext(PlayerContext);
+
+    const { register } = playerContext;
+
     const { characterName, characterClass, guildName } = player;
 
     const onChange = (e) => {

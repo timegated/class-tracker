@@ -21,6 +21,11 @@ const Registration = () => {
 
     const onSubmit = (e) => {
         console.log(e);
+        register({
+            characterName,
+            characterClass,
+            guildName
+        });
         e.preventDefault();
     };
 

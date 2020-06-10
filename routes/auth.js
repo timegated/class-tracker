@@ -4,7 +4,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const auth = require("../middleware/auth");
-
 const {
     check,
     validationResult
@@ -22,7 +21,12 @@ router.get("/", auth, async (req, res) => {
     }; 
 });
 
-router.post("/", async (req, res) => {
+router.post("/",
+    [
+        check("email", "Valid email required.").isEmail(),
+        check("password", "Password is required.").exists()
+    ]
+    , async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
@@ -55,3 +59,5 @@ router.post("/", async (req, res) => {
         res.status(500).send("Server Error");
     };
 });
+
+module.exports = router;

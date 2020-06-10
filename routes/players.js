@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const config = require("config");
+
 const Player = require("../models/Players");
-console.log(config.mongoURI,"\n", config.jwtSecret);
-console.log(Player);
+
 router.get("/", async (req, res) => {
     try {
         const players = await Player.find({

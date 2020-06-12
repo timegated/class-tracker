@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import PlayerContext from "../../context/player/playerContext";
-import "./Registration.css";
+import "./RegisterCharacter.css";
 
 const Registration = () => {
     const [player, setPlayer] = useState({

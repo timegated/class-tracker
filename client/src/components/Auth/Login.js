@@ -22,6 +22,7 @@ const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" value={password} onChange={onChange} required />
                 </div>
+                <input type="submit" value="Login" className="btn btn-black btn-block" required />
             </form>
         </div>
     );

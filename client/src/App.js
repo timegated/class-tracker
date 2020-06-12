@@ -4,10 +4,10 @@ import About from "./components/Pages/About/About";
 import Navbar from "./components/Layout/Navbar";
 import CurrentItems from "./components/Items/CurrentItems/CurrentItems";
 import ItemPriority from "./components/Items/ItemPriority/ItemPriority";
-import PlayerState from "./context/player/PlayerState";
-import AuthState from "./context/auth/AuthState";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
+import PlayerState from "./context/player/PlayerState";
+import AuthState from "./context/auth/AuthState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {

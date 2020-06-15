@@ -2,6 +2,10 @@ import React, { useState, useContext } from "react";
 import PlayerContext from "../../context/player/playerContext";
 import "./RegisterCharacter.css";
 
+// After an account is created a user can register any and all character's they have on their respective server
+// Initially all that's needed is their Guild/Class/Character Name
+// DB Associations: Users, Any Character's they have registered, Character's Gear
+
 const Registration = () => {
     const [player, setPlayer] = useState({
         characterName: '',

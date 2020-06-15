@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Forms.css";
+
 const SignUp = () => {
     const [user, setUser] = useState({
         userName: "",
@@ -33,6 +34,7 @@ const SignUp = () => {
                     <label htmlFor="passwordTwo">Enter Password Again</label>
                     <input type="password" name="passwordTwo" value={passwordTwo} onChange={onChange} required />
                 </div>
+                <input type="submit" value="Sign Up" className="btn btn-black btn-block" required />
             </form>
         </div>
     );

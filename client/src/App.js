@@ -8,12 +8,14 @@ import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
 import PlayerState from "./context/player/PlayerState";
 import AuthState from "./context/auth/AuthState";
+import AlertState from "./context/alert/AlertState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
     return (
         <AuthState>
             <PlayerState>
+                <AlertState>
                 <Router>
                     <div className="main-content">
                         <Navbar />
@@ -26,7 +28,8 @@ function App() {
                             <Route path="/signup" exact component={SignUp} />
                         </Switch>
                     </div>
-                </Router>
+                    </Router>
+                </AlertState>
             </PlayerState>
         </AuthState>
     );

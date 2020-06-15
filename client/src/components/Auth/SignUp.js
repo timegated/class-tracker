@@ -1,40 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import AuthContext from "../../context/auth/authContext";
+import AlertContext from "../../context/alert/alertContext";
 import "./Forms.css";
 
-const SignUp = () => {
+const SignUp = props => {
     const [user, setUser] = useState({
-        userName: "",
         email: "",
         passwordOne: "",
         passwordTwo: ""
     });
-    
-    const { userName, email, passwordOne, passwordTwo } = user;
+    const authContext = useContext(AuthContext);
+    const alertContext = useContext(AlertContext);
+
+    const { setAlert } = alertContext;
+    const { register, error, clearErrors, isAuthenticated } = authContext;
+    const { email, password, passwordTwo } = user;
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            // redirect
+            props.history.push("/");
+        };
+        if (error === "user already exists") {
+            setAlert(error, "danger");
+            clearErrors();
+        };
+    }, [error, isAuthenticated, props.history]);
+
+   
+
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
+    };
+
+    const onSubmit = (e) => {
+        console.log(e)
+        if (email === "" || password === "" || passwordTwo === "") {
+            setAlert("All fields must contain an input");  
+        } else if (password !== passwordTwo) {
+            setAlert("Passwords must match");
+        } else {
+            register({
+                email,
+                password
+            });
+        };
+        e.preventDefault();
     };
 
     return (
         <div className="form-container">
             <h1>SignUp</h1>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="username">User Name</label>
-                    <input type="text" name="username" value={userName} onChange={onChange} required />
-                </div>
+            <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">E-Mail</label>
                     <input type="text" name="email" value={email} onChange={onChange} required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordone">Password</label>
-                    <input type="password" name="passwordOne" value={passwordOne} onChange={onChange} required />
+                    <input type="password" name="password" value={password} onChange={onChange} required minLength="6" autoComplete="new password" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordTwo">Enter Password Again</label>
-                    <input type="password" name="passwordTwo" value={passwordTwo} onChange={onChange} required />
+                    <input type="password" name="passwordTwo" value={passwordTwo} onChange={onChange} required minLength="6" autoComplete="current password" />
                 </div>
-                <input type="submit" value="Sign Up" className="btn btn-black btn-block" required />
+                <input type="submit" value="Sign Up" className="btn btn-black btn-block" />
             </form>
         </div>
     );

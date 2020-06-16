@@ -54,15 +54,15 @@ const SignUp = props => {
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">E-Mail</label>
-                    <input type="text" name="email" value={email} onChange={onChange} required />
+                    <input type="text" name="email" onChange={onChange} required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordone">Password</label>
-                    <input type="password" name="password" value={password} onChange={onChange} required minLength="6" autoComplete="new password" />
+                    <input type="password" name="password" onChange={onChange} required minLength="6" autoComplete="new password" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordTwo">Enter Password Again</label>
-                    <input type="password" name="passwordTwo" value={passwordTwo} onChange={onChange} required minLength="6" autoComplete="current password" />
+                    <input type="password" name="passwordTwo" onChange={onChange} required minLength="6" autoComplete="current password" />
                 </div>
                 <input type="submit" value="Sign Up" className="btn btn-black btn-block" />
             </form>

@@ -23,5 +23,10 @@ module.exports = {
             },
         ],
     },
+    devServer: {
+        contentBase: path.resolve(__dirname, "build"),
+        compress: true,
+        port: 8080
+    },
     plugins: [new HtmlWebPackPlugin({ template: "./public/index.html" }), new MiniCssExtractPlugin()]
 };

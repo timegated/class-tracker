@@ -6,6 +6,7 @@ import CurrentItems from "./components/Items/CurrentItems/CurrentItems";
 import ItemPriority from "./components/Items/ItemPriority/ItemPriority";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
+import PrivateRoute from "./components/Routing/PrivateRoute";
 import PlayerState from "./context/player/PlayerState";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
@@ -20,12 +21,12 @@ function App() {
                     <div className="main-content">
                         <Navbar />
                         <Switch>
-                            <Route path="/" exact component={Home} />
-                            <Route path="/about" exact component={About} />
-                            <Route path="/currentitems" exact component={CurrentItems} />
-                            <Route path="/priority" exact component={ItemPriority} />
-                            <Route path="/login" exact component={Login} />
-                            <Route path="/signup" exact component={SignUp} />
+                            <PrivateRoute exact path="/" component={Home} />
+                            <Route exact path="/about" component={About} />
+                            <Route exact path="/currentitems" component={CurrentItems} />
+                            <Route exact path="/priority" component={ItemPriority} />
+                            <Route exact path="/login" component={Login} />
+                            <Route exact path="/signup" component={SignUp} />
                         </Switch>
                     </div>
                     </Router>

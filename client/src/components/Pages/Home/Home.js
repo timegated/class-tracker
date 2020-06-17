@@ -1,8 +1,16 @@
-import React, { Fragment } from "react";
+import React, { useContext, useEffect, Fragment } from "react";
 import RegisterCharacter from "../../RegisterCharacter/RegisterCharacter";
+import AuthContext from "../../../context/auth/authContext";
 import "./Home.css";
 
 function Home() {
+    const authContext = useContext(AuthContext);
+    
+    useEffect(() => {
+        authContext.loadUser();
+        // eslint-disable-next-line
+    }, []);
+
     return (
         <Fragment>
             <h1 className="home-page__title">Class Tracker</h1>

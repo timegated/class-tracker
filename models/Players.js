@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const PlayerSchema = mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "users"
+        ref: "user"
     },
     characterName: {
         type: String,

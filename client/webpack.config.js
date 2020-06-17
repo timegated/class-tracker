@@ -24,9 +24,10 @@ module.exports = {
         ],
     },
     devServer: {
-        contentBase: path.resolve(__dirname, "build"),
-        compress: true,
-        port: 8080
+        proxy: {
+            "/api": "http://localhost:5000"
+        },
     },
+    devtool: "source-map",
     plugins: [new HtmlWebPackPlugin({ template: "./public/index.html" }), new MiniCssExtractPlugin()]
 };

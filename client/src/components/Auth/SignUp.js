@@ -34,7 +34,7 @@ const SignUp = props => {
     };
 
     const onSubmit = (e) => {
-        console.log(e)
+        console.log(register)
         if (email === "" || password === "" || passwordTwo === "") {
             setAlert("All fields must contain an input");  
         } else if (password !== passwordTwo) {

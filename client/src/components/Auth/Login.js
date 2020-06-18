@@ -1,19 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import AuthContext from "../../context/auth/authContext";
+import AlertContext from "../../context/alert/alertContext";
 import "./Forms.css";
 
-const Login = () => {
+const Login = props => {
     const [user, setUser] = useState({ email: "", password: "" });
     const { email, password } = user;
    
+    const authContext = useContext(AuthContext);
+    const alertContext = useContext(AlertContext);
+
+    const { setAlert } = alertContext;
+    const { login, error, clearErrors, isAuthenticated } = authContext;
+
+    useEffect(() => {
+        if (isAuthenticated) {
+          // redirect
+            props.history.push("/");  
+        };
+        if (error === "Invalid credentials") {
+            setAlert(error, "danger");
+            clearErrors();
+        };
+    });
 
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
     };
     
+    const onSubmit = (e) => {
+        if (email === "" || password === "") {
+            setAlert("Fields can\'t be empty", "danger");
+        } else {
+            login({
+                email,
+                password
+            });
+        };
+        e.preventDefault();
+    };
+
     return (
         <div className="form-container">
             <h1>Login</h1>
-            <form>
+            <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <input type="text" name="email" value={email} onChange={onChange} required />

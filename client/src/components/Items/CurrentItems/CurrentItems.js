@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../RegisterCharacter/RegisterCharacter";
 
 const CurrentItems = () => {
+    const [raidTier, setRaidTier] = useState("");
+
+    const onChange = (e) => {
+        console.log(e.type);
+        setRaidTier(e.target.value);
+    };
+    
     return (
-        <form className="current-items__form">
-            <label className="current-items__label" htmlFor="Character Name">Character Name</label>
-            <input className="current-items__input" type="text" name="character" />
-            <label className="current-items__label" htmlFor="Guild Rank">Guild Rank</label>
-            <input className="current-items__input" type="text" name="guildrank" />
-            <label className="current-items__label" htmlFor="Class">Class</label>
-            <input className="current-items__input" type="text" name="class" />
-        </form>
+        <div className="form-container">
+            <form className="current-items__form">
+                <label htmlFor="Raid Tier">Raid Tier</label>
+                <select value={raidTier} onChange={onChange}>
+                    <option value=""></option>
+                    <option value="Molten Core">Molten Core</option>
+                    <option value="Blackwing Lair">Blackwing Lair</option>
+                    <option value="Temple of Ahn'Qiraj">Temple of Ahn'Qiraj</option>
+                </select>
+            </form>
+        </div>
     );
 };
 

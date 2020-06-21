@@ -10,13 +10,13 @@ const CurrentItems = () => {
 
     const [tierOneItems, setTierOneItems] = useState({
         head: "",
-        shoulders: "Giantstalker's Epaulets",
-        bracers: "Giantstalker's Bracers",
-        boots: "Giantstalker's Boots",
-        belt: "Giantstalker's Belt",
-        gloves: "Giantstalker's Gloves",
-        legs: "Giantstalker's Legs",
-        chest: "Giantstalker's Chest"
+        shoulders: "",
+        bracers:"", 
+        boots: "",
+        belt: "",
+        gloves: "",
+        legs: "",
+        chest: ""
     });
 
     const [tierTwoItems, setTierTwoItems] = useState({
@@ -45,7 +45,7 @@ const CurrentItems = () => {
     });
 
     const { raidOne, raidTwo, raidThree } = raidTier;
-    const { head, shoulders, bracers, boots, belt, gloves, legs, chest } = tierOneItems;
+    const { head, shoulder, bracers, boots, belt, gloves, legs, chest } = tierOneItems;
     const { headTwo, shouldersTwo, bracersTwo, bootsTwo, beltTwo, glovesTwo, legsTwo, chestTwo, trinketzG, trinketdM, trinketsT } = tierTwoItems;
     const { headThree, shouldersThree, bootsThree, legsThree, chestThree, trinketaQOne, trinketcC, trinketaQTwo } = aQItems;
 
@@ -56,7 +56,7 @@ const CurrentItems = () => {
     };
 
     return (
-        <div className="form-container">
+        <div className="current-items-form-container">
             <form className="current-items__form">
                 <label htmlFor="Raid Tier">Raid Tier</label>
                 <select value={raidTier} onChange={onChange}>
@@ -68,13 +68,13 @@ const CurrentItems = () => {
                 <label className="tier-one-label" htmlFor="Tier One">Tier 1 Items</label>
                 <div className="radio-items-tier-one">
                     <input type="radio" name="head" value="Giantstalker's Helm" checked={head === "Giantstalker's Helm"} onChange={onChange} /> Gianstalker's Helm{" "}
-                    {/* <input type="radio" name="characterClass" value="hunter" checked={characterClass === "hunter"} onChange={onChange} /> Hunter {" "}
-                    <input type="radio" name="characterClass" value="mage" checked={characterClass === "mage"} onChange={onChange} /> Mage {" "}
-                    <input type="radio" name="characterClass" value="warlock" checked={characterClass === "warlock"} onChange={onChange} /> Warlock {" "}
-                    <input type="radio" name="characterClass" value="druid" checked={characterClass === "druid"} onChange={onChange} /> Druid {" "}
-                    <input type="radio" name="characterClass" value="shaman" checked={characterClass === "shaman"} onChange={onChange} /> Shaman {" "}
-                    <input type="radio" name="characterClass" value="paladin" checked={characterClass === "paladin"} onChange={onChange} /> Paladin {" "}
-                    <input type="radio" name="characterClass" value="rogue" checked={characterClass === "rogue"} onChange={onChange} /> Rogue {" "} */}
+                    <input type="radio" name="shoulder" value="Giantstalker's Epaulets" checked={shoulder === "Giantstalker's Epaulets"} onChange={onChange} />Giantstalker's Epaulets {" "}
+                    <input type="radio" name="chest" value="Giantstalker's Chest" checked={chest === "Giantstalker's Chest"} onChange={onChange} /> Giantstalker's Chest {" "}
+                    <input type="radio" name="legs" value="Giantstalker's Leggings" checked={legs === "Giantstalker's Leggings"} onChange={onChange} /> Giantstalker's Leggings {" "}
+                    <input type="radio" name="bracers" value="Giantstalker's Bracers" checked={bracers === "Giantstalker's Bracers"} onChange={onChange} /> Giantstalker's Bracers {" "}
+                    <input type="radio" name="boots" value="Giantstalker's Boots" checked={boots === "Giantstalker's Boots"} onChange={onChange} /> Giantstalker's Boots {" "}
+                    <input type="radio" name="belt" value="Giantstalker's Belt" checked={belt === "Giantstalker's Belt"} onChange={onChange} /> Giantstalker's Belt {" "}
+                    <input type="radio" name="gloves" value="Giantstalker's Gloves" checked={gloves === "Giantstalker's Gloves"} onChange={onChange} /> Giantstalker's Gloves {" "}
                 </div>
             </form>
         </div>

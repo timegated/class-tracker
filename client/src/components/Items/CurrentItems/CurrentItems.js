@@ -9,7 +9,7 @@ const CurrentItems = () => {
     });
 
     const [tierOneItems, setTierOneItems] = useState({
-        head: "GiantStalker's Helmet",
+        head: "",
         shoulders: "Giantstalker's Epaulets",
         bracers: "Giantstalker's Bracers",
         boots: "Giantstalker's Boots",
@@ -50,9 +50,9 @@ const CurrentItems = () => {
     const { headThree, shouldersThree, bootsThree, legsThree, chestThree, trinketaQOne, trinketcC, trinketaQTwo } = aQItems;
 
     const onChange = (e) => {
-        console.log(e.type);
+        console.log(tierOneItems.head);
         setRaidTier(e.target.value);
-        setTierOneItems(e.target.value);
+        setTierOneItems({...tierOneItems, [e.target.name]:e.target.value});
     };
 
     return (
@@ -65,15 +65,16 @@ const CurrentItems = () => {
                     <option value={raidTwo}>Blackwing Lair</option>
                     <option value={raidThree}>Temple of Ahn'Qiraj</option>
                 </select>
+                <label className="tier-one-label" htmlFor="Tier One">Tier 1 Items</label>
                 <div className="radio-items-tier-one">
-                    <input type="radio" name="head" value="head" checked={ === "warrior"} onChange={onChange} /> Gianstalker's Helm{" "}
-                    <input type="radio" name="characterClass" value="hunter" checked={characterClass === "hunter"} onChange={onChange} /> Hunter {" "}
+                    <input type="radio" name="head" value="Giantstalker's Helm" checked={head === "Giantstalker's Helm"} onChange={onChange} /> Gianstalker's Helm{" "}
+                    {/* <input type="radio" name="characterClass" value="hunter" checked={characterClass === "hunter"} onChange={onChange} /> Hunter {" "}
                     <input type="radio" name="characterClass" value="mage" checked={characterClass === "mage"} onChange={onChange} /> Mage {" "}
                     <input type="radio" name="characterClass" value="warlock" checked={characterClass === "warlock"} onChange={onChange} /> Warlock {" "}
                     <input type="radio" name="characterClass" value="druid" checked={characterClass === "druid"} onChange={onChange} /> Druid {" "}
                     <input type="radio" name="characterClass" value="shaman" checked={characterClass === "shaman"} onChange={onChange} /> Shaman {" "}
                     <input type="radio" name="characterClass" value="paladin" checked={characterClass === "paladin"} onChange={onChange} /> Paladin {" "}
-                    <input type="radio" name="characterClass" value="rogue" checked={characterClass === "rogue"} onChange={onChange} /> Rogue {" "}
+                    <input type="radio" name="characterClass" value="rogue" checked={characterClass === "rogue"} onChange={onChange} /> Rogue {" "} */}
                 </div>
             </form>
         </div>

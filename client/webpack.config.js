@@ -7,8 +7,7 @@ module.exports = {
         app: ["@babel/polyfill", "./src/index.js"]
     },
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js"
+       publicPath: "/"
     },
     module: {
         rules: [
@@ -26,9 +25,10 @@ module.exports = {
         ],
     },
     devServer: {
+        historyApiFallback: true,
+        hot: true,
         proxy: {
             "/api": "http://localhost:5000",
-            hot: true
         },
     },
     devtool: "source-map",

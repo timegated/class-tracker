@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
-
+const auth = require("../middleware/auth");
 const Player = require("../models/Players");
+const User = require("../models/User");
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
     try {
         const players = await Player.find({
-            player: req.player
+            user: req.user._id
         }).sort({
             date: -1
         });
@@ -17,27 +18,22 @@ router.get("/", async (req, res) => {
     };
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
     const {
         characterName,
         characterClass,
         guildName
     } = req.body;
     try {
-        let player = await Player.findOne({
-            characterName
-        });
-        res.json(player);
-        if (player) {
-            return res.status(400).json({
-                msg: "Player already exists"
-            });
-        };
-        player = new Player({
+        const newPlayer = new Player({
             characterName,
             characterClass,
-            guildName
+            guildName,
+            user: req.user._id
         });
+        const player = await newPlayer.save();
+        res.json(player);
+        console.log(player)
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Server Error");

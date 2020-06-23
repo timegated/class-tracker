@@ -18,20 +18,20 @@ const PlayerState = props => {
 
     const [state, dispatch] = useReducer(playerReducer, initialState);
 
-    // const loadPlayer = async () => {
-    //     try {
-    //         const res = await axios.get("/api/players");
+    const loadPlayer = async () => {
+        try {
+            const res = await axios.get("/api/players");
 
-    //         dispatch({
-    //             type: ADD_PLAYER_SUCCESS,
-    //             payload: res.data
-    //         });
-    //     } catch (error) {
-    //         dispatch({
-    //             type: ADD_PLAYER_FAIL
-    //         });
-    //     };
-    // };
+            dispatch({
+                type: ADD_PLAYER_SUCCESS,
+                payload: res.data
+            });
+        } catch (error) {
+            dispatch({
+                type: ADD_PLAYER_FAIL
+            });
+        };
+    };
 
     const register = async formData => {
         const config = {

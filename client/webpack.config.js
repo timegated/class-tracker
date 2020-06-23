@@ -7,7 +7,9 @@ module.exports = {
         app: ["@babel/polyfill", "./src/index.js"]
     },
     output: {
-       publicPath: "/"
+        publicPath:  "/",
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js"
     },
     module: {
         rules: [

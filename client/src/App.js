@@ -22,14 +22,14 @@ function App() {
         <AuthState>
             <PlayerState>
                 <AlertState>
-                <Router>
-                    <div className="main-content">
+                    <Router>
                         <Navbar />
+                    <div className="main-content">
                         <Switch>
                             <PrivateRoute exact path="/" component={Home} />
                             <Route exact path="/about" component={About} />
-                            <Route exact path="/currentitems" component={CurrentItems} />
-                            <Route exact path="/priority" component={ItemPriority} />
+                            <PrivateRoute exact path="/currentitems" component={CurrentItems} />
+                            <PrivateRoute exact path="/priority" component={ItemPriority} />
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/signup" component={SignUp} />
                         </Switch>

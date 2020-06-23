@@ -1,16 +1,25 @@
-.main-menu {
+.navbar {
    background: black;
    width: 100%;
+   display: flex;
+   justify-content: space-between;
 }
 
-.main-menu__items {
+.navbar__title>a {
+    text-decoration: none;
+    color: #efefef;
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.navbar__items {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
 }
 
-.main-menu__item>a {
+.navbar__item>a {
     color: #efefef;
     text-decoration: none;
-    margin: 0 2rem 2rem;
+    margin: 1rem;
+    font-size: 1.50rem;
 }

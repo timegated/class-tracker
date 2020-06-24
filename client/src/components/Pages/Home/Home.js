@@ -5,9 +5,10 @@ import "./Home.css";
 
 function Home() {
     const authContext = useContext(AuthContext);
-    
+    const { loadUser } = authContext;
     useEffect(() => {
-        authContext.loadUser();
+        console.log(loadUser)
+        loadUser();
         // eslint-disable-next-line
     }, []);
 

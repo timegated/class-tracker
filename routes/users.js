@@ -10,16 +10,7 @@ const {
 
 const User = require("../models/User");
 
-router.get("/", async (req, res) => {
-    try {
-        const user = await User.findById(req.user);
-        res.json(user);
-    } catch (error) {
-        console.error(error.message);
-        res.status(500).send("Server Error");
-    };
-});
-
+// For registering first-time users
 router.post("/",
     [
     check("email", "Email required").not().isEmpty(),
@@ -32,7 +23,6 @@ router.post("/",
             errors: errors.array()
         });
     };
-    console.log(req.body)
     const {
         email,
         password
@@ -43,18 +33,11 @@ router.post("/",
             email
         });
 
-        // if (user) {
-        //     return res.status(400).json({
-        //         msg: "User already exists"
-        //     });
-        // };
-
         user = new User({
             email,
             password
         });
 
-        console.log(user)
 
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(password, salt);
@@ -64,17 +47,17 @@ router.post("/",
                 id: user.id
             }
         };
-
+        console.log(payload);
         jwt.sign(payload, config.get("jwtSecret"), {
-            expiresIn: 3600000
+            expiresIn: 36000
         }, (err, token) => {
             if (err) throw err;
-            res.json({ token });
+                res.json({ token });
+                console.log({ token })
         });
         
-        console.log(payload)
     } catch (error) {
-        console.error(err.message);
+        console.error(error.message);
         res.status(400).send("Server Error")
     };
 });

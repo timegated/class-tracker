@@ -21,33 +21,44 @@ router.get("/", auth, async (req, res) => {
     }; 
 });
 
+// For logging in
+
 router.post("/",
     [
         check("email", "Valid email required.").isEmail(),
         check("password", "Password is required.").exists()
     ]
     , async (req, res) => {
+    
     const errors = validationResult(req);
+    
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     };
+    
     const { email, password } = req.body;
+        
     try {
         let user = await User.findOne({ email });
         if (!user) {
             return res.status(400).json({ msg: "Invalid Credentials" });
         };
+        console.log("From auth routes", user);
+
         const isMatch = await bcrypt.compare(password, user.password);
+        console.log("From auth routes: matching pw's", isMatch);
+        
         if (!isMatch) {
             return res.status(400).json({ msg: "Invalid Credentials" });
         };
+
         const payload = {
             user: {
                 id: user.id
             }
         };
         jwt.sign(payload, config.get("jwtSecret"), {
-            expiresIn: 3600000
+            expiresIn: 36000
         }, (err, token) => {
                 if (err) throw err;
                 res.json({

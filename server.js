@@ -8,7 +8,7 @@ app.use(express.json({ extended: true }));
 connectDB();
 
 app.get("/", (req, res) => {
-    res.json({ msg: "Welcome to the class-tracker server" })
+    res.json({ msg: "Welcome to the class-tracker api" })
 });
 
 app.use("/api/users", require("./routes/users"));

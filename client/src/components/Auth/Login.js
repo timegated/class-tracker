@@ -46,11 +46,11 @@ const Login = props => {
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input type="text" name="email" value={email} onChange={onChange} required />
+                    <input type="text" name="email" value={email} onChange={onChange} required autoComplete="current-email" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" value={password} onChange={onChange} required />
+                    <input type="password" name="password" value={password} onChange={onChange} required autoComplete="current-password" />
                 </div>
                 <input type="submit" value="Login" className="btn btn-black btn-block" required />
             </form>

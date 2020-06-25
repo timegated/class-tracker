@@ -7,7 +7,7 @@ const User = require("../models/User");
 router.get("/", auth, async (req, res) => {
     try {
         const players = await Player.find({
-            user: req.user._id
+            user: req.user.id
         }).sort({
             date: -1
         });
@@ -29,7 +29,7 @@ router.post("/", auth, async (req, res) => {
             characterName,
             characterClass,
             guildName,
-            user: req.user._id
+            user: req.user.id
         });
         const player = await newPlayer.save();
         res.json(player);

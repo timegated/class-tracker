@@ -14,9 +14,15 @@ const User = require("../models/User");
 router.get("/", auth, async (req, res) => {
    try {
        const user = await User.findById(req.user.id).select("-password");
+
        res.json(user);
+
+       console.log(user);
+
    } catch (error) {
+
        console.error(error.message);
+
        res.status(500).send("Server Error");
     }; 
 });
@@ -33,7 +39,9 @@ router.post("/",
     const errors = validationResult(req);
     
     if (!errors.isEmpty()) {
+        
         return res.status(400).json({ errors: errors.array() });
+            
     };
     
     const { email, password } = req.body;

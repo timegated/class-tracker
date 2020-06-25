@@ -13,8 +13,14 @@ const User = require("../models/User");
 // For registering first-time users
 router.post("/",
     [
-    check("email", "Email required").not().isEmpty(),
-    check("password", "Password longer than six characters required.").isLength({min: 6})
+        check("name", "Make your username the same as your main\'s name")
+            .not()
+            .isEmpty(), 
+        check("email", "Email required")
+            .not()
+            .isEmpty(),
+        check("password", "Password must be longer than six characters.")
+            .isLength({ min: 6 })
     ],
     async (req, res) => {
     const errors = validationResult(req);
@@ -23,36 +29,47 @@ router.post("/",
             errors: errors.array()
         });
     };
-    const {
+        const {
+        name,
         email,
         password
         } = req.body;
         
-    try {
+        try {
+        
         let user = await User.find({
             email
         });
 
         user = new User({
+            name,
             email,
             password
         });
 
 
         const salt = await bcrypt.genSalt(10);
+
         user.password = await bcrypt.hash(password, salt);
+
         await user.save();
+
         const payload = {
             user: {
                 id: user.id
             }
         };
-        console.log(payload);
-        jwt.sign(payload, config.get("jwtSecret"), {
-            expiresIn: 36000
-        }, (err, token) => {
-            if (err) throw err;
+
+            jwt.sign(payload, config.get("jwtSecret"),
+                {
+                    expiresIn: 36000
+                },
+                (err, token) => {
+                
+                if (err) throw err;
+                
                 res.json({ token });
+
                 console.log({ token })
         });
         

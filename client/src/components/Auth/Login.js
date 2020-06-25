@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/auth/authContext";
-import AlertContext from "../../context/alert/alertContext";
+// import AlertContext from "../../context/alert/alertContext";
 import "./Forms.css";
 
 const Login = props => {
@@ -8,9 +8,7 @@ const Login = props => {
     const { email, password } = user;
    
     const authContext = useContext(AuthContext);
-    const alertContext = useContext(AlertContext);
 
-    const { setAlert } = alertContext;
     const { login, error, clearErrors, isAuthenticated } = authContext;
 
     useEffect(() => {
@@ -19,10 +17,10 @@ const Login = props => {
             props.history.push("/");  
         };
         if (error === "Invalid credentials") {
-            setAlert(error, "danger");
+            // setAlert(error, "danger");
             clearErrors();
         };
-    });
+    }, [error, isAuthenticated, props.history]);
 
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
@@ -30,7 +28,7 @@ const Login = props => {
     
     const onSubmit = (e) => {
         if (email === "" || password === "") {
-            setAlert("Fields can\'t be empty", "danger");
+            console.log("email and password cannot be empty")
         } else {
             login({
                 email,

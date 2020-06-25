@@ -3,6 +3,7 @@ const config = require("config");
 
 module.exports = function (req, res, next) {
     const token = req.header("x-auth-token");
+    console.log("from auth middleware:",token);
     if (!token) {
         return res.status(401).json({ msg: "Unauthorized" });
     }

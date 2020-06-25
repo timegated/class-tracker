@@ -29,6 +29,7 @@ const AuthState = props => {
         if (localStorage.token) {
             setAuthToken(localStorage.token);
         };
+        
         try {
             const res = await axios.get("/api/auth");
             dispatch({
@@ -48,7 +49,6 @@ const AuthState = props => {
                 "Content-type": "application/json"
             }
         };
-
         try {
             const res = await axios.post("/api/users", formData, config);
             dispatch({

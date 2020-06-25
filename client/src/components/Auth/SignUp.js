@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
-import AlertContext from "../../context/alert/alertContext";
+// import AlertContext from "../../context/alert/alertContext";
 import "./Forms.css";
 
 const SignUp = props => {
@@ -10,9 +10,8 @@ const SignUp = props => {
         passwordTwo: ""
     });
     const authContext = useContext(AuthContext);
-    const alertContext = useContext(AlertContext);
+    // const alertContext = useContext(AlertContext);
 
-    const { setAlert } = alertContext;
     const { register, error, clearErrors, isAuthenticated } = authContext;
     const { email, password, passwordTwo } = user;
 
@@ -22,7 +21,6 @@ const SignUp = props => {
             props.history.push("/");
         };
         if (error === "user already exists") {
-            setAlert(error, "danger");
             clearErrors();
         };
     }, [error, isAuthenticated, props.history]);
@@ -36,9 +34,9 @@ const SignUp = props => {
     const onSubmit = (e) => {
         console.log(register)
         if (email === "" || password === "" || passwordTwo === "") {
-            setAlert("All fields must contain an input");  
+            // setAlert("All fields must contain an input");  
         } else if (password !== passwordTwo) {
-            setAlert("Passwords must match");
+            // setAlert("Passwords must match");
         } else {
             register({
                 email,
@@ -50,7 +48,6 @@ const SignUp = props => {
 
     return (
         <div className="form-container">
-            <h1>SignUp</h1>
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">E-Mail</label>

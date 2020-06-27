@@ -70,7 +70,7 @@ router.post("/",
                 
                 res.json({ token });
 
-                console.log({ token })
+                console.log("token from post request in user routes: ", { token })
         });
         
     } catch (error) {

@@ -11,13 +11,8 @@ import PlayerState from "./context/player/PlayerState";
 import AuthState from "./context/auth/AuthState";
 // import AlertState from "./context/alert/AlertState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import setAuthToken from "./utils/setAuthToken";
 
-if (localStorage.token) {
-    setAuthToken(localStorage.token);  
-};
-
-function App() {
+const App = () => {
     return (
         <AuthState>
             <PlayerState>

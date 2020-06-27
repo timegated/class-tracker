@@ -5,6 +5,7 @@ import "./Forms.css";
 
 const SignUp = props => {
     const [user, setUser] = useState({
+        name:"",
         email: "",
         passwordOne: "",
         passwordTwo: ""
@@ -13,7 +14,7 @@ const SignUp = props => {
     // const alertContext = useContext(AlertContext);
 
     const { register, error, clearErrors, isAuthenticated } = authContext;
-    const { email, password, passwordTwo } = user;
+    const { name, email, password, passwordTwo } = user;
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -33,12 +34,13 @@ const SignUp = props => {
 
     const onSubmit = (e) => {
         console.log(register)
-        if (email === "" || password === "" || passwordTwo === "") {
+        if (name === "" || email === "" || password === "" || passwordTwo === "") {
             // setAlert("All fields must contain an input");  
         } else if (password !== passwordTwo) {
             // setAlert("Passwords must match");
         } else {
             register({
+                name,
                 email,
                 password
             });
@@ -49,6 +51,10 @@ const SignUp = props => {
     return (
         <div className="form-container">
             <form onSubmit={onSubmit}>
+                <div className="form-group">
+                    <label htmlFor="name">User Name</label>
+                    <input type="text" name="name" onChange={onChange} required />
+                </div>
                 <div className="form-group">
                     <label htmlFor="email">E-Mail</label>
                     <input type="text" name="email" onChange={onChange} required />

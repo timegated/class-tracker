@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const cors = require("../middleware/cors");
 const {
     check,
     validationResult
@@ -22,6 +23,7 @@ router.post("/",
         check("password", "Password must be longer than six characters.")
             .isLength({ min: 6 })
     ],
+    cors,
     async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -40,7 +42,7 @@ router.post("/",
         let user = await User.find({
             email
         });
-
+        // removed if check for currently existing user here
         user = new User({
             name,
             email,
@@ -59,7 +61,7 @@ router.post("/",
                 id: user.id
             }
         };
-
+            console.log(payload);
             jwt.sign(payload, config.get("jwtSecret"),
                 {
                     expiresIn: 36000
@@ -70,12 +72,12 @@ router.post("/",
                 
                 res.json({ token });
 
-                console.log("token from post request in user routes: ", { token })
+                    console.log("token from post request in user routes: ", { token });
         });
         
     } catch (error) {
-        console.error(error.message);
-        res.status(400).send("Server Error")
+            console.error(error.message);
+            res.status(400).send("Server Error");
     };
 });
 

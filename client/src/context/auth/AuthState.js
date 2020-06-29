@@ -44,7 +44,9 @@ const AuthState = props => {
     const register = async formData => {
         const config = {
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                "x-auth-token": "secret",
+                "Accept": "application/json"
             }
         };
         try {
@@ -65,7 +67,9 @@ const AuthState = props => {
     const login = async formData => {
         const config = {
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                "x-auth-token": "secret",
+                "Accept": "application/json"
             }
         };
         try {
@@ -74,6 +78,8 @@ const AuthState = props => {
                 type: LOGIN_SUCCESS,
                 payload: res.data
             });
+
+            loadUser();
         } catch (error) {
             dispatch({
                 type: LOGIN_FAIL,

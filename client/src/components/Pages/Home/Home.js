@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect } from "react";
 import RegisterCharacter from "../../RegisterCharacter/RegisterCharacter";
 import AuthContext from "../../../context/auth/authContext";

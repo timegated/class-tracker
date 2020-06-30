@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/auth/authContext";
 // import AlertContext from "../../context/alert/alertContext";
@@ -6,15 +7,15 @@ import "./Forms.css";
 const Login = props => {
     const [user, setUser] = useState({ email: "", password: "" });
     const { email, password } = user;
-   
+
     const authContext = useContext(AuthContext);
 
     const { login, error, clearErrors, isAuthenticated } = authContext;
 
     useEffect(() => {
         if (isAuthenticated) {
-          // redirect
-            props.history.push("/");  
+            // redirect
+            props.history.push("/");
         };
         if (error === "Invalid credentials") {
             // setAlert(error, "danger");
@@ -25,7 +26,7 @@ const Login = props => {
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
     };
-    
+
     const onSubmit = (e) => {
         if (email === "" || password === "") {
             console.log("email and password cannot be empty")

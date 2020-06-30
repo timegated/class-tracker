@@ -3,7 +3,6 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const cors = require("../middleware/cors");
 const {
     check,
     validationResult
@@ -23,7 +22,6 @@ router.post("/",
         check("password", "Password must be longer than six characters.")
             .isLength({ min: 6 })
     ],
-    cors,
     async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

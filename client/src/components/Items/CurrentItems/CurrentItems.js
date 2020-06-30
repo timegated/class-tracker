@@ -11,37 +11,12 @@ const CurrentItems = () => {
     const [tierOneItems, setTierOneItems] = useState({
         head: "",
         shoulders: "",
-        bracers:"", 
+        bracers: "",
         boots: "",
         belt: "",
         gloves: "",
         legs: "",
         chest: ""
-    });
-
-    const [tierTwoItems, setTierTwoItems] = useState({
-        headTwo: "Dragonstalker's Helmet",
-        shouldersTwo: "Dragonstalker's Epaulets",
-        bracersTwo: "Dragonstalker's Bracers",
-        bootsTwo: "Dragonstalker's Boots",
-        beltTwo: "Dragonstalker's Belt",
-        glovesTwo: "Dragonstalker's Gloves",
-        legsTwo: "Dragonstalker's Legs",
-        chestTwo: "Dragonstalker's Chest",
-        trinketzG: "Renataki's Charm of Beasts",
-        trinketdM: "Royal Seal of Eldre'thelas",
-        trinketsT: "Devilsaur Eye"
-    });
-
-    const [aQItems, setAqItems] = useState({
-        headThree: "Striker's Diadem",
-        shouldersThree: "Striker's Pauldrons",
-        bootsThree: "Striker's Footguards",
-        legsThree: "Striker's Leggings",
-        chestThree: "Striker's Hauberk",
-        trinketaQOne: "Jom Gabbar",
-        trinketcC: "Earthstrike",
-        trinketaQTwo: "Badge of the Swarmguard"
     });
 
     const { raidOne, raidTwo, raidThree } = raidTier;
@@ -52,7 +27,7 @@ const CurrentItems = () => {
     const onChange = (e) => {
         console.log(tierOneItems.head);
         setRaidTier(e.target.value);
-        setTierOneItems({...tierOneItems, [e.target.name]:e.target.value});
+        setTierOneItems({ ...tierOneItems, [e.target.name]: e.target.value });
     };
 
     return (

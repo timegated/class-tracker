@@ -47,9 +47,9 @@ const Navbar = () => {
                     Class Tracker
                 </Link>
             </h1>
-           <ul className="navbar__items">
+            <ul className="navbar__items">
                 {isAuthenticated ? authLinks : guestLinks}
-           </ul> 
+            </ul>
         </nav>
     );
 };

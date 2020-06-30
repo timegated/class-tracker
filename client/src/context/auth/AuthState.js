@@ -27,7 +27,7 @@ const AuthState = props => {
 
     const loadUser = async () => {
         setAuthToken(localStorage.token);
-        
+
         try {
             const res = await axios.get("/api/auth");
             dispatch({
@@ -37,7 +37,7 @@ const AuthState = props => {
         } catch (error) {
             dispatch({
                 type: AUTH_ERROR
-            });  
+            });
         };
     };
 
@@ -45,8 +45,6 @@ const AuthState = props => {
         const config = {
             headers: {
                 "Content-type": "application/json",
-                "x-auth-token": "secret",
-                "Accept": "application/json"
             }
         };
         try {
@@ -68,8 +66,6 @@ const AuthState = props => {
         const config = {
             headers: {
                 "Content-type": "application/json",
-                "x-auth-token": "secret",
-                "Accept": "application/json"
             }
         };
         try {

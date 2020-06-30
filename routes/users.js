@@ -3,7 +3,10 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 039e49b5b173fa9dbd1c21efa37f96a6cde0408a
 const {
     check,
     validationResult

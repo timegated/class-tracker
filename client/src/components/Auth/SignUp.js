@@ -5,7 +5,7 @@ import "./Forms.css";
 
 const SignUp = props => {
     const [user, setUser] = useState({
-        name:"",
+        name: "",
         email: "",
         passwordOne: "",
         passwordTwo: ""
@@ -26,7 +26,7 @@ const SignUp = props => {
         };
     }, [error, isAuthenticated, props.history]);
 
-   
+
 
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });

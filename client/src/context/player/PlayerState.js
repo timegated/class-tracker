@@ -41,7 +41,7 @@ const PlayerState = props => {
         };
         try {
             const res = await axios.post("/api/players", formData, config);
-            
+
             dispatch({
                 type: ADD_PLAYER_SUCCESS,
                 payload: res.data

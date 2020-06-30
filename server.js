@@ -5,7 +5,9 @@ const path = require("path");
 const app = express();
 
 
+
 app.use(express.json({ extended: true }));
+
 connectDB();
 
 app.use("/api/users", require("./routes/users"));

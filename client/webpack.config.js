@@ -31,7 +31,7 @@ module.exports = {
         hot: true,
         quiet: true,
         proxy: {
-            "/api": "http://localhost:3000",
+            "/api": "http://localhost:5000",
         },
     },
     devtool: "source-map",

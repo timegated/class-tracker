@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const auth = require("../middleware/auth");
-const cors = require("../middleware/cors");
+
 const {
     check,
     validationResult
@@ -16,7 +16,7 @@ const User = require("../models/User");
 // @desc  Get logged in user
 // @access PRIVATE
 
-router.get("/", cors, auth, async (req, res) => {
+router.get("/", auth, async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select("-password");
         res.json(user);
@@ -35,7 +35,7 @@ router.post("/",
     [
         check("email", "Include a valid email").isEmail(),
         check("password", "Password is required").exists()
-    ], cors, async (req, res) => {
+    ], async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
@@ -57,8 +57,7 @@ router.post("/",
                     id: user.id
                 }
             };
-            // console.log(payload);
-            //  jsonwebtoken method to sign the token, payload (user object) is passed in, and the jwtSecret is grabbed from the config object
+         
             jwt.sign(payload, config.get("jwtSecret"),
                 {
                     expiresIn: 3600000

@@ -45,8 +45,6 @@ const AuthState = props => {
         const config = {
             headers: {
                 "Content-type": "application/json",
-                "x-auth-token": "secret",
-                "Accept": "application/json"
             }
         };
         try {
@@ -68,8 +66,6 @@ const AuthState = props => {
         const config = {
             headers: {
                 "Content-type": "application/json",
-                "x-auth-token": "secret",
-                "Accept": "application/json"
             }
         };
         try {

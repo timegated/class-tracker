@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import "./Navbar.css";
@@ -6,14 +6,21 @@ import "./Navbar.css";
 const Navbar = () => {
     const authContext = useContext(AuthContext);
 
-    const { isAuthenticated, logout } = authContext;
+    const { isAuthenticated, logout, user, loadUser, clearErrors } = authContext;
+
+    useEffect(() => {
+        loadUser();
+        // eslint-disable-next-line
+    }, []);
 
     const onLogout = () => {
         logout();
+        console.log("Logout fired?")
     };
 
     const authLinks = (
         <>
+            <li>Hello {user && user.name}</li>
             <li className="navbar__item">
                 <a onClick={onLogout} href="#!">
                     <i className="fas fa-sign-out-alt"></i>

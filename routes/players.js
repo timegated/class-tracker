@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
 const Player = require("../models/Players");
-const User = require("../models/User");
 
 router.get("/", auth, async (req, res) => {
     try {

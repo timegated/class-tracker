@@ -21,8 +21,7 @@ const CurrentItems = () => {
 
     const { raidOne, raidTwo, raidThree } = raidTier;
     const { head, shoulder, bracers, boots, belt, gloves, legs, chest } = tierOneItems;
-    const { headTwo, shouldersTwo, bracersTwo, bootsTwo, beltTwo, glovesTwo, legsTwo, chestTwo, trinketzG, trinketdM, trinketsT } = tierTwoItems;
-    const { headThree, shouldersThree, bootsThree, legsThree, chestThree, trinketaQOne, trinketcC, trinketaQTwo } = aQItems;
+
 
     const onChange = (e) => {
         console.log(tierOneItems.head);

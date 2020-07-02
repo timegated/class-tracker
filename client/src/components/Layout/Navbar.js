@@ -6,7 +6,7 @@ import "./Navbar.css";
 const Navbar = () => {
     const authContext = useContext(AuthContext);
 
-    const { isAuthenticated, logout, user, loadUser, clearErrors } = authContext;
+    const { isAuthenticated, logOut, user, loadUser } = authContext;
 
     useEffect(() => {
         loadUser();
@@ -14,8 +14,9 @@ const Navbar = () => {
     }, []);
 
     const onLogout = () => {
-        logout();
+        logOut();
         console.log("Logout fired?")
+        console.log(isAuthenticated)
     };
 
     const authLinks = (
@@ -38,6 +39,9 @@ const Navbar = () => {
 
     const guestLinks = (
         <>
+            <li className="navbar__item">
+                <Link to="/about">About</Link>
+            </li>
             <li className="navbar__item">
                 <Link to="/signup">Sign Up</Link>
             </li>

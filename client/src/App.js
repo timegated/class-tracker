@@ -12,7 +12,7 @@ import PlayerState from "./context/player/PlayerState";
 import AuthState from "./context/auth/AuthState";
 // import AlertState from "./context/alert/AlertState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import "./App.css"
 const App = () => {
   return (
     <AuthState>
@@ -21,12 +21,12 @@ const App = () => {
           <Navbar />
           <div className="main-content">
             <Switch>
-              <PrivateRoute exact path="/" component={Home} />
-              <PrivateRoute exact path="/currentitems" component={CurrentItems} />
-              <PrivateRoute exact path="/priority" component={ItemPriority} />
               <Route exact path="/about" component={About} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
+              <PrivateRoute exact path="/" component={Home} />
+              <PrivateRoute exact path="/currentitems" component={CurrentItems} />
+              <PrivateRoute exact path="/priority" component={ItemPriority} />
             </Switch>
           </div>
         </Router>

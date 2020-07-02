@@ -32,6 +32,7 @@ export default (state, action) => {
         case LOGIN_FAIL:
         case LOGOUT:
             localStorage.removeItem("token");
+            console.log(state);
             return {
                 ...state,
                 token: null,

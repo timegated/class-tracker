@@ -21,7 +21,7 @@ const Login = props => {
             // setAlert(error, "danger");
             clearErrors();
         };
-    }, [error, isAuthenticated, props.history]);
+    }, [error, isAuthenticated, props.history, clearErrors]);
 
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });

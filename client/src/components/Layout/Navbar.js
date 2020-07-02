@@ -34,6 +34,9 @@ const Navbar = () => {
             <li className="navbar__item">
                 <Link to="/priority">Priority</Link>
             </li>
+            <li className="navbar__item">
+                <Link to="/characters">Characters</Link>
+            </li>
         </>
     );
 

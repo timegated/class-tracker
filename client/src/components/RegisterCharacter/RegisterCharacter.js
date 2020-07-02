@@ -1,35 +1,34 @@
 import React, { useState, useContext } from "react";
-import PlayerContext from "../../context/player/playerContext";
+import CharacterContext from "../../context/character/characterContext";
 import "./RegisterCharacter.css";
 
-// After an account is created a user can register any and all character's they have on their respective server
-// Initially all that's needed is their Guild/Class/Character Name
-// DB Associations: Users, Any Character's they have registered, Character's Gear
-
 const Registration = () => {
-    const [player, setPlayer] = useState({
+    const [character, setCharacter] = useState({
         characterName: '',
         characterClass: '',
         guildName: ''
     });
-    const playerContext = useContext(PlayerContext);
+    const characterContext = useContext(CharacterContext);
 
-    const { register } = playerContext;
+    const { register } = characterContext;
 
-    const { characterName, characterClass, guildName } = player;
+    const { characterName, characterClass, guildName } = character;
 
     const onChange = (e) => {
-        setPlayer({ ...player, [e.target.name]: e.target.value });
-        console.log(player)
+        setCharacter({ ...character, [e.target.name]: e.target.value });
     };
 
     const onSubmit = (e) => {
-        console.log(e);
         register({
             characterName,
             characterClass,
             guildName
         });
+        setCharacter({
+            characterName: "",
+            characterClass: "",
+            guildName: ""
+        })
         e.preventDefault();
     };
 

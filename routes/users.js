@@ -64,7 +64,7 @@ router.post("/",
             console.log("Payload from user route.post: ",payload);
             jwt.sign(payload, config.get("jwtSecret"),
                 {
-                    expiresIn: 3600
+                    expiresIn: 360000
                 },
                 (err, token) => {
                 

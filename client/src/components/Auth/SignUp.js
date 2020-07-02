@@ -24,7 +24,7 @@ const SignUp = props => {
         if (error === "user already exists") {
             clearErrors();
         };
-    }, [error, isAuthenticated, props.history]);
+    }, [error, isAuthenticated, props.history, clearErrors]);
 
 
 

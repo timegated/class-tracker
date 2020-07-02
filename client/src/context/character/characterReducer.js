@@ -1,4 +1,3 @@
-
 import {
     ADD_PLAYER_SUCCESS,
     ADD_PLAYER_FAIL,
@@ -11,7 +10,7 @@ export default (state, action) => {
         case ADD_PLAYER_SUCCESS:
             return {
                 ...state,
-                player: action.payload
+                characters: action.payload
             };
         case ADD_PLAYER_FAIL:
             return {

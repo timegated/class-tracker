@@ -12,7 +12,7 @@ connectDB();
 
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
-app.use("/api/players", require("./routes/players"));
+app.use("/api/characters", require("./routes/characters"));
 
 if (process.env.NODE_ENV) {
     app.use(express.static("client/build"));

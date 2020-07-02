@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PlayerSchema = mongoose.Schema({
+const CharacterSchema = mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "user"
@@ -23,4 +23,4 @@ const PlayerSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("player", PlayerSchema);
+module.exports = mongoose.model("characters", CharacterSchema);

@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
-const Player = require("../models/Players");
+const Character = require("../models/Characters");
 
 router.get("/", auth, async (req, res) => {
     try {
-        const players = await Player.find({
+        const characters = await Character.find({
             user: req.user.id
         }).sort({
             date: -1
         });
-        res.json(players);
+        res.json(characters);
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Server Error");
@@ -24,15 +24,15 @@ router.post("/", auth, async (req, res) => {
         guildName
     } = req.body;
     try {
-        const newPlayer = new Player({
+        const newCharacter = new Character({
             characterName,
             characterClass,
             guildName,
             user: req.user.id
         });
-        const player = await newPlayer.save();
-        res.json(player);
-        console.log(player)
+        const character = await newCharacter.save();
+        res.json(character);
+        console.log(character)
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Server Error");

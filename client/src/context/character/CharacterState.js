@@ -2,25 +2,23 @@ import React, {
     useReducer
 } from "react";
 import axios from "axios";
-import PlayerContext from "./playerContext";
-import playerReducer from "./playerReducer";
+import PlayerContext from "./characterContext";
+import playerReducer from "./characterReducer";
 import {
     ADD_PLAYER_SUCCESS,
-    ADD_PLAYER_FAIL,
-    UPDATE_PLAYER,
-    DELETE_PLAYER
+    ADD_PLAYER_FAIL
 } from "../types";
 
 const PlayerState = props => {
     const initialState = {
-        player: null,
+        characters: null,
     };
 
     const [state, dispatch] = useReducer(playerReducer, initialState);
 
-    const loadPlayer = async () => {
+    const loadCharacters = async () => {
         try {
-            const res = await axios.get("/api/players");
+            const res = await axios.get("/api/characters");
 
             dispatch({
                 type: ADD_PLAYER_SUCCESS,
@@ -36,11 +34,11 @@ const PlayerState = props => {
     const register = async formData => {
         const config = {
             headers: {
-                "Content-type": "application/json"
+                "Content-Type": "application/json"
             }
         };
         try {
-            const res = await axios.post("/api/players", formData, config);
+            const res = await axios.post("/api/characters", formData, config);
 
             dispatch({
                 type: ADD_PLAYER_SUCCESS,
@@ -55,8 +53,9 @@ const PlayerState = props => {
 
     return (
         <PlayerContext.Provider value={{
-            player: state.player,
-            register
+            characters: state.characters,
+            register,
+            loadCharacters
         }}>
             {props.children}
         </PlayerContext.Provider>

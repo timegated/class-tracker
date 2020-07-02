@@ -1,20 +1,34 @@
 import React, { useEffect, useContext } from "react";
-import PlayerContext from "../../../context/character/characterContext";
+import CharacterContext from "../../../context/character/characterContext";
+import CharacterItem from "./CharacterItem";
 
 const Characters = () => {
-    const playerContext = useContext(PlayerContext);
+    const characterContext = useContext(CharacterContext);
     
-    const { characters, loadCharacters } = playerContext;
+    const { characters, loadCharacters } = characterContext;
 
     useEffect(() => {
         loadCharacters();
         // es-lint-disable-next-line
     }, []);
+
     console.log(characters)
+    if (characters !== null && characters.length === 0) {
+        return <h4>Add a Character</h4>
+    };
+
     return (
-        <div>
-            <h1>Character's Displayed Here</h1>
-        </div>
+        <>
+            {characters !== null ? (
+                <div>
+                    {characters.map(character => (
+                        <CharacterItem
+                            character={character}
+                        />
+                ))}
+                </div>
+            ) : (console.log('error'))}
+        </>
     );
 };
 

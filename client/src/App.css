@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
 body {
     background: #2c2c2c;
     color: #efefef;
@@ -11,4 +13,151 @@ body {
     flex-direction: column;
     max-width: 1200px;
 }
+
+.about-content {
+    max-width: 750px;
+    margin: 2rem auto;
+}
+
+.current-items__form {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    margin: auto;
+}
+
+.current-items__input {
+   border: none;
+   margin: .5rem;
+   flex: 1 0 35px;
+   font-size: 18px;
+}
+
+.current-items__label {
+    margin: .5rem;
+    font-size: 18px;
+}
+.current-items-form-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.card {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: center;
+    width: 500px;
+    box-shadow: 1px 1px 1px 1px #2c2c2c;
+}
+
+
+.radio-items-tier-one {
+    margin-top: .5rem;
+}
+
+.tier-one-label {
+    margin-top: 1rem;
+}
+
+.home-page__title {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background: black;
+    color: #efefef;
+    padding: 0.4rem 1.3rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-black {
+  background: black;
+  color: #efefef;
+}
+  
+.form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.form-group {
+    margin: 1.2rem 0;
+}
+
+.form-group input {
+    margin: .2rem 0;
+}
+
+input {
+  margin: 1.2rem 0;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: #888;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+  
+.navbar {
+   background: black;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.navbar__title>a {
+    text-decoration: none;
+    color: #efefef;
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.navbar__items {
+    list-style: none;
+    display: flex;
+}
+
+.navbar__item>a {
+    color: #efefef;
+    text-decoration: none;
+    margin: 1rem;
+    font-size: 1.50rem;
+}
+
 

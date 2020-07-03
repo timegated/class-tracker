@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import CharacterContext from "../../context/character/characterContext";
-import "./RegisterCharacter.css";
 
 const Registration = () => {
     const [character, setCharacter] = useState({

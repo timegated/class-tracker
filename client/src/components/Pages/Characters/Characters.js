@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import CharacterContext from "../../../context/character/characterContext";
 import CharacterItem from "./CharacterItem";
-import "./Characters.css"
 
 
 const Characters = () => {

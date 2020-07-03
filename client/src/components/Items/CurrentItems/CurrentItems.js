@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./CurrentItems.css";
 
 const CurrentItems = () => {
     const [raidTier, setRaidTier] = useState({

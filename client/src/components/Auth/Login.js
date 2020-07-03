@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/auth/authContext";
 // import AlertContext from "../../context/alert/alertContext";
-import "./Forms.css";
 
 const Login = props => {
     const [user, setUser] = useState({ email: "", password: "" });

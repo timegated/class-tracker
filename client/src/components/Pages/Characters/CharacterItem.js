@@ -17,7 +17,10 @@ const CharacterItem = ({ character }) => {
             </h3>
             <h3>
                 {guildName}
-            </h3>
+                </h3>
+                <p>
+                    <button className="btn">Delete</button>
+                </p>
         </div>
     </div>
         

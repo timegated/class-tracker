@@ -1,29 +1,32 @@
 import {
-    ADD_PLAYER_SUCCESS,
-    ADD_PLAYER_FAIL,
-    UPDATE_PLAYER,
-    DELETE_PLAYER
+    ADD_CHARACTER_SUCCESS,
+    ADD_CHARACTER_FAIL,
+    UPDATE_CHARACTER,
+    DELETE_CHARACTER
 } from "../types";
 
 export default (state, action) => {
     switch (action.type) {
-        case ADD_PLAYER_SUCCESS:
+        case ADD_CHARACTER_SUCCESS:
             return {
                 ...state,
                 characters: action.payload
             };
-        case ADD_PLAYER_FAIL:
+        case ADD_CHARACTER_FAIL:
             return {
                 ...state,
-                msg: "Failed to add player"
+                msg: "Failed to add character."
             };
-        case UPDATE_PLAYER:
+        case UPDATE_CHARACTER:
             return {
                 ...state
             };
-        case DELETE_PLAYER:
+        case DELETE_CHARACTER:
             return {
-                ...state
+                ...state,
+                characters: state.characters.filter(
+                    character => character._id !== action.payload
+                ),
             };
         default:
             return state

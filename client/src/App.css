@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-
+/* Main Content General Styling */
 body {
     background: #2c2c2c;
     color: #efefef;
@@ -19,30 +19,7 @@ body {
     margin: 2rem auto;
 }
 
-.current-items__form {
-    display: flex;
-    flex-direction: column;
-    width: 750px;
-    margin: auto;
-}
-
-.current-items__input {
-   border: none;
-   margin: .5rem;
-   flex: 1 0 35px;
-   font-size: 18px;
-}
-
-.current-items__label {
-    margin: .5rem;
-    font-size: 18px;
-}
-.current-items-form-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    overflow: hidden;
-    padding: 0 2rem;
-}
+/* Character Cards */
 .card-container {
     display: flex;
     flex-direction: row;
@@ -59,19 +36,12 @@ body {
     box-shadow: 1px 1px 1px 1px #2c2c2c;
 }
 
-
-.radio-items-tier-one {
-    margin-top: .5rem;
-}
-
-.tier-one-label {
-    margin-top: 1rem;
-}
-
+/* Home Page */
 .home-page__title {
     text-align: center;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
     background: black;
@@ -95,7 +65,7 @@ body {
   background: black;
   color: #efefef;
 }
-  
+  /*CurrentItems Input  */
 .form-container {
     max-width: 500px;
     margin: 2rem auto;
@@ -133,7 +103,41 @@ textarea {
   font-size: 1.2rem;
   border: 1px solid #ccc;
 }
-  
+
+.radio-items-tier-one {
+    margin-top: .5rem;
+}
+
+.tier-one-label {
+    margin-top: 1rem;
+}
+
+.current-items__form {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    margin: auto;
+}
+
+.current-items__input {
+   border: none;
+   margin: .5rem;
+   flex: 1 0 35px;
+   font-size: 18px;
+}
+
+.current-items__label {
+    margin: .5rem;
+    font-size: 18px;
+}
+.current-items-form-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+/* Navbar */
 .navbar {
    background: black;
    width: 100%;

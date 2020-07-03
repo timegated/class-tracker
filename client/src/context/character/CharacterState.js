@@ -2,31 +2,32 @@ import React, {
     useReducer
 } from "react";
 import axios from "axios";
-import PlayerContext from "./characterContext";
-import playerReducer from "./characterReducer";
+import CharacterContext from "./characterContext";
+import characterReducer from "./characterReducer";
 import {
-    ADD_PLAYER_SUCCESS,
-    ADD_PLAYER_FAIL
+    ADD_CHARACTER_SUCCESS,
+    ADD_CHARACTER_FAIL,
+    DELETE_CHARACTER
 } from "../types";
 
-const PlayerState = props => {
+const CharacterState = props => {
     const initialState = {
         characters: null,
     };
 
-    const [state, dispatch] = useReducer(playerReducer, initialState);
+    const [state, dispatch] = useReducer(characterReducer, initialState);
 
     const loadCharacters = async () => {
         try {
             const res = await axios.get("/api/characters");
 
             dispatch({
-                type: ADD_PLAYER_SUCCESS,
+                type: ADD_CHARACTER_SUCCESS,
                 payload: res.data
             });
         } catch (error) {
             dispatch({
-                type: ADD_PLAYER_FAIL
+                type: ADD_CHARACTER_FAIL
             });
         };
     };
@@ -41,25 +42,35 @@ const PlayerState = props => {
             const res = await axios.post("/api/characters", formData, config);
 
             dispatch({
-                type: ADD_PLAYER_SUCCESS,
+                type: ADD_CHARACTER_SUCCESS,
                 payload: res.data
             });
         } catch (error) {
             dispatch({
-                type: ADD_PLAYER_FAIL
+                type: ADD_CHARACTER_FAIL
             });
         };
     };
-
+    const deleteCharacter = async id => {
+        try {
+            await axios.delete(`/api/characters/${id}`);
+            dispatch({
+                type: DELETE_CHARACTER
+            })
+        } catch (error) {
+            
+        }
+    };
     return (
-        <PlayerContext.Provider value={{
+        <CharacterContext.Provider value={{
             characters: state.characters,
             register,
-            loadCharacters
+            loadCharacters,
+            deleteCharacter
         }}>
             {props.children}
-        </PlayerContext.Provider>
+        </CharacterContext.Provider>
     )
 };
 
-export default PlayerState;
+export default CharacterState;

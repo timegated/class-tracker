@@ -1,10 +1,15 @@
-import React from "react";
-// import CharacterContext from "../../../context/character/characterContext";
+import React, { useContext } from "react";
+import CharacterContext from "../../../context/character/characterContext";
 
 const CharacterItem = ({ character }) => {
-    // const characterContext = useContext(CharacterContext);
+    const characterContext = useContext(CharacterContext);
+    const { deleteCharacter } = characterContext;
+    const { _id, characterName, characterClass, guildName } = character;
 
-    const { characterName, characterClass, guildName } = character;
+    const onDelete = () => {
+        deleteCharacter(_id);
+    };
+
 
     return (
     <div className="card-container">
@@ -19,7 +24,7 @@ const CharacterItem = ({ character }) => {
                 {guildName}
                 </h3>
                 <p>
-                    <button className="btn">Delete</button>
+                    <button onClick={onDelete} className="btn">Delete</button>
                 </p>
         </div>
     </div>

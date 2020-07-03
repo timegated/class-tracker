@@ -9,7 +9,7 @@ import ItemPriority from "./components/Items/ItemPriority/ItemPriority";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
 import PrivateRoute from "./components/Routing/PrivateRoute";
-import PlayerState from "./context/character/CharacterState";
+import CharacterState from "./context/character/CharacterState";
 import AuthState from "./context/auth/AuthState";
 // import AlertState from "./context/alert/AlertState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -18,7 +18,7 @@ import "./App.css"
 const App = () => {
   return (
     <AuthState>
-      <PlayerState>
+      <CharacterState>
         <Router>
           <Navbar />
           <div className="main-content">
@@ -33,7 +33,7 @@ const App = () => {
             </Switch>
           </div>
         </Router>
-      </PlayerState>
+      </CharacterState>
     </AuthState>
   );
 };

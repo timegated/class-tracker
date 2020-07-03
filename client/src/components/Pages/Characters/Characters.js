@@ -1,6 +1,8 @@
 import React, { useEffect, useContext } from "react";
 import CharacterContext from "../../../context/character/characterContext";
 import CharacterItem from "./CharacterItem";
+import "./Characters.css"
+
 
 const Characters = () => {
     const characterContext = useContext(CharacterContext);
@@ -20,9 +22,10 @@ const Characters = () => {
     return (
         <>
             {characters !== null ? (
-                <div>
+                <div className="card-container">
                     {characters.map(character => (
                         <CharacterItem
+                            key={character._id}
                             character={character}
                         />
                 ))}

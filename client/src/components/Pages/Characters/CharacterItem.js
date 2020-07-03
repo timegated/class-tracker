@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 // import CharacterContext from "../../../context/character/characterContext";
 
 const CharacterItem = ({ character }) => {
@@ -7,6 +7,7 @@ const CharacterItem = ({ character }) => {
     const { characterName, characterClass, guildName } = character;
 
     return (
+    <div className="card-container">
         <div className="card">
             <h3>
                 {characterName}
@@ -18,6 +19,8 @@ const CharacterItem = ({ character }) => {
                 {guildName}
             </h3>
         </div>
+    </div>
+        
     );
 };
 

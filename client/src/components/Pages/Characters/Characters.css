@@ -1,0 +1,21 @@
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.card {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: center;
+    width: 500px;
+    box-shadow: 1px 1px 1px 1px #2c2c2c;
+}
+
+.btn {
+    display: inline-block;
+    color:  #efefef;
+    background: #2c2c2c;
+}

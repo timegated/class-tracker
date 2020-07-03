@@ -14,8 +14,6 @@ const Navbar = () => {
 
     const onLogout = () => {
         logOut();
-        console.log("Logout fired?")
-        console.log(isAuthenticated)
     };
 
     const authLinks = (

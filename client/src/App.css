@@ -8,10 +8,9 @@ body {
 }
 
 .main-content {
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    justify-content: center;
 }
 
 .about-content {
@@ -67,7 +66,7 @@ body {
 }
   /*CurrentItems Input  */
 .form-container {
-    max-width: 500px;
+    max-width: 850px;
     margin: 2rem auto;
     overflow: hidden;
     padding: 0 2rem;

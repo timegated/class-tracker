@@ -29,7 +29,7 @@ const CurrentItems = () => {
     };
 
     return (
-        <div className="current-items-form-container">
+        <div className="form-container">
             <form className="current-items__form">
                 <label htmlFor="Raid Tier">Raid Tier</label>
                 <select value={raidTier} onChange={onChange}>

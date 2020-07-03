@@ -2,8 +2,15 @@ import React from 'react';
 
 const ItemPriority = () => {
     return (
-        <form>
-            <label htmlFor="form">Priority form here</label>
+        <form className="form-container">
+            
+                <label htmlFor="item">Item</label>
+                <input type="text"/>
+            
+            
+                <label htmlFor="upgrade"></label>
+                <input type="text"/>
+            
         </form>
     );
 };

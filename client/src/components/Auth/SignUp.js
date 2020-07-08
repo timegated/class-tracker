@@ -59,8 +59,8 @@ const SignUp = props => {
                     <input type="text" name="email" onChange={onChange} required />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="passwordone">Password</label>
-                    <input type="password" name="password" onChange={onChange} required minLength="6" autoComplete="new password" />
+                    <label htmlFor="passwordOne">Password</label>
+                    <input type="password" name="passwordOne" onChange={onChange} required minLength="6" autoComplete="new password" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordTwo">Enter Password Again</label>

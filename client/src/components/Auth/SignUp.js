@@ -49,6 +49,7 @@ const SignUp = props => {
 
     return (
         <div className="form-container">
+            <h1>Sign Up</h1>
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">User Name</label>

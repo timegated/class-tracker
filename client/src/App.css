@@ -15,7 +15,7 @@ body {
 
 .about-content {
     max-width: 750px;
-    margin: 2rem auto;
+    margin: 10rem auto;
 }
 
 /* Character Cards */
@@ -24,15 +24,16 @@ body {
     flex-direction: row;
     flex-flow: wrap;
     justify-content: center;
-    margin: 1rem;
+    margin: 10rem;
 }
 
 .card {
     padding: 1rem;
     border: 1px solid #ccc;
     text-align: center;
-    width: 500px;
+    flex: 1 0 50%;
     box-shadow: 1px 1px 1px 1px #2c2c2c;
+    margin: 1rem;
 }
 
 /* Home Page */
@@ -87,7 +88,17 @@ input {
 .form-text {
   display: block;
   margin-top: 0.3rem;
-  color: #888;
+  margin-bottom: 0.3rem;
+  color: #EFEFEF;
+  font-size: 24px;
+}
+.form-radio-select {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-radio-select li {
+    list-style: none;
 }
 
 input[type='text'],

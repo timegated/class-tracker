@@ -7,7 +7,9 @@ import characterReducer from "./characterReducer";
 import {
     ADD_CHARACTER_SUCCESS,
     ADD_CHARACTER_FAIL,
-    DELETE_CHARACTER
+    CHAR_LOADED,
+    DELETE_CHARACTER,
+    CHAR_LOADED_FAIL
 } from "../types";
 
 const CharacterState = props => {
@@ -22,12 +24,12 @@ const CharacterState = props => {
             const res = await axios.get("/api/characters");
 
             dispatch({
-                type: ADD_CHARACTER_SUCCESS,
+                type: CHAR_LOADED,
                 payload: res.data
             });
         } catch (error) {
             dispatch({
-                type: ADD_CHARACTER_FAIL
+                type: CHAR_LOADED_FAIL
             });
         };
     };

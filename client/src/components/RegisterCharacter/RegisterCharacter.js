@@ -23,11 +23,6 @@ const Registration = () => {
             characterClass,
             guildName
         });
-        // setCharacter({
-        //     characterName: "",
-        //     characterClass: "",
-        //     guildName: ""
-        // })
         e.preventDefault();
     };
 

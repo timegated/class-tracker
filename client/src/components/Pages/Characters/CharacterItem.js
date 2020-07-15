@@ -12,7 +12,6 @@ const CharacterItem = ({ character }) => {
 
 
     return (
-    <div className="card-container">
         <div className="card">
             <h3>
                 {characterName}
@@ -27,7 +26,6 @@ const CharacterItem = ({ character }) => {
                     <button onClick={onDelete} className="btn">Delete</button>
                 </p>
         </div>
-    </div>
         
     );
 };

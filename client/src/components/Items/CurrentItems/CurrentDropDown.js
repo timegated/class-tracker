@@ -23,6 +23,7 @@ const CurrentDropDown = () => {
     <div>
       <label className="form-text" htmlFor="Character Name">Select Character</label>
       <select>
+        <option></option>
         {characters !== null ? (
           characters.map(character => (
             <option

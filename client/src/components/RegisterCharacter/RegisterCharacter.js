@@ -23,16 +23,16 @@ const Registration = () => {
             characterClass,
             guildName
         });
-        setCharacter({
-            characterName: "",
-            characterClass: "",
-            guildName: ""
-        })
+        // setCharacter({
+        //     characterName: "",
+        //     characterClass: "",
+        //     guildName: ""
+        // })
         e.preventDefault();
     };
 
     return (
-        <form className="current-items__form" onSubmit={onSubmit}>
+        <form className="form-container" onSubmit={onSubmit}>
             <h1>Character Registration</h1>
             <label className="current-items__label" htmlFor="Character Name">Character Name</label>
             <input className="current-items__input" value={characterName} type="text" name="characterName" onChange={onChange} />

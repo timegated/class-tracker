@@ -67,7 +67,7 @@ body {
   /*CurrentItems Input  */
 .form-container {
     max-width: 850px;
-    margin: 2rem auto;
+    margin: 10rem auto;
     overflow: hidden;
     padding: 0 2rem;
 }
@@ -114,8 +114,7 @@ textarea {
 .current-items__form {
     display: flex;
     flex-direction: column;
-    width: 750px;
-    margin: auto;
+    margin: 10rem auto;
 }
 
 .current-items__input {
@@ -140,6 +139,10 @@ textarea {
 .navbar {
    background: black;
    width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding: 0;
    display: flex;
    justify-content: space-between;
 }
@@ -154,6 +157,7 @@ textarea {
 .navbar__items {
     list-style: none;
     display: flex;
+    justify-content: flex-end;
 }
 
 .navbar__item>a {

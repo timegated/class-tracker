@@ -6,7 +6,7 @@ const SignUp = props => {
     const [user, setUser] = useState({
         name: "",
         email: "",
-        passwordOne: "",
+        password: "",
         passwordTwo: ""
     });
     const authContext = useContext(AuthContext);
@@ -32,11 +32,11 @@ const SignUp = props => {
     };
 
     const onSubmit = (e) => {
-        console.log(register)
         if (name === "" || email === "" || password === "" || passwordTwo === "") {
             // setAlert("All fields must contain an input");  
         } else if (password !== passwordTwo) {
             // setAlert("Passwords must match");
+            console.error("Error")
         } else {
             register({
                 name,
@@ -59,8 +59,8 @@ const SignUp = props => {
                     <input type="text" name="email" onChange={onChange} required />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="passwordOne">Password</label>
-                    <input type="password" name="passwordOne" onChange={onChange} required minLength="6" autoComplete="new password" />
+                    <label htmlFor="password">Password</label>
+                    <input type="password" name="password" onChange={onChange} required minLength="6" autoComplete="new password" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordTwo">Enter Password Again</label>

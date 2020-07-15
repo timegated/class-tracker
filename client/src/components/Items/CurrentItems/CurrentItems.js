@@ -30,7 +30,8 @@ const CurrentItems = () => {
 
     return (
         <div className="form-container">
-            <form className="current-items__form">
+            <form>
+                <h1>Form used to register current items each character has individually</h1>
                 <label htmlFor="Raid Tier">Raid Tier</label>
                 <select value={raidTier} onChange={onChange}>
                     <option value=""></option>

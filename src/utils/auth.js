@@ -8,14 +8,13 @@ export const newToken = (user) => {
   });
 };
 
-export const verifyToken = (token) => {
+export const verifyToken = (token) =>
   new Promise((resolve, reject) => {
     jwt.verify(token, config.secrets.jwt, (err, payload) => {
       if (err) return reject(err);
       resolve(payload);
     });
   });
-};
 
 export const signup = async (req, res) => {
   const { name, email, password } = req.body;
@@ -32,19 +31,20 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password) {
+  if (!req.body.email || !req.body.password) {
     return res.status(400).send({ message: "Fields cannot be blank" });
   }
 
   const invalid = { message: "Invalid email or password" };
 
   try {
-    const user = User.findOne({ email }).select("email password").exec();
+    const user = await User.findOne({ email: req.body.email })
+      .select("email password")
+      .exec();
     if (!user) {
       return res.status(401).send(invalid);
     }
-    const match = await user.checkPassword(password);
+    const match = await user.checkPassword(req.body.password);
 
     if (!match) {
       return res.status(401).send(invalid);
@@ -75,7 +75,7 @@ export const protect = async (req, res, next) => {
   const user = await User.findById(payload.id)
     .select("-password")
     .lean()
-    .exec()
+    .exec();
   if (!user) {
     return res.status(401).end();
   }

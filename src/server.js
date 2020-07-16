@@ -1,10 +1,14 @@
 import express from "express";
-import connect from "./utils";
+import { json, urlencoded } from "body-parser";
+import { connect } from "./utils/db";
 import path from "path";
 import morgan from "morgan";
 import cors from "cors";
 import config from "./config";
 import { signup, login, protect } from "./utils/auth";
+import charRouter from "./resources/characters/char.router";
+import itemRouter from "./resources/items/item.router";
+import userRouter from "./resources/user/user.router";
 const app = express();
 const router = express.Router();
 
@@ -12,7 +16,8 @@ app.disable("x-powered-by");
 
 // middleware
 app.use(cors());
-app.use(express.json({ extended: true }));
+app.use(json());
+app.use(urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 // main-entry-point
@@ -22,6 +27,9 @@ app.post("/login", login);
 // routes
 app.use("/api", router);
 app.use("/api", protect);
+app.use("/api/user", userRouter);
+app.use("/api/characters", charRouter);
+app.use("/api/item", itemRouter);
 
 if (process.env.NODE_ENV) {
   app.use(express.static("client/build"));

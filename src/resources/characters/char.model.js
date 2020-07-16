@@ -1,26 +1,31 @@
 const mongoose = require("mongoose");
 
-const characterSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
+const characterSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    class: {
+      type: String,
+      required: true,
+    },
+    guild: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
+    createdBy: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "user",
+      required: true,
+    },
   },
-  characterName: {
-    type: String,
-    required: true,
-  },
-  characterClass: {
-    type: String,
-    required: true,
-  },
-  guildName: {
-    type: String,
-    required: true,
-  },
-  date: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  { timestamps: true }
+);
 
+characterSchema.index({ user: 1, name: 1 }, { unique: true });
 export const Characters = mongoose.model("characters", characterSchema);

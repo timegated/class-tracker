@@ -39,8 +39,7 @@ const itemSchema = new _mongoose.default.Schema({
   },
   character: {
     type: _mongoose.default.SchemaTypes.ObjectId,
-    ref: "characters",
-    required: true
+    ref: "characters"
   }
 }, {
   timestamps: true

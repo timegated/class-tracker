@@ -32,7 +32,6 @@ const itemSchema = new mongoose.Schema(
     character: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: "characters",
-      required: true,
     },
   },
   { timestamps: true }

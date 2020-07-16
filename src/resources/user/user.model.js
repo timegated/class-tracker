@@ -23,6 +23,12 @@ const userSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+    characters: [
+      {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "character",
+      },
+    ],
   },
   {
     timestamps: true,

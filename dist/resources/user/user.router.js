@@ -10,6 +10,7 @@ var _express = require("express");
 var _user = require("./user.controllers");
 
 const router = (0, _express.Router)();
+router.route("/:id").get(_user.getUser);
 router.put("/", _user.updateMe);
 var _default = router;
 exports.default = _default;

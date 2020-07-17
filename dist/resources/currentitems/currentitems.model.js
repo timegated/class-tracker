@@ -40,7 +40,7 @@ const currentSchema = new _mongoose.default.Schema({
     required: true
   },
   belongsTo: {
-    type: mongooseSchemaTypes.ObjectId,
+    type: _mongoose.default.SchemaTypes.ObjectId,
     ref: "characters"
   }
 });

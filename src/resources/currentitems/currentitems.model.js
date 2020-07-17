@@ -32,7 +32,7 @@ const currentSchema = new mongoose.Schema(
       required: true
     },
     belongsTo: {
-      type: mongooseSchemaTypes.ObjectId,
+      type: mongoose.SchemaTypes.ObjectId,
       ref: "characters"
     }
   }

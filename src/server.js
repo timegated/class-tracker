@@ -11,22 +11,17 @@ import itemRouter from "./resources/items/item.router";
 import userRouter from "./resources/user/user.router";
 const app = express();
 const router = express.Router();
-const corsOptions = {
-  exposedHeaders: "Authorization",
-};
 
 app.disable("x-powered-by");
 
 // middleware
-app.use(cors(corsOptions));
 app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use(morgan("dev"));
-
+app.use(cors());
 // main-entry-point
 app.post("/signup", signup);
 app.post("/login", login);
-app.get("/login", login);
 // routes
 app.use("/api", router);
 app.use("/api", protect);

@@ -21,7 +21,7 @@ export default (state, action) => {
             };
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
-            // localStorage.setItem("token", action.payload.token);
+            localStorage.setItem("token", action.payload.token);
             console.log("From login_success(authReducer): ", state)
             return {
                 ...state,

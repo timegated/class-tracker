@@ -18,7 +18,7 @@ export const getMany = (model) => async (req, res) => {
   try {
     const docs = await model.find({ createdBy: req.user._id }).lean().exec();
     console.log(docs);
-    res.status(200).json({ data: docs });
+    res.status(200).json({ docs });
   } catch (error) {
     console.error(error);
     res.status(400).end();

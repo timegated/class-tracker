@@ -36,7 +36,7 @@ export default (state, action) => {
         case DELETE_CHARACTER:
             return {
                 ...state,
-                characters: state.characters.filter(
+                characters: state.characters.docs.filter(
                     character => character._id !== action.payload
                 ),
             };

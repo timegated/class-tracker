@@ -40,7 +40,7 @@ const getMany = model => async (req, res) => {
     }).lean().exec();
     console.log(docs);
     res.status(200).json({
-      data: docs
+      docs
     });
   } catch (error) {
     console.error(error);

@@ -11,5 +11,6 @@ var _user = require("./user.controllers");
 
 const router = (0, _express.Router)();
 router.put("/", _user.updateMe);
+router.get("/", _user.getUser);
 var _default = router;
 exports.default = _default;

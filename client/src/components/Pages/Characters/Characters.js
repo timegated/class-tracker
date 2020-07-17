@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import CharacterContext from "../../../context/character/characterContext";
-import CharacterItem from "./CharacterItem";
+import CharInfo from "./CharInfo";
 
 
 const Characters = () => {
@@ -17,13 +17,13 @@ const Characters = () => {
     if (characters !== null && characters.length === 0) {
         return <h4>Add a Character</h4>
     };
-
+  
     return (
         <>
             {characters !== null ? (
                 <div className="card-container">
-                    {characters.map(character => (
-                        <CharacterItem
+                    {characters.docs.map(character => (
+                        <CharInfo
                             key={character._id}
                             character={character}
                         />

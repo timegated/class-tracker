@@ -16,7 +16,7 @@ import {
 
 const AuthState = props => {
     const initialState = {
-        token: null,
+        token: localStorage.getItem("token"),
         user: null,
         isAuthenticated: false,
         loading: true,
@@ -26,11 +26,11 @@ const AuthState = props => {
     const [state, dispatch] = useReducer(authReducer, initialState);
 
     const loadUser = async () => {
-        setAuthToken(state.token);
+        setAuthToken(localStorage.token);
         // I don't have a get route for /login lul
         // need to actually set one up here on the backend to retrieve the user data
         try {
-            const res = await axios.get("/login");
+            const res = await axios.get("/api/user");
             dispatch({
                 type: USER_LOADED,
                 payload: res.data

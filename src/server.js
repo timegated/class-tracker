@@ -9,6 +9,7 @@ import { signup, login, protect } from "./utils/auth";
 import charRouter from "./resources/characters/char.router";
 import itemRouter from "./resources/items/item.router";
 import userRouter from "./resources/user/user.router";
+import currentRouter from "./resources/currentitems/currentitems.router";
 const app = express();
 const router = express.Router();
 
@@ -28,6 +29,7 @@ app.use("/api", protect);
 app.use("/api/user", userRouter);
 app.use("/api/characters", charRouter);
 app.use("/api/item", itemRouter);
+app.use("/api/current", currentRouter);
 
 if (process.env.NODE_ENV) {
   app.use(express.static("client/build"));

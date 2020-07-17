@@ -22,6 +22,8 @@ var _item = _interopRequireDefault(require("./resources/items/item.router"));
 
 var _user = _interopRequireDefault(require("./resources/user/user.router"));
 
+var _currentitems = _interopRequireDefault(require("./resources/currentitems/currentitems.router"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const app = (0, _express.default)();
@@ -45,6 +47,7 @@ app.use("/api", _auth.protect);
 app.use("/api/user", _user.default);
 app.use("/api/characters", _char.default);
 app.use("/api/item", _item.default);
+app.use("/api/current", _currentitems.default);
 
 if (process.env.NODE_ENV) {
   app.use(_express.default.static("client/build"));

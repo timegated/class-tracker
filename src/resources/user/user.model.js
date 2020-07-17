@@ -62,4 +62,5 @@ userSchema.methods.checkPassword = function (password) {
   });
 };
 
+
 export const User = mongoose.model("user", userSchema);

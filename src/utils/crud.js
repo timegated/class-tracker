@@ -27,7 +27,7 @@ export const getMany = (model) => async (req, res) => {
 
 export const createOne = (model) => async (req, res) => {
   const createdBy = req.user._id;
-  const belongsTo = req.body;
+  const belongsTo = req.user;
   console.log("belongsTo: ", belongsTo);
   console.log("createdBy:", createdBy);
   try {

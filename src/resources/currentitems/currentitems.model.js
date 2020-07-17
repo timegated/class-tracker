@@ -33,10 +33,10 @@ const currentSchema = new mongoose.Schema(
     },
     belongsTo: {
       type: mongoose.SchemaTypes.ObjectId,
-      ref: "characters"
+      ref: "characters",
+      required: true,
     }
   }
 )
 
-currentSchema.index({ characters: 1, name: 1 }, { unique: true });
 export const CurrentItem = mongoose.model("currentitems", currentSchema);

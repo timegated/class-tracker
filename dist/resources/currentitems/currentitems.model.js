@@ -41,14 +41,9 @@ const currentSchema = new _mongoose.default.Schema({
   },
   belongsTo: {
     type: _mongoose.default.SchemaTypes.ObjectId,
-    ref: "characters"
+    ref: "characters",
+    required: true
   }
-});
-currentSchema.index({
-  characters: 1,
-  name: 1
-}, {
-  unique: true
 });
 
 const CurrentItem = _mongoose.default.model("currentitems", currentSchema);

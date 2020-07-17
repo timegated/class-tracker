@@ -14,8 +14,8 @@ const Characters = () => {
     }, []);
 
     console.log(characters)
-    if (characters !== null && characters.length === 0) {
-        return <h4>Add a Character</h4>
+    if (characters !== null && characters.docs.length === 0) {
+        return <h4 className="add__title">Add a Character</h4>
     };
   
     return (
@@ -29,7 +29,7 @@ const Characters = () => {
                         />
                 ))}
                 </div>
-            ) : (console.log('error'))}
+            ) : <h4 className="add__title">Add a Character</h4>}
         </>
     );
 };

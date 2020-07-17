@@ -15,7 +15,7 @@ const CurrentDropDown = () => {
     // eslint-disable-next-line
   }, []);
 
-  if (characters !== null && characters.length === 0) {
+  if (characters !== null && characters.docs.length === 0) {
     return <h4>No Character's here yet</h4>
   }
 
@@ -24,16 +24,17 @@ const CurrentDropDown = () => {
       <label className="form-text" htmlFor="Character Name">Select Character</label>
       <select>
         <option></option>
-        {characters !== null ? (
-          characters.map(character => (
-            <option
-              key={character._id}
-              value={character.characterName}
-            >
-              {character.characterName} - {character.characterClass}
-            </option>
-          ))
-      ) : (console.log("No characters yet"))}
+        {characters !== null ? 
+          characters.docs.map(character => {
+            console.log(character)
+            return <option
+                key={character._id}
+                value={character.name}
+              >
+                {character.name} - {character.charClass}
+              </option>
+        }): console.log("error")  
+      }
       </select>
     </div>
   );

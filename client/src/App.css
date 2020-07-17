@@ -40,6 +40,12 @@ body {
 .home-page__title {
     text-align: center;
 }
+.add__title {
+    margin-top: 10rem;
+    text-align: center;
+    color: #efefef;
+    font-size: 24px;
+}
 
 /* Buttons */
 .btn {
@@ -148,7 +154,7 @@ textarea {
 
 /* Navbar */
 .navbar {
-   background: black;
+   background: #002B33;
    width: 100%;
    position: fixed;
    top: 0;
@@ -156,6 +162,7 @@ textarea {
    padding: 0;
    display: flex;
    justify-content: space-between;
+   line-height: 1rem;
 }
 
 .navbar__title>a {
@@ -169,6 +176,7 @@ textarea {
     list-style: none;
     display: flex;
     justify-content: flex-end;
+    line-height: 1rem;
 }
 
 .navbar__item>a {
@@ -176,6 +184,10 @@ textarea {
     text-decoration: none;
     margin: 1rem;
     font-size: 1.50rem;
+    padding: 1rem;
 }
 
+.navbar__item>a:hover {
+    background: #19D9
+}
 

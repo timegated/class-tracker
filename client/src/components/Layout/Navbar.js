@@ -26,19 +26,19 @@ const Navbar = () => {
         <>
             <li>Hello {user && user.name}</li>
             <li className="navbar__item">
-                <a onClick={onLogout} href="#!">
-                    <i className="fas fa-sign-out-alt"></i>
-                    <span className="hide-sm">Logout</span>
-                </a>
-            </li>
-            <li className="navbar__item">
-                <Link to="/register"> Register </Link>
+                <Link to="/register"> New Character </Link>
             </li>
             <li className="navbar__item">
                 <Link to="/priority">Priority</Link>
             </li>
             <li className="navbar__item">
-                <Link to="/characters">Characters</Link>
+                <Link to="/currentitems">Current Items</Link>
+            </li>
+            <li className="navbar__item">
+                <a onClick={onLogout} href="#!">
+                    <i className="fas fa-sign-out-alt"></i>
+                    <span className="hide-sm">Logout</span>
+                </a>
             </li>
         </>
     );

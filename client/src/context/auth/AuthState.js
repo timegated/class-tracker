@@ -16,9 +16,9 @@ import {
 
 const AuthState = props => {
     const initialState = {
-        token: localStorage.getItem("token"),
+        token: null,
         user: null,
-        isAuthenticated: null,
+        isAuthenticated: false,
         loading: true,
         error: null
     };
@@ -26,8 +26,9 @@ const AuthState = props => {
     const [state, dispatch] = useReducer(authReducer, initialState);
 
     const loadUser = async () => {
-        setAuthToken(localStorage.token);
-
+        setAuthToken(state.token);
+        // I don't have a get route for /login lul
+        // need to actually set one up here on the backend to retrieve the user data
         try {
             const res = await axios.get("/login");
             dispatch({
@@ -53,7 +54,7 @@ const AuthState = props => {
                 type: REGISTER_SUCCESS,
                 payload: res.data
             });
-            loadUser();
+            // loadUser();
         } catch (error) {
             dispatch({
                 type: REGISTER_FAIL,
@@ -75,7 +76,7 @@ const AuthState = props => {
                 payload: res.data
             });
 
-            loadUser();
+            // loadUser();
         } catch (error) {
             dispatch({
                 type: LOGIN_FAIL,

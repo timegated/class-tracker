@@ -24,10 +24,10 @@ const characterSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  items: {
+  items: [{
     type: mongoose.SchemaTypes.ObjectId,
     ref: "items"
-  },
+  }],
   createdBy: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "user",
@@ -42,5 +42,5 @@ characterSchema.index({
 }, {
   unique: true
 });
-const Characters = mongoose.model("character", characterSchema);
+const Characters = mongoose.model("characters", characterSchema);
 exports.Characters = Characters;

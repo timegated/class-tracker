@@ -52,9 +52,7 @@ exports.getMany = getMany;
 
 const createOne = model => async (req, res) => {
   const createdBy = req.user._id;
-  const character = req.character;
   console.log("createdBy:", createdBy);
-  console.log("character:", character);
 
   try {
     const doc = await model.create(_objectSpread(_objectSpread({}, req.body), {}, {

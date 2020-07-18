@@ -20,3 +20,4 @@ export const ITEMS_LOADED = "ITEMS_LOADED";
 export const ITEMS_LOADED_FAIL = "ITEMS_LOADED_FAIL";
 export const UPDATE_ITEM = "UPDATE_ITEM";
 export const DELETE_ITEM = "DELETE_ITEM";
+export const CURRENT_ITEM_ADD = "CURRENT_ITEM_ADD";

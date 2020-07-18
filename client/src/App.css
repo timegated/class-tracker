@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /* Main Content General Styling */
-body {
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
     background: #2c2c2c;
+    background-image: url("./assets/images/bg-trees.jpg");
+    background-position: center;
+	background-size: 100% 100%;
+  	background-repeat: no-repeat;
     color: #efefef;
     font-family: sans-serif;
 }
@@ -24,16 +35,17 @@ body {
     flex-direction: row;
     flex-flow: wrap;
     justify-content: center;
-    margin: 10rem;
+    margin-top: 5rem;
+    order: reverse;
 }
 
 .card {
     padding: 1rem;
-    border: 1px solid #ccc;
     text-align: center;
-    flex: 1 0 50%;
-    box-shadow: 1px 1px 1px 1px #2c2c2c;
+    flex: 1 0 40%;
+    box-shadow: 5px 5px 5px 5px #002B33;
     margin: 1rem;
+    background: #002B33;
 }
 
 /* Home Page */
@@ -76,19 +88,13 @@ body {
     max-width: 850px;
     margin: 10rem auto;
     overflow: hidden;
-    padding: 0 2rem;
+    padding: 5rem;
+    background: #002B33;
+    box-shadow: 5px 5px 5px 5px #002B33;
 }
 
 .form-group {
     margin: 1.2rem 0;
-}
-
-.form-group input {
-    margin: .2rem 0;
-}
-
-input {
-  margin: 1.2rem 0;
 }
 
 .form-text {
@@ -118,6 +124,7 @@ textarea {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  border-radius: 18px;
 }
 
 .radio-items-tier-one {

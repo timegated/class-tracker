@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 
 const currentSchema = new mongoose.Schema(
   {
+    charName: {
+      type: String,
+      required: true,
+    },
     head: {
       type: String,
     },
@@ -34,7 +38,6 @@ const currentSchema = new mongoose.Schema(
     belongsTo: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: "characters",
-      required: true,
     }
   }
 )

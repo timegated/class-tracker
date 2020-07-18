@@ -38,6 +38,7 @@ export const createOne = (model) => async (req, res) => {
     res.status(400).end();
   }
 };
+
 export const updateOne = (model) => async (req, res) => {
   try {
     const updatedDoc = await model

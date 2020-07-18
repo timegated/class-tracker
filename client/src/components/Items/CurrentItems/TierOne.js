@@ -13,7 +13,7 @@ const TierOne = () => {
   })
   const { head, shoulder, chest, legs, wrist, feet, waist, hands } = tierOne;
   const onChange = (e) => {
-    setTierOne({ ...tierOne, [e.target.name]: e.target.value });
+      setTierOne({ ...tierOne, [e.target.name]: e.target.value });
   }
 
 

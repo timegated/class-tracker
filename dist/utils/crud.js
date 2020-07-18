@@ -59,7 +59,7 @@ const createOne = model => async (req, res) => {
   try {
     const doc = await model.create(_objectSpread(_objectSpread({}, req.body), {}, {
       createdBy
-    }));
+    })).populate("characters").exec(err => console.log(err));
     res.status(201).json({
       data: doc
     });

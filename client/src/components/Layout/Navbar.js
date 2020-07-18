@@ -8,14 +8,10 @@ const Navbar = () => {
     const { isAuthenticated, logOut, user, loadUser } = authContext;
 
     useEffect(() => {
-        let isActive = true;
 
         loadUser();
         // eslint-disable-next-line
 
-        return () => {
-            isActive = false;
-        }
     }, []);
 
     const onLogout = () => {

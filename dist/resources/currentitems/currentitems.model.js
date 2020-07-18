@@ -41,8 +41,7 @@ const currentSchema = new _mongoose.default.Schema({
   },
   belongsTo: {
     type: _mongoose.default.SchemaTypes.ObjectId,
-    ref: "characters",
-    required: true
+    ref: "characters"
   }
 });
 

@@ -7,6 +7,7 @@ import {
   ADD_ITEM_FAIL,
   ITEMS_LOADED,
   ITEMS_LOADED_FAIL,
+  CURRENT_ITEM_ADD,
   UPDATE_ITEM,
   DELETE_ITEM
 } from "../types";
@@ -14,6 +15,7 @@ import {
 const ItemState = props => {
   const initialState = {
     items: null,
+    currentItems: null,
   }
 
   const [state, dispatch] = useReducer(itemReducer, initialState);
@@ -53,8 +55,22 @@ const ItemState = props => {
     }
   };
 
-
-
+  const addCurrentItem = async formData => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    try {
+      const res = axios.post("/api/current", formData, config);
+      dispatch({
+        type: CURRENT_ITEM_ADD,
+        payload: res.data
+      })
+    } catch (error) {
+      console.error(error);
+    }
+}
 
 
   return (
@@ -62,6 +78,7 @@ const ItemState = props => {
       value={{
         items: state.items,
         loadItems,
+        addCurrentItem,
         addItem,
       }}
     >

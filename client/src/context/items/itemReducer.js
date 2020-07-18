@@ -1,6 +1,7 @@
 import {
   ADD_ITEM_SUCCESS,
   ADD_ITEM_FAIL,
+  CURRENT_ITEM_ADD,
   ITEMS_LOADED,
   ITEMS_LOADED_FAIL,
   UPDATE_ITEM,
@@ -9,6 +10,7 @@ import {
 
 export default (state, action) => {
   switch (action.type) {
+    case CURRENT_ITEM_ADD:
     case ADD_ITEM_SUCCESS:
       return {
         ...state,

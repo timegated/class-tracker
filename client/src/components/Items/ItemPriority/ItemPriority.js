@@ -14,9 +14,12 @@ const ItemPriority = () => {
         setItem({ ...item, [e.target.name]: e.target.value });
     };
 
+    const onSubmit = (e) => {
+        console.log("On submit");
+    }
     console.log(item)
     return (
-        <form className="form-container">
+        <form className="form-container" onSubmit={onSubmit}>
             <h1>This form is used for creating a future "wants" list for individual characters. Info displayed on Character's page</h1>
             <label className="current-items__label" htmlFor="Item Name">Item Name</label>
             <input className="current-items__input" value={name} type="text" name="name" onChange={onChange} />
@@ -33,7 +36,7 @@ const ItemPriority = () => {
                 <option value="not-received">Not Received</option>
                 <option value="received">Received</option>
             </select>
-            
+            <button type="submit" className="btn" style={{ margin: "1rem auto", display: "block", width: "100%" }}>Submit</button>
         </form>
     );
 };

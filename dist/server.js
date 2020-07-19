@@ -49,7 +49,7 @@ app.use("/api/characters", _char.default);
 app.use("/api/item", _item.default);
 app.use("/api/current", _currentitems.default);
 
-if (process.env.NODE_ENV) {
+if (process.env.NODE_ENV === "production") {
   app.use(_express.default.static("client/build"));
   app.get("*", (req, res) => {
     res.sendFile(_path.default.resolve(__dirname, "client", "build", "index.html"));

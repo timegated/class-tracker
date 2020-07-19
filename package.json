@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "start": "babel src --out-dir dist && nodemon dist/server.js",
+    "start": "babel src --out-dir dist",
     "server": "nodemon dist/server.js",
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
@@ -48,6 +48,7 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "config": "^3.3.1",

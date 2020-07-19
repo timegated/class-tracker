@@ -8,7 +8,7 @@
     "yarn": "1.22.4"
   },
   "scripts": {
-    "start": "babel src --out-dir dist",
+    "build": "babel src --out-dir dist",
     "server": "nodemon dist/server.js",
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",

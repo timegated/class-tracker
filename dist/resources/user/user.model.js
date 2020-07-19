@@ -31,12 +31,7 @@ const userSchema = new _mongoose.default.Schema({
   date: {
     type: Date,
     default: Date.now
-  },
-  characters: [{
-    type: _mongoose.default.SchemaTypes.ObjectId,
-    ref: "characters",
-    required: true
-  }]
+  }
 }, {
   timestamps: true
 });

@@ -13,7 +13,7 @@ const Login = props => {
     useEffect(() => {
         if (isAuthenticated) {
             // redirect
-            props.history.push("/priority")
+            props.history.push("/viewitems")
         };
         if (error === "Invalid credentials") {
             // setAlert(error, "danger");

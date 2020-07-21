@@ -28,7 +28,7 @@ app.use("/api", router);
 app.use("/api", protect);
 app.use("/api/user", userRouter);
 app.use("/api/characters", charRouter);
-app.use("/api/item", itemRouter);
+app.use("/api/items", itemRouter);
 app.use("/api/current", currentRouter);
 
 if (process.env.NODE_ENV === "production") {

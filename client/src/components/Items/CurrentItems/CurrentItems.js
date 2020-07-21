@@ -4,8 +4,6 @@ import TierOne from "./TierOne";
 import TierTwo from "./TierTwo";
 import AQ from "./AQ";
 const CurrentItems = () => {
-    // why does this component have state when state is already managed via context?
-    // what is it's function: Placeholder at the moment, will most likely create a collection for housing this information and call it from the api
     const [raidTier, setRaidTier] = useState({
         raidOne: "Molten Core",
         raidTwo: "Blackwing Lair",

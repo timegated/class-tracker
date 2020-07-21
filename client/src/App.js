@@ -7,10 +7,12 @@ import Navbar from "./components/Layout/Navbar";
 import CurrentItems from "./components/Items/CurrentItems/CurrentItems";
 import Characters from "./components/Pages/Characters/Characters";
 import ItemPriority from "./components/Items/ItemPriority/ItemPriority";
+import ViewItems from "./components/Items/ViewItems/ViewItems";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
 import PrivateRoute from "./components/Routing/PrivateRoute";
 import ItemState from "./context/items/ItemState";
+import CurrentState from "./context/current/CurrentState";
 import CharacterState from "./context/character/CharacterState";
 import AuthState from "./context/auth/AuthState";
 // import AlertState from "./context/alert/AlertState";
@@ -21,7 +23,8 @@ const App = () => {
   return (
     <AuthState>
       <CharacterState>
-        <ItemState>
+        <CurrentState>
+          <ItemState>
           <Router>
             <Navbar />
             <div className="main-content">
@@ -34,10 +37,13 @@ const App = () => {
                 <PrivateRoute exact path="/currentitems" component={CurrentItems} />
                 <PrivateRoute exact path="/priority" component={ItemPriority} />
                 <PrivateRoute exact path="/characters" component={Characters} />
+                <PrivateRoute exact path="/viewitems" component={ViewItems} />
               </Switch>
             </div>
-          </Router>
-        </ItemState>
+            </Router>
+          </ItemState>
+        </CurrentState>
+       
       </CharacterState>
     </AuthState>
   );

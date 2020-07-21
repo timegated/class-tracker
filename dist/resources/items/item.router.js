@@ -15,6 +15,6 @@ const router = (0, _express.Router)(); // /api/item
 
 router.route("/").post(_item.default.createOne).get(_item.default.getMany); // /api/item/:id
 
-router.route("/").get(_item.default.getOne).put(_item.default.updateOne).delete(_item.default.removeOne);
+router.route("/:id").get(_item.default.getOne).put(_item.default.updateOne).delete(_item.default.removeOne);
 var _default = router;
 exports.default = _default;

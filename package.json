@@ -10,9 +10,10 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "start": "node dist/server.js",
-    "client": "yarn start --prefix client",
+    "server":"nodemon dist/server.js",
+    "client": "npm start --prefix client",
     "clientinstall": "yarn install --prefix client",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && yarn install && yarn run build"
   },
   "repository": {

@@ -72,6 +72,7 @@ html, body {
     margin-top: 0.5rem;
     transition: opacity 0.2s ease-in;
     outline: none;
+    text-decoration: none;
 }
 
 .btn-block {
@@ -198,3 +199,8 @@ textarea {
     background: #19D9
 }
 
+
+.view-items__main {
+    margin-top: 5rem;
+    color: #efefef;
+}

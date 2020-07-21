@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import CharacterContext from "../../../context/character/characterContext";
+import { Link } from "react-router-dom";
 
 const CharInfo = ({ character }) => {
     const characterContext = useContext(CharacterContext);
@@ -8,10 +9,6 @@ const CharInfo = ({ character }) => {
 
     const onDelete = () => {
         deleteCharacter(_id);
-    };
-
-    const onView = () => {
-
     };
     
     const onPrio = () => {
@@ -30,9 +27,9 @@ const CharInfo = ({ character }) => {
                 {guild}
                 </h3>
             <p>
-                <button onClick={onView} className="btn">View Items</button>
-                <button onClick={onPrio} className="btn">View Prio List</button>
-                <button onClick={onDelete} className="btn">Delete</button>
+                <Link to="/viewitems" className="btn">View Items</Link>
+                <Link onClick={onPrio} className="btn">View Prio List</Link>
+                <Link onClick={onDelete} className="btn">Delete</Link>
                 </p>
                
                     

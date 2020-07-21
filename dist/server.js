@@ -46,7 +46,7 @@ app.use("/api", router);
 app.use("/api", _auth.protect);
 app.use("/api/user", _user.default);
 app.use("/api/characters", _char.default);
-app.use("/api/item", _item.default);
+app.use("/api/items", _item.default);
 app.use("/api/current", _currentitems.default);
 
 if (process.env.NODE_ENV === "production") {

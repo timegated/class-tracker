@@ -27,6 +27,14 @@ html, body {
 .about-content {
     max-width: 750px;
     margin: 10rem auto;
+    background: #002B33;
+    padding: 5rem;
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+.about-content h1 {
+    text-decoration: underline;
 }
 
 /* Character Cards */

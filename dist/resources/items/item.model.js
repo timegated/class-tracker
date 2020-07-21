@@ -10,6 +10,10 @@ var _mongoose = _interopRequireDefault(require("mongoose"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const itemSchema = new _mongoose.default.Schema({
+  charName: {
+    type: String,
+    required: true
+  },
   name: {
     type: String,
     required: true,
@@ -36,10 +40,6 @@ const itemSchema = new _mongoose.default.Schema({
     type: _mongoose.default.SchemaTypes.ObjectId,
     ref: "user",
     required: true
-  },
-  character: {
-    type: _mongoose.default.SchemaTypes.ObjectId,
-    ref: "characters"
   }
 }, {
   timestamps: true

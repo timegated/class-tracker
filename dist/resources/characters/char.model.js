@@ -24,10 +24,14 @@ const characterSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  items: [{
+  currentItems: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "currentitems"
+  },
+  items: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "items"
-  }],
+  },
   createdBy: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "user",

@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 
 const itemSchema = new mongoose.Schema(
   {
+    charName: {
+      type: String,
+      required: true
+    },
     name: {
       type: String,
       required: true,
@@ -28,11 +32,7 @@ const itemSchema = new mongoose.Schema(
       type: mongoose.SchemaTypes.ObjectId,
       ref: "user",
       required: true,
-    },
-    character: {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: "characters",
-    },
+    }
   },
   { timestamps: true }
 );

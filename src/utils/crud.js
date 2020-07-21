@@ -17,7 +17,6 @@ export const getOne = (model) => async (req, res) => {
 export const getMany = (model) => async (req, res) => {
   try {
     const docs = await model.find({ createdBy: req.user._id }).lean().exec();
-    console.log(docs);
     res.status(200).json({ docs });
   } catch (error) {
     console.error(error);
@@ -27,9 +26,6 @@ export const getMany = (model) => async (req, res) => {
 
 export const createOne = (model) => async (req, res) => {
   const createdBy = req.user._id;
-  const belongsTo = req.user;
-  console.log("belongsTo: ", belongsTo);
-  console.log("createdBy:", createdBy);
   try {
     const doc = await model.create({ ...req.body, createdBy });
     res.status(201).json({ data: doc });

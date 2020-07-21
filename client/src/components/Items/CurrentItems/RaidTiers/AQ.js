@@ -15,7 +15,7 @@ const AQ = () => {
   const onChange = (e) => {
     setAq({ ...aqSet, [e.target.name]: e.target.value });
   }
-  console.log(aqSet)
+  
   return (
     <div>
       <label className="form-text" htmlFor="Tier Two">Tier 2 Items</label>

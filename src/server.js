@@ -21,8 +21,10 @@ app.use(urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(cors());
 // main-entry-point
+
 app.post("/signup", signup);
 app.post("/login", login);
+
 // routes
 app.use("/api", router);
 app.use("/api", protect);

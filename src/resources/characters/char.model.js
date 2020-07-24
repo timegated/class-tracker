@@ -18,22 +18,13 @@ const characterSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
-    currentItems: {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: "currentitems"
-    },
-    items: {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: "items"
-    },
     createdBy: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: "user",
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-characterSchema.index({ user: 1, name: 1 }, { unique: true });
 export const Characters = mongoose.model("characters", characterSchema);

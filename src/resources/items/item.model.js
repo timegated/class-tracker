@@ -32,11 +32,13 @@ const itemSchema = new mongoose.Schema(
       type: mongoose.SchemaTypes.ObjectId,
       ref: "user",
       required: true,
-    }
+    },
+    character: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "characters"
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
-
-itemSchema.index({ characters: 1, name: 1 }, { unique: true });
 
 export const Item = mongoose.model("items", itemSchema);

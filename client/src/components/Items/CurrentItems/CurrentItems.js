@@ -32,6 +32,7 @@ const CurrentItems = () => {
         e.preventDefault();
     };
     return (
+        // select raid tier first before all else
         <div className="form-container">
             <h1>Current Items</h1>
             <form onSubmit={onSubmit}>

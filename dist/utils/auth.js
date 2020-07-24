@@ -72,7 +72,7 @@ const login = async (req, res) => {
   try {
     const user = await _user.User.findOne({
       email: req.body.email
-    }).select("email password").exec();
+    }).select("email password").populate("characters").exec();
 
     if (!user) {
       return res.status(401).send(invalid);

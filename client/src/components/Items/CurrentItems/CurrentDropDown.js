@@ -7,7 +7,7 @@ const CurrentDropDown = ({ characters }) => {
   }
   console.log(characters)
   return (
-    <div>
+    <>
       <label className="form-text" htmlFor="Character Name">Select Character</label>
       <select>
         <option></option>
@@ -22,7 +22,7 @@ const CurrentDropDown = ({ characters }) => {
           }) : console.log("CurrentDD: nothing here yet")
         }
       </select>
-    </div>
+    </>
   );
 };
 

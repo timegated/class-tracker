@@ -40,6 +40,7 @@ export const login = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email })
       .select("email password")
+      .populate("characters")
       .exec();
     if (!user) {
       return res.status(401).send(invalid);

@@ -35,7 +35,11 @@ const currentSchema = new mongoose.Schema(
       ref: "user",
       required: true
     },
-  }
-)
+    character: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "characters"
+    },
+  },
+);
 
 export const CurrentItem = mongoose.model("currentitems", currentSchema);

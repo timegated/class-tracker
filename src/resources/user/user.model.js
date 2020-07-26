@@ -19,14 +19,28 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    characters: [{
+      name: {
+        type: String,
+        required: true,
+      },
+      charClass: {
+        type: String,
+        required: true,
+      },
+      guild: {
+        type: String,
+        required: true,
+      },
+      date: {
+        type: Date,
+        default: Date.now,
+      },
+    }],
     date: {
       type: Date,
       default: Date.now,
     },
-    characters: [{
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: "characters",
-    }],
   },
   {
     timestamps: true,

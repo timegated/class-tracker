@@ -29,7 +29,7 @@ app.post("/login", login);
 app.use("/api", router);
 app.use("/api", protect);
 app.use("/api/user", userRouter);
-app.use("/api/characters", charRouter);
+app.use("/api/user/characters", userRouter);
 app.use("/api/items", itemRouter);
 app.use("/api/current", currentRouter);
 

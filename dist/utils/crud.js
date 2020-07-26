@@ -45,7 +45,8 @@ const getMany = model => async (req, res) => {
     console.error(error);
     res.status(400).end();
   }
-};
+}; // post character info to embedded doc
+
 
 exports.getMany = getMany;
 

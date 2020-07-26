@@ -28,14 +28,28 @@ const userSchema = new _mongoose.default.Schema({
     type: String,
     required: true
   },
+  characters: [{
+    name: {
+      type: String,
+      required: true
+    },
+    charClass: {
+      type: String,
+      required: true
+    },
+    guild: {
+      type: String,
+      required: true
+    },
+    date: {
+      type: Date,
+      default: Date.now
+    }
+  }],
   date: {
     type: Date,
     default: Date.now
-  },
-  characters: [{
-    type: _mongoose.default.SchemaTypes.ObjectId,
-    ref: "characters"
-  }]
+  }
 }, {
   timestamps: true
 });

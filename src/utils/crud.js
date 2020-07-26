@@ -23,6 +23,7 @@ export const getMany = (model) => async (req, res) => {
     res.status(400).end();
   }
 };
+// post character info to embedded doc
 
 export const createOne = (model) => async (req, res) => {
   const createdBy = req.user._id;

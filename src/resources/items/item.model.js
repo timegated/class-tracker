@@ -33,10 +33,6 @@ const itemSchema = new mongoose.Schema(
       ref: "user",
       required: true,
     },
-    character: {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: "characters"
-    },
   },
   { timestamps: true },
 );

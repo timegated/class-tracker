@@ -25,6 +25,7 @@ const CurrentItems = () => {
     const onChange = (e) => {
         setRaidTier(e.target.value);
     };
+    console.log(characters);
     return (
         // select raid tier first before all else
         <div className="form-container">

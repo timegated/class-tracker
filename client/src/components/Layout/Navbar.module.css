@@ -1,0 +1,39 @@
+.Navbar {
+  background: #000;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  line-height: 2rem;
+}
+
+.NavbarTitle>a {
+  text-decoration: none;
+  color: #FFCD55;
+  margin: 1rem;
+  font-size: 2rem;  
+}
+
+.NavbarItems {
+  list-style: none;
+  display: flex;
+  line-height: 1rem;
+  padding: 1rem;
+}
+
+.NavbarItem>a {
+  color: #FFD100;
+  text-decoration: none;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.NavbarItem>a:hover {
+  background: #2c2c2c;
+  border-radius: 10px;
+  text-decoration: underline;
+}

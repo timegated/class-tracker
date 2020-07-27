@@ -94,8 +94,9 @@ html, body {
     margin: 10rem auto;
     overflow: hidden;
     padding: 5rem;
-    background: #002B33;
-    box-shadow: 5px 5px 5px 5px #002B33;
+    background: #4a4c4d;
+    box-shadow: 5px 5px 5px 5px #4a4c4d;
+    border-radius: 18px;
 }
 
 .form-group {
@@ -129,7 +130,7 @@ textarea {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
-  border-radius: 18px;
+  border-radius: 10px;
 }
 
 .radio-items-tier-one {

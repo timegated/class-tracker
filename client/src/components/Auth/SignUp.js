@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
 // import AlertContext from "../../context/alert/alertContext";
+import classes from './Auth.module.css';
 
 const SignUp = props => {
     const [user, setUser] = useState({
@@ -48,26 +49,30 @@ const SignUp = props => {
     };
 
     return (
-        <div className="form-container">
+        <div className={classes.formContainer}>
             <h1>Sign Up</h1>
             <form onSubmit={onSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">User Name</label>
+                <div className={classes.formGroup}>
+                    <label className={classes.formLabel} htmlFor="name">User Name</label>
                     <input type="text" name="name" onChange={onChange} required />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="email">E-Mail</label>
+                <div className={classes.formGroup}>
+                    <label className={classes.formLabel} htmlFor="email">E-Mail</label>
                     <input type="text" name="email" onChange={onChange} required />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                <div className={classes.formGroup}>
+                    <label className={classes.formLabel} htmlFor="realm">Realm</label>
+                    <input type="text" name="realm" onChange={onChange} required />
+                </div>
+                <div className={classes.formGroup}>
+                    <label className={classes.formLabel} htmlFor="password">Password</label>
                     <input type="password" name="password" onChange={onChange} required minLength="6" autoComplete="new password" />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="passwordTwo">Enter Password Again</label>
+                <div className={classes.formGroup}>
+                    <label className={classes.formLabel} htmlFor="passwordTwo">Enter Password Again</label>
                     <input type="password" name="passwordTwo" onChange={onChange} required minLength="6" autoComplete="current password" />
                 </div>
-                <input type="submit" value="Sign Up" className="btn btn-black btn-block" />
+                <input type="submit" value="Sign Up" className={classes.submitButton} />
             </form>
         </div>
     );

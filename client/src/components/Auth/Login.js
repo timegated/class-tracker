@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from 'react-router-dom';
 import AuthContext from "../../context/auth/authContext";
 // import AlertContext from "../../context/alert/alertContext";
+import classes from "./Auth.module.css";
 
 const Login = props => {
     const [user, setUser] = useState({ email: "", password: "" });
@@ -38,19 +40,22 @@ const Login = props => {
     };
 
     return (
-        <div className="form-container">
+        <div className={classes.formContainer}>
             <h1>Login</h1>
             <form onSubmit={onSubmit}>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
+                <div className={classes.formGroup}>
+                    <label className={classes.formLabel} htmlFor="email">Email:</label>
                     <input type="text" name="email" value={email} onChange={onChange} required autoComplete="current-email" />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                <div className={classes.formGroup}>
+                    <label className={classes.formLabel} htmlFor="password">Password:</label>
                     <input type="password" name="password" value={password} onChange={onChange} required autoComplete="current-password" />
                 </div>
-                <input type="submit" value="Login" className="btn btn-black btn-block" required />
+                <input type="submit" value="Login" className={classes.submitButton} required />
             </form>
+            <div className={classes.createAccount}>
+                <h4>Don't have an account?</h4> <Link to="/signup">Create One</Link>
+            </div>
         </div>
     );
 };

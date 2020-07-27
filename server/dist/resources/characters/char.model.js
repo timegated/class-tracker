@@ -32,11 +32,5 @@ const characterSchema = new mongoose.Schema({
 }, {
   timestamps: true
 });
-characterSchema.index({
-  user: 1,
-  name: 1
-}, {
-  unique: true
-});
 const Characters = mongoose.model("characters", characterSchema);
 exports.Characters = Characters;

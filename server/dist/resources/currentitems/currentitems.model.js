@@ -42,6 +42,10 @@ const currentSchema = new _mongoose.default.Schema({
     type: _mongoose.default.SchemaTypes.ObjectId,
     ref: "user",
     required: true
+  },
+  character: {
+    type: _mongoose.default.SchemaTypes.ObjectId,
+    ref: "characters"
   }
 });
 

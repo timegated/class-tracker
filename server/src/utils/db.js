@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import options from "../config";
 
 export const connect = (url = options.dbUrl, opts = {}) => {
+  console.log(typeof url);
   console.log({ connectDB: "MongoDb connected" });
   return mongoose.connect(url, {
     ...opts,

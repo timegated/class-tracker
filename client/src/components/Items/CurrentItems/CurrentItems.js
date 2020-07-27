@@ -14,8 +14,7 @@ const CurrentItems = () => {
         raidOne: "Molten Core",
         raidTwo: "Blackwing Lair",
         raidThree: "Temple of Ahn'Qiraj"
-    })    
-
+    });
 
     useEffect(() => {
         loadCharacters();
@@ -26,16 +25,11 @@ const CurrentItems = () => {
     const onChange = (e) => {
         setRaidTier(e.target.value);
     };
-
-    const onSubmit = (e) => {
-        console.log(e.target.value)
-        e.preventDefault();
-    };
     return (
         // select raid tier first before all else
         <div className="form-container">
             <h1>Current Items</h1>
-            <form onSubmit={onSubmit}>
+            <form>
                 <CurrentDropDown characters={characters}/>
                 <label className="form-text" htmlFor="Raid Tier">Raid Tier</label>
                 <select value={raidTier} onChange={onChange}>

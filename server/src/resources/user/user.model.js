@@ -26,6 +26,7 @@ const userSchema = new mongoose.Schema(
     characters: [{
       type: mongoose.SchemaTypes.ObjectId,
       ref: "characters",
+      required: true
     }],
   },
   {

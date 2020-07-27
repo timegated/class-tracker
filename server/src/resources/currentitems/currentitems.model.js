@@ -2,10 +2,6 @@ import mongoose from "mongoose";
 
 const currentSchema = new mongoose.Schema(
   {
-    charName: {
-      type: String,
-      required: true,
-    },
     head: {
       type: String,
     },
@@ -34,10 +30,6 @@ const currentSchema = new mongoose.Schema(
       type: mongoose.SchemaTypes.ObjectId,
       ref: "user",
       required: true
-    },
-    character: {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: "characters"
     },
   },
 );

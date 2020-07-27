@@ -9,11 +9,11 @@ import { signup, login, protect } from "./utils/auth";
 import charRouter from "./resources/characters/char.router";
 import itemRouter from "./resources/items/item.router";
 import userRouter from "./resources/user/user.router";
-import currentRouter from "./resources/currentitems/currentitems.router";
+// import currentRouter from "./resources/currentitems/currentitems.router";
 const app = express();
 const router = express.Router();
 
-app.disable("x-powered-by");
+app.disable("X-Powered-By");
 
 // middleware
 app.use(json());
@@ -31,7 +31,6 @@ app.use("/api", protect);
 app.use("/api/user", userRouter);
 app.use("/api/characters", charRouter);
 app.use("/api/items", itemRouter);
-app.use("/api/current", currentRouter);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.crudControllers = exports.removeOne = exports.updateOne = exports.createOne = exports.getMany = exports.getOne = void 0;
+exports.crudControllers = exports.removeOne = exports.updateOne = exports.createOne = exports.createItems = exports.getMany = exports.getUser = exports.getOne = void 0;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -33,6 +33,18 @@ const getOne = model => async (req, res) => {
 
 exports.getOne = getOne;
 
+const getUser = model => async (req, res) => {
+  try {
+    const user = await model.findById(req.user._id).select("-password").exec();
+    res.json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server Error");
+  }
+};
+
+exports.getUser = getUser;
+
 const getMany = model => async (req, res) => {
   try {
     const docs = await model.find({
@@ -48,6 +60,18 @@ const getMany = model => async (req, res) => {
 };
 
 exports.getMany = getMany;
+
+const createItems = model => async (req, res) => {
+  const createdBy = req.user_id;
+
+  try {
+    const doc = await model.create(_objectSpread(_objectSpread({}, req.body), {}, {
+      createdBy
+    }));
+  } catch (error) {}
+};
+
+exports.createItems = createItems;
 
 const createOne = model => async (req, res) => {
   const createdBy = req.user._id;
@@ -118,7 +142,8 @@ const crudControllers = model => ({
   updateOne: updateOne(model),
   getMany: getMany(model),
   getOne: getOne(model),
-  createOne: createOne(model)
+  createOne: createOne(model),
+  getUser: getUser(model)
 });
 
 exports.crudControllers = crudControllers;

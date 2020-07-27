@@ -14,6 +14,18 @@ export const getOne = (model) => async (req, res) => {
   }
 };
 
+export const getUser = model => async (req, res) => {
+  try {
+    const user = await model.findById(req.user._id)
+      .select("-password")
+      .exec();
+    res.json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server Error");
+  }
+};
+
 export const getMany = (model) => async (req, res) => {
   try {
     const docs = await model.find({ createdBy: req.user._id }).lean().exec();
@@ -21,6 +33,14 @@ export const getMany = (model) => async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(400).end();
+  }
+};
+export const createItems = (model) => async (req, res) => {
+  const createdBy = req.user_id;
+  try {
+    const doc = await model.create({...req.body, createdBy})
+  } catch (error) {
+    
   }
 };
 
@@ -82,4 +102,5 @@ export const crudControllers = (model) => ({
   getMany: getMany(model),
   getOne: getOne(model),
   createOne: createOne(model),
+  getUser: getUser(model),
 });

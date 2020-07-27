@@ -34,7 +34,8 @@ const userSchema = new _mongoose.default.Schema({
   },
   characters: [{
     type: _mongoose.default.SchemaTypes.ObjectId,
-    ref: "characters"
+    ref: "characters",
+    required: true
   }]
 }, {
   timestamps: true

@@ -17,10 +17,8 @@ const baseConfig = {
   port: PORT,
   secrets: {
     jwt: process.env.JWT_SECRET,
-    jwtExp: "1hr"
-  } // dbUrl: process.env.DB_URI,
-  // dbOnline: `mongodb+srv://cheuser:${process.env.DB_KEY}.mongodb.net/class-tracker?retryWrites=true&w=majority`,
-
+    jwtExp: "1d"
+  }
 };
 let envConfig = {};
 

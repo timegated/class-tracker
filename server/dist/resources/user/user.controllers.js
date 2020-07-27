@@ -3,7 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getUser = exports.updateMe = void 0;
+exports.default = exports.updateMe = void 0;
+
+var _crud = require("../../utils/crud");
 
 var _user = require("./user.model");
 
@@ -23,14 +25,6 @@ const updateMe = async (req, res) => {
 
 exports.updateMe = updateMe;
 
-const getUser = async (req, res) => {
-  try {
-    const user = await _user.User.findById(req.user._id).select("-password");
-    res.json(user);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Server Error");
-  }
-};
+var _default = (0, _crud.crudControllers)(_user.User);
 
-exports.getUser = getUser;
+exports.default = _default;

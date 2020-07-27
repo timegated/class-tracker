@@ -1,3 +1,4 @@
+import { crudControllers } from "../../utils/crud";
 import { User } from "./user.model";
 
 export const updateMe = async (req, res) => {
@@ -14,13 +15,4 @@ export const updateMe = async (req, res) => {
   }
 };
 
-
-export const getUser = async (req, res) => {
-  try {
-    const user = await User.findById(req.user._id).select("-password");
-    res.json(user);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Server Error");
-  }
-};
+export default crudControllers(User);

@@ -4,7 +4,7 @@
   "description": "Web app for tracking items in game.",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd server && npm run server\" \"cd client && npm run start\"",
+    "start": "concurrently \"cd server && yarn run server\" \"cd client && yarn run start\"",
     "heroku-postbuild": "cd client && yarn install && yarn run build"
   },
   "repository": {
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/timegated/class-tracker/issues"
   },
-  "homepage": "https://github.com/timegated/class-tracker#readme"
+  "homepage": "https://github.com/timegated/class-tracker#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
 }

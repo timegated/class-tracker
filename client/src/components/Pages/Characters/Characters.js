@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import CharacterContext from "../../../context/character/characterContext";
 import CharInfo from "./CharInfo";
-
+import classes from "./Characters.module.css";
 
 const Characters = () => {
     const characterContext = useContext(CharacterContext);
@@ -19,9 +19,9 @@ const Characters = () => {
     };
   
     return (
-        <>
+       <>
             {characters !== null ? (
-                <div className="card-container">
+                <div className={classes.cardContainer}>
                     {characters.docs.map(character => (
                         <CharInfo
                             key={character._id}
@@ -29,8 +29,8 @@ const Characters = () => {
                         />
                 ))}
                 </div>
-            ) : <h4 className="add__title">Add a Character</h4>}
-        </>
+            ) : <h4 className={classes.addTitle}>Add a Character</h4>}
+      </>
     );
 };
 

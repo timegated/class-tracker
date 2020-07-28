@@ -34,14 +34,6 @@ html, body {
 }
 
 /* Character Cards */
-.card-container {
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: center;
-    margin-top: 5rem;
-    order: reverse;
-}
 
 .card {
     padding: 1rem;
@@ -56,12 +48,12 @@ html, body {
 .home-page__title {
     text-align: center;
 }
-.add__title {
+/* .add__title {
     margin-top: 10rem;
     text-align: center;
     color: #efefef;
     font-size: 24px;
-}
+} */
 
 /* Buttons */
 .btn {
@@ -110,6 +102,7 @@ html, body {
   color: #EFEFEF;
   font-size: 24px;
 }
+
 .form-radio-select {
     display: flex;
     flex-direction: column;
@@ -164,46 +157,6 @@ textarea {
     overflow: hidden;
     padding: 0 2rem;
 }
-
-/* Navbar */
-.navbar {
-   background: #002B33;
-   width: 100%;
-   position: fixed;
-   top: 0;
-   left: 0;
-   padding: 0;
-   display: flex;
-   justify-content: space-between;
-   line-height: 1rem;
-}
-
-.navbar__title>a {
-    text-decoration: none;
-    color: #efefef;
-    margin: 1rem;
-    font-size: 2rem;
-}
-
-.navbar__items {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    line-height: 1rem;
-}
-
-.navbar__item>a {
-    color: #efefef;
-    text-decoration: none;
-    margin: 1rem;
-    font-size: 1.50rem;
-    padding: 1rem;
-}
-
-.navbar__item>a:hover {
-    background: #19D9
-}
-
 
 .view-items__main {
     margin-top: 5rem;

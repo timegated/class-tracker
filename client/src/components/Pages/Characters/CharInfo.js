@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import CharacterContext from "../../../context/character/characterContext";
 import { Link } from "react-router-dom";
+import classes from "./Characters.module.css";
 
 const CharInfo = ({ character }) => {
     // how do i grab the individual character _id from the viewitem/viewprio links?
@@ -14,7 +15,10 @@ const CharInfo = ({ character }) => {
     };
     console.log(_id)
     return (
-        <div className="card">
+        <div className={classes.card}>
+            <div className={classes.cardImg}>
+                <img src="https://vignette.wikia.nocookie.net/wowwiki/images/0/09/Patchnotes-icon-hunter.gif/revision/latest?cb=20130325175454" alt="hunter icon"/>
+            </div>
             <h3>
                 {name}
             </h3>

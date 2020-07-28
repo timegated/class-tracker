@@ -1,4 +1,43 @@
 .Navbar {
+ display: flex;
+ flex-direction: column;
+ position: fixed;
+ width: 50%;
+ height: 100%;
+ z-index: 999;
+ left: -600px;
+ top: 0;
+ overflow-x: visible;
+ overflow-y: auto;
+ transition: left 0.6s ease;
+ background: #000;
+ align-items: center;
+ width: 100%;
+}
+
+.NavbarTitle>a {
+ text-decoration: none;
+ color: #FFD100;
+}
+
+.NavbarItems {
+ display: flex;
+ flex-direction: row;
+ list-style: none;
+}
+
+.NavbarItem>a {
+  color: #FFD100;
+}
+
+.NavbarItem>a:hover {
+ 
+}
+
+/* Larger screen sizes */
+
+@media screen and (min-width: 768px) {
+  .Navbar {
   background: #000;
   width: 100%;
   position: sticky;
@@ -6,14 +45,14 @@
   left: 0;
   padding: 0;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   line-height: 2rem;
 }
 
-.NavbarTitle>a {
+  .NavbarTitle>a {
   text-decoration: none;
   color: #FFCD55;
-  margin: 1rem;
   font-size: 2rem;  
 }
 
@@ -21,15 +60,17 @@
   list-style: none;
   display: flex;
   line-height: 1rem;
-  padding: 1rem;
 }
 
 .NavbarItem>a {
   color: #FFD100;
   text-decoration: none;
   margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem;
+  font-size: 1rem;
+}
+
+.NavbarLogout {
+  font-size: 1rem;
 }
 
 .NavbarItem>a:hover {
@@ -37,3 +78,5 @@
   border-radius: 10px;
   text-decoration: underline;
 }
+}
+

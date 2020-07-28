@@ -1,7 +1,6 @@
 
 import React from "react";
 import Home from "./components/Pages/Home/Home";
-import NewCharacter from "./components/RegisterCharacter/RegisterCharacter";
 import About from "./components/Pages/About/About";
 import Navbar from "./components/Layout/Navbar";
 import CurrentItems from "./components/Items/CurrentItems/CurrentItems";
@@ -33,7 +32,6 @@ const App = () => {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={SignUp} />
                 <PrivateRoute exact path="/" component={Home} />
-                <PrivateRoute exact path="/register" component={NewCharacter} />
                 <PrivateRoute exact path="/currentitems" component={CurrentItems} />
                 <PrivateRoute exact path="/priority" component={ItemPriority} />
                 <PrivateRoute exact path="/characters" component={Characters} />

@@ -3,7 +3,7 @@ import CurrentDropDown from "./CurrentDropDown";
 import TierOne from "./RaidTiers/TierOne";
 import TierTwo from "./RaidTiers/TierTwo";
 import AQ from "./RaidTiers/AQ";
-import CurrentContext from "../../../context/current/currentContext"
+// import CurrentContext from "../../../context/current/currentContext"
 import CharContext from "../../../context/character/characterContext";
 
 // snagged

@@ -1,0 +1,37 @@
+.prioContainer {
+  max-width: 650px;
+  margin: 8rem;
+  padding: 3rem;
+  background: #2c2c2c;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px #000;
+  border: 1px solid #000;
+}
+
+.prioContainer h1 {
+  color: #FFCD55;
+  text-decoration: underline;
+}
+
+.prioLabel {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.prioInput {
+  border: none;
+  margin: 0.5rem;
+}
+
+.prioSubmit {
+  display: block;
+  width: 100%;
+  background: #000;
+  color: #FFD100;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 1px 1px #000;
+  cursor: pointer;
+}

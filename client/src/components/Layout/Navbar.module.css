@@ -66,11 +66,12 @@
   color: #FFD100;
   text-decoration: none;
   margin: 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
 }
 
 .NavbarLogout {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .NavbarItem>a:hover {

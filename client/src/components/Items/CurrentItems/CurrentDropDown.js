@@ -5,7 +5,6 @@ const CurrentDropDown = ({ characters }) => {
   if (characters !== null && characters.docs.length === 0) {
     return <h4>No Character's here yet</h4>
   }
-  console.log(characters)
   return (
     <>
       <label className="form-text" htmlFor="Character Name">Select Character</label>

@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import Toggler from './Toggler/Toggler';
 import AuthContext from "../../context/auth/authContext";
 import classes from "./Navbar.module.css";
 
@@ -56,7 +55,6 @@ const Navbar = () => {
 
     return (
         <header>
-            <Toggler />
             <nav className={classes.Navbar}>
                 <h1 className={classes.NavbarTitle}>
                     <Link to="/">

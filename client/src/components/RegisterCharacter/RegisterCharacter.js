@@ -33,7 +33,7 @@ const Registration = () => {
 
     return (
         <form className={classes.formContainer} onSubmit={onSubmit}>
-            <h1>Character Registration</h1>
+            <h1>Add Character</h1>
             <div className={classes.formGroup}>
                 <label className={classes.inputLabel} htmlFor="Character Name">Character Name:</label>
                 <input className={classes.inputText} value={name} type="text" name="name" onChange={onChange} />

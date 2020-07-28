@@ -19,7 +19,7 @@ const ViewItems = () => {
   console.log(characters);
   return (
     <div className="view-items__main">
-      <h1>Viewing Character Items</h1>
+      <h1>Viewing Character's Current Items</h1>
     </div>
   );
 };

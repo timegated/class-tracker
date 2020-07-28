@@ -7,6 +7,7 @@ import CurrentItems from "./components/Items/CurrentItems/CurrentItems";
 import Characters from "./components/Pages/Characters/Characters";
 import ItemPriority from "./components/Items/ItemPriority/ItemPriority";
 import ViewItems from "./components/Items/ViewItems/ViewItems";
+import ViewPrio from "./components/Items/ViewPrio/ViewPrio";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
 import PrivateRoute from "./components/Routing/PrivateRoute";
@@ -36,6 +37,7 @@ const App = () => {
                 <PrivateRoute exact path="/priority" component={ItemPriority} />
                 <PrivateRoute exact path="/characters" component={Characters} />
                 <PrivateRoute exact path="/viewitems" component={ViewItems} />
+                <PrivateRoute exact path="/viewprio" component={ViewPrio} />
               </Switch>
             </div>
             </Router>

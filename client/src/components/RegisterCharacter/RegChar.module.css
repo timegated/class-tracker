@@ -10,10 +10,16 @@
 
 .formContainer h1 {
   color: #FFD100;
+  text-decoration: underline;
 }
 
 .formGroup {
   margin: 1rem;
+}
+
+.formGroup h5 {
+  color: #FFD100;
+  margin-left: 1rem;
 }
 
 .inputLabel {
@@ -26,16 +32,17 @@
 
 .radioList li {
   list-style: none;
+  font-size: 1.5rem;
 }
 
 .submitButton {
   display: block;
-  width: 50%;
-  margin: auto;
+  width: 100%;
   border-radius: 10px;
-  background: #2c2c2c;
-  color: #efefef;
-  font-size: 1rem;
+  color: #FFDC55;
+  background: #000;
+  font-size: 1.5rem;
+  border: 1px solid #000;
   padding: 0.5rem;
   cursor: pointer;
 }

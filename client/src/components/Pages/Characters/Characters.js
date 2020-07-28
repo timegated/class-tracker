@@ -13,9 +13,8 @@ const Characters = () => {
         // es-lint-disable-next-line
     }, []);
 
-    console.log(characters)
     if (characters !== null && characters.docs.length === 0) {
-        return <h4 className="add__title">Add a Character</h4>
+        return <h1 className={classes.addTitle}>Add a Character</h1>
     };
   
     return (

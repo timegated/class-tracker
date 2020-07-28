@@ -43,7 +43,6 @@ const App = () => {
             </Router>
           </ItemState>
         </CurrentState>
-       
       </CharacterState>
     </AuthState>
   );

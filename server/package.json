@@ -10,7 +10,7 @@
   "scripts": {
     "build": "rimraf dist && babel src --out-dir dist",
     "start": "node dist/server.js",
-    "server":"nodemon dist/server.js",
+    "server": "nodemon dist/server.js",
     "client": "npm start --prefix client",
     "clientinstall": "yarn install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run --prefix client\""
@@ -60,6 +60,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.19",
     "mongoose": "^5.9.17",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "wow-classic-items": "^0.8.1"
   }
 }

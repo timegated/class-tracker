@@ -18,13 +18,16 @@ var _auth = require("./utils/auth");
 
 var _char = _interopRequireDefault(require("./resources/characters/char.router"));
 
+var _itemDB = _interopRequireDefault(require("./resources/itemDB/itemDB.router"));
+
 var _item = _interopRequireDefault(require("./resources/items/item.router"));
 
 var _user = _interopRequireDefault(require("./resources/user/user.router"));
 
+var _currentitems = _interopRequireDefault(require("./resources/currentitems/currentitems.router"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import currentRouter from "./resources/currentitems/currentitems.router";
 const app = (0, _express.default)();
 
 const router = _express.default.Router();
@@ -45,7 +48,9 @@ app.use("/api", router);
 app.use("/api", _auth.protect);
 app.use("/api/user", _user.default);
 app.use("/api/characters", _char.default);
+app.use("/api/currentitems", _currentitems.default);
 app.use("/api/items", _item.default);
+app.use("/api/itemdb", _itemDB.default);
 
 if (process.env.NODE_ENV === "production") {
   app.use(_express.default.static("client/build"));

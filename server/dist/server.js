@@ -50,7 +50,7 @@ app.use("/api/user", _user.default);
 app.use("/api/characters", _char.default);
 app.use("/api/currentitems", _currentitems.default);
 app.use("/api/items", _item.default);
-app.use("/api/itemdb", _itemDB.default);
+app.use("/api/itemDB", _itemDB.default);
 
 if (process.env.NODE_ENV === "production") {
   app.use(_express.default.static("client/build"));

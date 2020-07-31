@@ -8,12 +8,13 @@
     "yarn": "1.22.4"
   },
   "scripts": {
-    "build": "rimraf dist && babel src --out-dir dist",
-    "start": "node dist/server.js",
+    "build": "babel src --out-dir dist",
+    "dev": "nodemon --exec yarn restart",
     "server": "nodemon dist/server.js",
     "client": "npm start --prefix client",
     "clientinstall": "yarn install --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run --prefix client\""
+    "restart": "rimraf dist && yarn build && yarn start",
+    "start": "babel src --out-dir dist && node dist/server.js"
   },
   "repository": {
     "type": "git",

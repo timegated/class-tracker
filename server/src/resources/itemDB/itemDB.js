@@ -23,7 +23,9 @@ export const searchItemSlots = (subClass, slot) => {
   return searchSlots
 };
 
-export const searchWeapons = (subClass, weapon) => {
+export const searchWeapons = (weapons) => {
   const items = mapItems(weaponFilter);
-  const sC = makeSearchWork()
+  const subClass = makeSearchWork(weapons);
+  const weaponTypes = items.filter(i => i.subclass === subClass);
+  return weaponTypes;
 };

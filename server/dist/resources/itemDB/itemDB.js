@@ -3,14 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.searchItemSlots = exports.searchItems = void 0;
+exports.searchWeapons = exports.searchItemSlots = exports.searchItems = void 0;
 
 var _itemDButils = require("../../utils/itemDButils");
 
 // find items by subclass
-const searchItems = subClass => {
+const searchItems = itemClass => {
   const items = (0, _itemDButils.mapItems)(_itemDButils.armorFilter);
-  const searchTerm = (0, _itemDButils.makeSearchWork)(subClass);
+  const searchTerm = (0, _itemDButils.makeSearchWork)(itemClass);
   const searchSubClass = items.filter(i => i.subclass === searchTerm);
   return searchSubClass;
 }; // find items by subclass and slot
@@ -30,3 +30,12 @@ const searchItemSlots = (subClass, slot) => {
 };
 
 exports.searchItemSlots = searchItemSlots;
+
+const searchWeapons = weapons => {
+  const items = (0, _itemDButils.mapItems)(_itemDButils.weaponFilter);
+  const subClass = (0, _itemDButils.makeSearchWork)(weapons);
+  const weaponTypes = items.filter(i => i.subclass === subClass);
+  return weaponTypes;
+};
+
+exports.searchWeapons = searchWeapons;

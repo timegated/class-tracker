@@ -1,26 +1,49 @@
-import React, { useEffect, useContext } from "react";
-import CurrentContext from "../../../context/current/currentContext";
-import CharacterContext from "../../../context/character/characterContext";
+import React, { useState } from "react";
+import axios from 'axios';
+// import CurrentContext from "../../../context/current/currentContext";
+// import CharacterContext from "../../../context/character/characterContext";
 
 const ViewItems = () => {
   // viewing items for a singular character, this page's content changes based on which character's view items link is activated
+  // const currentContext = useContext(CurrentContext);
+  // const characterContext = useContext(CharacterContext);
+  // const { loadCurrent, currentItems } = currentContext;
+  // const { loadCharacters, characters } = characterContext;
+  // useEffect(() => {
+  // }, []);
+  const [searchTerm, setSearchTerm] = useState({
+    subclass: '',
+    slot: '',
+  });
+  const { subclass, slot } = searchTerm;
 
-  const currentContext = useContext(CurrentContext);
-  const characterContext = useContext(CharacterContext);
-  const { loadCurrent, currentItems } = currentContext;
-  const { loadCharacters, characters } = characterContext;
+  const getItems = async (sc, s) => {
+    const items = await axios.get(`/api/itemdb/${sc}/${s}`)
+    console.log(items.data)
+  };
 
-  useEffect(() => {
-    loadCurrent();
-    loadCharacters();
-  }, []);
-  
-  console.log(currentItems);
-  console.log(characters);
+  const onChange = (e) => {
+    setSearchTerm({ ...searchTerm, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    getItems(subclass, slot);
+
+    e.preventDefault();
+  }
   return (
-    <div className="view-items__main">
-      <h1>Viewing Character's Current Items</h1>
-    </div>
+    <form className="view-items__main" onSubmit={onSubmit}>
+      <div>
+        <label htmlFor="">Subclass: </label>
+        <input name="subclass" type="text" value={subclass} onChange={onChange} />
+      </div>
+      <div>
+        <label htmlFor="">Slot: </label>
+        <input name="slot" type="text" value={slot} onChange={onChange} />
+      </div>
+      
+      <button type="submit">Submit</button>
+    </form>
   );
 };
 

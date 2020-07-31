@@ -1,38 +1,33 @@
 import {
-  getItemSubClass,
-  getItemSlots,
-  armorFilter,
-  itemFilter
+  searchItems,
+  searchItemSlots,
+  searchWeapons
 } from './itemDB';
 import { Router } from 'express';
 
 const router = Router();
 
 // search route for specific armor types
-router.get(['/:class', '/:name', '/:slot'], (req, res) => {
-  const type = req.params;
-  const subClass = getItemSubClass(armorFilter, type.class);
-  console.log(type.class);
+router.get('/:class', (req, res) => {
+  const subclass = req.params.class;
+  const subClass = searchItems(subclass);
   console.log(req.params);
   res.status(200).json(subClass);
-  
-
-  // switch (type.class || type.name || type.slot) {
-  //   case 'plate':
-  //     return res.status(200).json(plate);
-  //   case 'mail':
-  //     return res.status(200).json(mail);
-  //   case 'cloth':
-  //     return res.status(200).json(cloth);
-  //   case 'leather':
-  //     return res.status(200).json(leather);
-  //   case 'leather':
-  //     return res.status(200).json(leather);
-  //   case type.slot:
-  //     return getItemSlots(plate, type.slot)
-  //   default:
-  //     return res.status(400).json({msg: 'Fall-through to default statement'});
-  // }
 });
 
+router.get('/:class/:slot', (req, res) => {
+  const subclass = req.params.class;
+  const slot = req.params.slot;
+  console.log(req.params);
+  const slots = searchItemSlots(subclass, slot);
+  res.status(200).json(slots);
+});
+
+router.get('/:weapon/:subclass', (req, res) => {
+  const weapon = req.params.weapon;
+  const subclass = req.params.subclass;
+  console.log(req.params);
+  const weapons = searchWeapons(weapon, subclass);
+  res.status(200).json(weapons);
+});
 export default router;

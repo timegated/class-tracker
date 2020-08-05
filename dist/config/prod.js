@@ -8,6 +8,6 @@ const config = {
   secrets: {
     jwt: "secrets"
   },
-  dbUrl: `mongodb+srv://cheuser:${process.env.DB_KEY}.mongodb.net/class-tracker?retryWrites=true&w=majority`
+  dbUrl: `mongodb+srv://cheuser:lU4iJeg9Vkr4ORHR.mongodb.net/class-tracker?retryWrites=true&w=majority`
 };
 exports.config = config;

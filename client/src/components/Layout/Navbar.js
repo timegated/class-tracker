@@ -1,7 +1,52 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
-import classes from "./Navbar.module.css";
+import styled from 'styled-components';
+
+const NavBar = styled.nav`
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 50%;
+    z-index: 999;
+    top: 0;
+    overflow-x: visible;
+    transition: left 0.6s ease;
+    background: #000;
+    align-items: center;
+    width: 100%;
+`
+const NavItemList = styled.ul`
+    list-style: none;
+`
+const NavItem = styled.li`
+    display: inline-block;
+    margin: 0 0.5rem 0 0;
+    padding: 0.25rem;
+
+    & a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1;
+        text-decoration: none;
+        color: #FFD100;
+    }
+    & a:hover {
+        border-bottom: 2px solid #ebebeb;
+    }
+`
+const NavLink = styled(Link)`
+    &.current-page {
+        border-bottom: 2px solid #ebebeb;
+    }
+`
+const NavTitle = styled.h1`
+    & a {
+        text-decoration: none;
+        color: #FFD100;
+        font-size: 1.9rem
+    }
+`
 
 const Navbar = () => {
     const authContext = useContext(AuthContext);
@@ -20,51 +65,51 @@ const Navbar = () => {
 
     const authLinks = (
         <>
-            <li>Hello {user && user.name}</li>
-            <li className={classes.NavbarItem}>
-                <Link to="/"> Home </Link>
-            </li>
-            <li className={classes.NavbarItem}>
-                <Link to="/priority">Priority</Link>
-            </li>
-            <li className={classes.NavbarItem}>
-                <Link to="/currentitems">Current Items</Link>
-            </li>
-            <li className={classes.NavbarItem}>
+            <NavItem>Hello {user && user.name}</NavItem>
+            <NavItem>
+                <NavLink activeClassName="current-page" to="/"> Home </NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink to="/priority">Priority</NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink to="/currentitems">Current Items</NavLink>
+            </NavItem>
+            <NavItem>
                 <a onClick={onLogout} href="#!">
                     <i className="fas fa-sign-out-alt"></i>
-                    <span className={classes.NavbarLogout}>Logout</span>
+                    <span>Logout</span>
                 </a>
-            </li>
+            </NavItem>
         </>
     );
 
     const guestLinks = (
         <>
-            <li className={classes.NavbarItem}>
+            <NavItem>
                 <Link to="/about">About</Link>
-            </li>
-            <li className={classes.NavbarItem}>
+            </NavItem>
+            <NavItem>
                 <Link to="/signup">Sign Up</Link>
-            </li>
-            <li className={classes.NavbarItem}>
+            </NavItem>
+            <NavItem>
                 <Link to="/login">Login</Link>
-            </li>
+            </NavItem>
         </>
     );
 
     return (
         <header>
-            <nav className={classes.Navbar}>
-                <h1 className={classes.NavbarTitle}>
+            <NavBar>
+                <NavTitle>
                     <Link to="/">
                         Class Tracker
                     </Link>
-                </h1>
-                <ul className={classes.NavbarItems}>
+                </NavTitle>
+                <NavItemList>
                     {isAuthenticated ? authLinks : guestLinks}
-                </ul>
-            </nav>
+                </NavItemList>
+            </NavBar>
 
         </header>
 

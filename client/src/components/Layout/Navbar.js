@@ -22,16 +22,20 @@ const NavItemList = styled.ul`
 const NavItem = styled.li`
     display: inline-block;
     margin: 0 0.5rem 0 0;
-    padding: 0.25rem;
 
-    & a {
+    & > a {
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1;
         text-decoration: none;
         color: #FFD100;
+        padding: 0.25rem;
     }
-    & a:hover {
+    & > a:hover {
+        border-bottom: 2px solid #ebebeb;
+    }
+
+    & > a:active {
         border-bottom: 2px solid #ebebeb;
     }
 `

@@ -13,21 +13,7 @@ html, body {
     color: #efefef;
     font-family: 'Roboto', sans-serif;
 }
-/* 
-.main-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
 
-/* .about-content {
-    max-width: 750px;
-    margin: 10rem auto;
-    background: #002B33;
-    padding: 5rem;
-    border-radius: 10px;
-    font-size: 24px;
-} */
 
 .about-content h1 {
     text-decoration: underline;
@@ -48,12 +34,7 @@ html, body {
 .home-page__title {
     text-align: center;
 }
-/* .add__title {
-    margin-top: 10rem;
-    text-align: center;
-    color: #efefef;
-    font-size: 24px;
-} */
+
 
 /* Buttons */
 .btn {

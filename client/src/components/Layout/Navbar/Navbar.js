@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import AuthContext from "../../context/auth/authContext";
+import AuthContext from "../../../context/auth/authContext";
 import styled from 'styled-components';
 
 const NavBar = styled.nav`

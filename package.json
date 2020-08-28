@@ -9,12 +9,12 @@
   },
   "scripts": {
     "build": "rimraf dist && babel src --out-dir dist",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "server": "nodemon dist/server.js",
+    "dev": "SET NODE_ENV=development & concurrently \"yarn run server\" \"yarn run client\"",
+    "server": "SET NODE_ENV=development & nodemon dist/server.js",
     "client": "npm start --prefix client",
     "clientinstall": "yarn install --prefix client",
     "restart": "rimraf dist && yarn build && yarn start",
-    "start": "node dist/server.js",
+    "start": "SET NODE_ENV=production & node dist/server.js",
     "heroku-postbuild": "cd client && yarn install && yarn run build"
   },
   "repository": {
@@ -46,6 +46,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.4.2",
+    "mock-req-res": "^1.2.0",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",

@@ -1,7 +1,7 @@
 import { merge } from "lodash";
 const env = process.env.NODE_ENV || "development";
 const PORT = process.env.PORT || 5000;
-
+console.log(env);
 const baseConfig = {
   env,
   isDev: env === "development",
@@ -15,6 +15,8 @@ const baseConfig = {
 };
 
 let envConfig = {};
+
+console.log(envConfig);
 
 switch (env) {
   case "dev":

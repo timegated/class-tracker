@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.config = void 0;
 const config = {
   secrets: {
-    jwt: "secrets"
+    jwt: 'secrets'
   },
-  dbUrl: 'mongodb://localhost:27017/class-tracker'
+  dbUrl: `mongodb://localhost:27017/class-tracker`
 };
 exports.config = config;

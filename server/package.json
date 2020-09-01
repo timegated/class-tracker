@@ -17,7 +17,8 @@
     "client": "npm start --prefix client",
     "clientinstall": "yarn install --prefix client",
     "restart": "rimraf dist && yarn build && yarn start",
-    "start": "SET NODE_ENV=production & node dist/server.js"
+    "start": "SET NODE_ENV=production & node dist/server.js",
+    "heroku-postbuild": "yarn run build"
   },
   "repository": {
     "type": "git",

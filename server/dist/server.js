@@ -42,7 +42,10 @@ app.use((0, _morgan.default)("dev"));
 app.use((0, _cors.default)()); // main-entry-point
 
 app.post("/signup", _auth.signup);
-app.post("/login", _auth.login); // routes
+app.post("/login", _auth.login);
+app.get('/', (req, res) => {
+  res.send().json('Welcome to the WoW-Class-Tracker Server');
+}); // routes
 
 app.use("/api", router);
 app.use("/api", _auth.protect);

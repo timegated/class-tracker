@@ -27,6 +27,10 @@ app.use(cors());
 app.post("/signup", signup);
 app.post("/login", login);
 
+app.get('/', (req, res) => {
+  res.send().json('Welcome to the WoW-Class-Tracker Server');
+})
+
 // routes
 app.use("/api", router);
 app.use("/api", protect);

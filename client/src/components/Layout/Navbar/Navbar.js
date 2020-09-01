@@ -31,6 +31,18 @@ const NavItem = styled.li`
         color: #FFD100;
         padding: 0.25rem;
     }
+    & > a.cta {
+        border: 1px solid #FFD100;
+        border-radius: 10px;
+        font-size: 1.8rem;
+        padding: 0.5rem;
+    }
+
+    & > a.cta:hover {
+        background: #FFD100;
+        color: #000;
+    }
+    
     & > a:hover {
         border-bottom: 2px solid #ebebeb;
     }
@@ -43,7 +55,8 @@ const NavLink = styled(Link)`
     &.current-page {
         border-bottom: 2px solid #ebebeb;
     }
-`
+   
+`   
 const NavTitle = styled.h1`
     & a {
         text-decoration: none;
@@ -94,10 +107,10 @@ const Navbar = () => {
                 <Link to="/about">About</Link>
             </NavItem>
             <NavItem>
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/login">Login</Link>
             </NavItem>
             <NavItem>
-                <Link to="/login">Login</Link>
+                <Link className="cta" to="/signup">Sign Up</Link>
             </NavItem>
         </>
     );

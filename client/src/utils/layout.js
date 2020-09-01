@@ -5,7 +5,6 @@ export const Grid = styled.div`
 `;
 
 export const Row = styled.div`
-  border: 5px solid rgba(0, 0, 0, 0.8);
   display: flex;
   @media (min-width: 320px) and (max-width: 800px) {
           flex-direction: column;

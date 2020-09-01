@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import axios from 'axios';
-// import CurrentContext from "../../../context/current/currentContext";
-// import CharacterContext from "../../../context/character/characterContext";
 
 const ViewItems = () => {
-  // viewing items for a singular character, this page's content changes based on which character's view items link is activated
-  // const currentContext = useContext(CurrentContext);
-  // const characterContext = useContext(CharacterContext);
-  // const { loadCurrent, currentItems } = currentContext;
-  // const { loadCharacters, characters } = characterContext;
-  // useEffect(() => {
-  // }, []);
+
   const [searchTerm, setSearchTerm] = useState({
     subclass: '',
     slot: '',

@@ -16,7 +16,6 @@ import CurrentState from "./context/current/CurrentState";
 import CharacterState from "./context/character/CharacterState";
 import AuthState from "./context/auth/AuthState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css"
 
 const App = () => {
   return (

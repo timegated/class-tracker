@@ -1,11 +1,13 @@
-body {
-    background: #2c2c2c;
-    color: #efefef;
-    font-family: sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'sans-serif';
 }
 
-.main-content {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+*, *::before, *::after {
+    box-sizing: inherit;
 }
+

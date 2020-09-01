@@ -1,7 +1,6 @@
 import express from "express";
 import { json, urlencoded } from "body-parser";
 import { connect } from "./utils/db";
-import path from "path";
 import morgan from "morgan";
 import cors from "cors";
 import config from "./config";
@@ -22,6 +21,7 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(cors());
+
 // main-entry-point
 
 app.post("/signup", signup);
@@ -39,13 +39,6 @@ app.use("/api/characters", charRouter);
 app.use("/api/currentitems", currentRouter);
 app.use("/api/items", itemRouter);
 app.use("/api/itemDB", itemDBRouter);
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
 
 const start = async () => {
   try {

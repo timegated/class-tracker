@@ -1,45 +1,70 @@
 import React from 'react';
 import styled from 'styled-components';
-import classes from './About.module.css';
 import bgTrees from '../../../assets/images/bg-trees.jpg';
+import { Grid, Row, Col } from '../../../utils/layout';
 
 const Hero = styled.section`
     background: url('${bgTrees}') center;
     background-size: cover;
-    box-shadow: inset 250px 250px 250px rgba(0,0,0,0.3);
+    box-shadow: inset 250px 250px 250px rgba(0,0,0,0.4);
     color: #000;
     width: 100%;
     position: relative;
     height: 50vh;
-    margin: 5rem 0 0 0;
     display: flex;
     justify-content: center;
-`
+    align-content: center;
+`;
 
 const HeroHeader = styled.div`
     color: #FCD100;
     margin: 5rem 0 0 0;
-    font-size: 42px;
-`
+    font-size: 3rem;
+
+    @media only screen and (max-width: 320px) {
+        margin: 10rem 0 0 0;
+        font-size: 1rem;
+    }
+`;
+
 
 const About = () => {
     return (
         <>
+            <Grid>
             <Hero>
                 <HeroHeader>
-                    <h1>Take Control of Your Inventory</h1>
-                    <h4>Learn more about your class</h4>
+                    <h1>Keep track of the items you want</h1>
+                    <h3>Manage the items you have</h3>
                 </HeroHeader>
             </Hero>
-            <div className={classes.aboutContent}>
-            <h1>About</h1>
-            <p>Designed to help players that take part in end game content to keep track of what they currently have.
-            Guilds generally face difficulty allocating items to their players, hopefully this will serve as a way to keep track of
-            what items players are hoping to get and ultimately to help a loot council or officers make decisions concerning loot from raid encounters.
-            </p>
-        </div>
+           
+                <Row>
+                    <Col size={4}>
+                    <h1>About</h1>
+                        <p>Designed to help players that take part in end game content to keep track of what they currently have.
+                        Guilds generally face difficulty allocating items to their players, hopefully this will serve as a way to keep track of
+                        what items players are hoping to get and ultimately to help a loot council or officers make decisions concerning loot from raid encounters.
+                        </p>
+                    </Col>
+                    <Col size={4}>
+                    <h1>About</h1>
+                        <p>Designed to help players that take part in end game content to keep track of what they currently have.
+                        Guilds generally face difficulty allocating items to their players, hopefully this will serve as a way to keep track of
+                        what items players are hoping to get and ultimately to help a loot council or officers make decisions concerning loot from raid encounters.
+                        </p>
+                    </Col>
+                    <Col size={4}>
+                    <h1>About</h1>
+                        <p>Designed to help players that take part in end game content to keep track of what they currently have.
+                        Guilds generally face difficulty allocating items to their players, hopefully this will serve as a way to keep track of
+                        what items players are hoping to get and ultimately to help a loot council or officers make decisions concerning loot from raid encounters.
+                        </p>
+                    </Col>
+                </Row>
+            </Grid>
         </>
-        
+
     );
 };
 

@@ -8,17 +8,14 @@
     "yarn": "1.22.4"
   },
   "scripts": {
-    "builddev": "rimraf dist && babel src --out-dir dist",
+    "build": "rimraf dist && babel src --out-dir dist",
     "dev": "SET NODE_ENV=development & concurrently \"yarn run server\" \"yarn run client\"",
     "server": "SET NODE_ENV=development & nodemon dist/server.js",
     "test":"SET NODE_ENV=testing jest --forceExit --detectOpenHandles --silent",
     "test-models": "yarn test -t model",
     "test-auth": "yarn test -t Authentication:",
-    "client": "npm start --prefix client",
-    "clientinstall": "yarn install --prefix client",
     "restart": "rimraf dist && yarn build && yarn start",
-    "start": "SET NODE_ENV=production & node dist/server.js",
-    "heroku-postbuild": "yarn run build && yarn run start"
+    "start": "SET NODE_ENV=production & node dist/server.js"
   },
   "repository": {
     "type": "git",

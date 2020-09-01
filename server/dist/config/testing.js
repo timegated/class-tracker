@@ -8,6 +8,6 @@ const config = {
   secrets: {
     jwt: 'secrets'
   },
-  dbUrl: `mongodb://localhost:27017/class-tracker`
+  dbUrl: `mongodb://localhost:27017/class-tracker-test`
 };
 exports.config = config;

@@ -10,7 +10,9 @@ const mongoose = require("mongoose");
 const characterSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    trim: true,
+    maxLength: 50
   },
   charClass: {
     type: String,

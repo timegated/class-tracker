@@ -11,6 +11,9 @@
     "build": "rimraf dist && babel src --out-dir dist",
     "dev": "SET NODE_ENV=development & concurrently \"yarn run server\" \"yarn run client\"",
     "server": "SET NODE_ENV=development & nodemon dist/server.js",
+    "test":"SET NODE_ENV=testing jest --forceExit --detectOpenHandles --silent",
+    "test-models": "yarn test -t model",
+    "test-auth": "yarn test -t Authentication:",
     "client": "npm start --prefix client",
     "clientinstall": "yarn install --prefix client",
     "restart": "rimraf dist && yarn build && yarn start",
@@ -66,5 +69,15 @@
     "mongoose": "^5.9.17",
     "morgan": "^1.10.0",
     "wow-classic-items": "^0.8.1"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "textEnvironment": "node",
+    "setupTestFrameworkScriptFile": "<rootDir>/test-db-setup-js",
+    "testPathIgnorePatterns": [
+      "dist/"
+    ],
+    "restoreMocks": true
   }
 }

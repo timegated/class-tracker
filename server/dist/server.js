@@ -64,6 +64,7 @@ const start = async () => {
     await (0, _db.connect)();
     app.listen(_config.default.port, () => {
       console.log(`Server live on Port: ${_config.default.port}`);
+      console.log('Line 50 in server.js', _config.default);
     });
   } catch (error) {
     console.error(error);

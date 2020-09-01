@@ -11,6 +11,7 @@ import itemDBRouter from './resources/itemDB/itemDB.router';
 import itemRouter from "./resources/items/item.router";
 import userRouter from "./resources/user/user.router";
 import currentRouter from "./resources/currentitems/currentitems.router";
+
 const app = express();
 const router = express.Router();
 
@@ -47,6 +48,7 @@ const start = async () => {
     await connect();
     app.listen(config.port, () => {
       console.log(`Server live on Port: ${config.port}`);
+      console.log('Line 50 in server.js', config);
     });
   } catch (error) {
     console.error(error);

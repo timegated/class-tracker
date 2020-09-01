@@ -5,6 +5,8 @@ const characterSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
+      trim: true,
+      maxLength: 50
     },
     charClass: {
       type: String,

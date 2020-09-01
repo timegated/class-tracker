@@ -10,7 +10,7 @@ const Characters = () => {
 
     useEffect(() => {
         loadCharacters();
-        // es-lint-disable-next-line
+        // eslint-disable-next-line
     }, []);
 
     if (characters !== null && characters.docs.length === 0) {

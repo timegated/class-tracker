@@ -18,6 +18,7 @@ const CurrentItems = () => {
 
     useEffect(() => {
         loadCharacters();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const { raidOne, raidTwo, raidThree } = raidTier;

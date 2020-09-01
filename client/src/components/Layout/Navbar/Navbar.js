@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../../context/auth/authContext";
 import styled from 'styled-components';
@@ -59,8 +59,8 @@ const Navbar = () => {
     useEffect(() => {
 
         loadUser();
-        // eslint-disable-next-line
-
+        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const onLogout = () => {

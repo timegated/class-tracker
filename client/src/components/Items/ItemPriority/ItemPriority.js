@@ -8,6 +8,7 @@ const ItemPriority = () => {
 
     useEffect(() => {
         loadCharacters();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const [item, setItem] = useState({
@@ -17,7 +18,7 @@ const ItemPriority = () => {
         prio: "",
     });
 
-    const { charName, name, status, prio } = item;
+    const {  name } = item;
     
     const onChange = (e) => {
         setItem({ ...item, [e.target.name]: e.target.value });

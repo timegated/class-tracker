@@ -8,8 +8,6 @@ import {
   ITEMS_LOADED,
   ITEMS_LOADED_FAIL,
   CURRENT_ITEM_ADD,
-  UPDATE_ITEM,
-  DELETE_ITEM
 } from "../types";
 
 const ItemState = props => {

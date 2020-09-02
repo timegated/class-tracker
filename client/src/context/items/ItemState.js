@@ -18,6 +18,13 @@ const ItemState = props => {
 
   const [state, dispatch] = useReducer(itemReducer, initialState);
 
+  const loadFromDB = async () => {
+    try {
+
+    } catch (error) {
+      
+    }
+  }
   const loadItems = async () => {
     try {
       const res = await axios.get("/api/items");

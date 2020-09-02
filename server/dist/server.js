@@ -6,8 +6,6 @@ var _bodyParser = require("body-parser");
 
 var _db = require("./utils/db");
 
-var _path = _interopRequireDefault(require("path"));
-
 var _morgan = _interopRequireDefault(require("morgan"));
 
 var _cors = _interopRequireDefault(require("cors"));
@@ -44,7 +42,7 @@ app.use((0, _cors.default)()); // main-entry-point
 app.post("/signup", _auth.signup);
 app.post("/login", _auth.login);
 app.get('/', (req, res) => {
-  res.send().json('Welcome to the WoW-Class-Tracker Server');
+  res.status(200).json('Welcome to the WoW-Class-Tracker Server');
 }); // routes
 
 app.use("/api", router);
@@ -54,13 +52,6 @@ app.use("/api/characters", _char.default);
 app.use("/api/currentitems", _currentitems.default);
 app.use("/api/items", _item.default);
 app.use("/api/itemDB", _itemDB.default);
-
-if (process.env.NODE_ENV === "production") {
-  app.use(_express.default.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(_path.default.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
 
 const start = async () => {
   try {

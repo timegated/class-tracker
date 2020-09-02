@@ -16,10 +16,8 @@ export const searchItemSlots = (subClass, slot) => {
   const items = mapItems(armorFilter);
   const sC = makeSearchWork(subClass);
   const s = makeSearchWork(slot);
-  console.log('From getItemSlots: ', sC);
-  console.log('From getItemSlots: ', s);
   const searchSlots = items.filter(i => i.subclass === sC && i.slot === s);
-  console.log(searchSlots)
+
   return searchSlots
 };
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Grid = styled.div`
-
+  background-color: var(--color-bg-1);
 `;
 
 export const Row = styled.div`
@@ -15,9 +15,14 @@ export const Row = styled.div`
 
 export const Col = styled.div`
   text-align: center;
-  border: 0.2rem solid rgba(255, 255, 255, 0.8);
+  background-color: var(--font-color-1);
+  margin: 0.4rem;
   width: ${(props) => props.size / 12 * 100}vw;
   padding: 2rem;
+
+  &.dark {
+    background-color: var(--color-bg-1);
+  }
   @media (min-width: 320px) and (max-width: 800px) {
     width: 100%;
   }

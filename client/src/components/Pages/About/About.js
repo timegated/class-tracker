@@ -7,7 +7,7 @@ const Hero = styled.section`
     background: url('${bgTrees}') center;
     background-size: cover;
     box-shadow: inset 250px 250px 250px rgba(0,0,0,0.4);
-    color: #000;
+    color: var(--color-dark-1);
     width: 100%;
     position: relative;
     height: 50vh;
@@ -17,7 +17,7 @@ const Hero = styled.section`
 `;
 
 const HeroHeader = styled.div`
-    color: #FCD100;
+    color: var(--font-color-1);
     margin: 5rem 0 0 0;
     font-size: 3rem;
 
@@ -30,8 +30,14 @@ const HeroHeader = styled.div`
         font-size: 2rem;
     }
 `;
+const Title = styled.h2`
+    font-size: 2.5rem;
+`;
+const Description = styled.p`
+    font-size: 1.5rem;
+    line-height: 1.75;
 
-
+`
 const About = () => {
     return (
         <>
@@ -41,24 +47,29 @@ const About = () => {
                     <h3>Manage the items you have</h3>
                 </HeroHeader>
             </Hero>
-           <Grid>
+            <Grid>
+                <Row>
+                    <Col size={12} className="dark">
+                        
+
+                    </Col>
+                </Row>
                 <Row>
                     <Col size={4}>
-                    <h1>Why</h1>
-                        <p>Designed to help players that take part in end game content to keep track of what they currently have.
-                        Guilds generally face difficulty allocating items to their players, hopefully this will serve as a way to keep track of
-                        what items players are hoping to get and ultimately to help a loot council or officers make decisions concerning loot from raid encounters.
-                        </p>
+                    <Title>Why</Title>
+                        <Description>
+                            Designed to help players that run end game content to keep track of what they currently have.  
+                        </Description>
                     </Col>
                     <Col size={4}>
-                    <h1>How</h1>
-                        <p> 
-                            Use the form located on the home page to add characters you'd like to track items for.
-                        </p>
+                    <Title>How</Title>
+                        <Description> 
+                            Use the form on the home page to add characters you'd like to track items for. 
+                        </Description>
                     </Col>
                     <Col size={4}>
-                    <h1>Sign Up</h1>
-                       Click the sign up button up above to get started.
+                    <Title>Sign Up</Title>
+                       <Description>Click the sign up button up above to get started.</Description>
                     </Col>
                 </Row>
             </Grid>

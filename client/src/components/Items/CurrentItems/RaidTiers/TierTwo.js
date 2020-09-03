@@ -1,16 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TierTwo = () => {
-  const [tierTwo, setTierTwo] = useState({
-    head: "",
-    shoulder: "",
-    chest: "",
-    legs: "",
-    wrist: "",
-    feet: "",
-    waist: "",
-    hands: "",
-  })
+const TierTwo = ({ tierTwo, setTierTwo }) => {
 
   const { head, shoulder, chest, legs, wrist, feet, waist, hands } = tierTwo;
 

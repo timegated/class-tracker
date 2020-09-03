@@ -34,9 +34,8 @@ const SignUp = props => {
 
     const onSubmit = (e) => {
         if (name === "" || email === "" || password === "" || passwordTwo === "") {
-            // setAlert("All fields must contain an input");  
+            console.error('Passwords must match');
         } else if (password !== passwordTwo) {
-            // setAlert("Passwords must match");
             console.error("Error")
         } else {
             register({

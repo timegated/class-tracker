@@ -14,7 +14,7 @@ import currentRouter from "./resources/currentitems/currentitems.router";
 const app = express();
 const router = express.Router();
 
-app.disable("X-Powered-By");
+app.disable("x-powered-by");
 
 // middleware
 app.use(json());
@@ -23,7 +23,6 @@ app.use(morgan("dev"));
 app.use(cors());
 
 // main-entry-point
-
 app.post("/signup", signup);
 app.post("/login", login);
 
@@ -39,16 +38,14 @@ app.use("/api/characters", charRouter);
 app.use("/api/currentitems", currentRouter);
 app.use("/api/items", itemRouter);
 app.use("/api/itemDB", itemDBRouter);
-
-const start = async () => {
+console.log('Port from config',config.port)
+export const start = async () => {
   try {
-    await connect();
+    await connect()
     app.listen(config.port, () => {
       console.log(`Server live on Port: ${config.port}`);
-      console.log('Line 50 in server.js', config);
     });
   } catch (error) {
     console.error(error);
   }
 };
-start();

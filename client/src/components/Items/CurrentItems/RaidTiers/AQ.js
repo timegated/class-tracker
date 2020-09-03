@@ -1,15 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-const AQ = () => {
-  const [aqSet, setAq] = useState({
-    head: "",
-    legs: "",
-    feet: "",
-    chest: "",
-    shoulder: "",
-    hands: ""
-  });
-
+const AQ = ({ aqSet, setAq }) => {
+  
   const { head, legs, feet, chest, shoulder, hands } = aqSet;
 
   const onChange = (e) => {

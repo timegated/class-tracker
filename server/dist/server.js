@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.start = void 0;
+
 var _express = _interopRequireDefault(require("express"));
 
 var _bodyParser = require("body-parser");
@@ -30,7 +35,7 @@ const app = (0, _express.default)();
 
 const router = _express.default.Router();
 
-app.disable("X-Powered-By"); // middleware
+app.disable("x-powered-by"); // middleware
 
 app.use((0, _bodyParser.json)());
 app.use((0, _bodyParser.urlencoded)({
@@ -52,17 +57,17 @@ app.use("/api/characters", _char.default);
 app.use("/api/currentitems", _currentitems.default);
 app.use("/api/items", _item.default);
 app.use("/api/itemDB", _itemDB.default);
+console.log('Port from config', _config.default.port);
 
 const start = async () => {
   try {
     await (0, _db.connect)();
     app.listen(_config.default.port, () => {
       console.log(`Server live on Port: ${_config.default.port}`);
-      console.log('Line 50 in server.js', _config.default);
     });
   } catch (error) {
     console.error(error);
   }
 };
 
-start();
+exports.start = start;

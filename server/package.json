@@ -9,13 +9,15 @@
   },
   "scripts": {
     "build": "rimraf dist && babel src --out-dir dist",
-    "dev": "SET NODE_ENV=development & concurrently \"yarn run server\" \"yarn run client\"",
-    "server": "SET NODE_ENV=development & nodemon dist/server.js",
+    "dev:client": "SET NODE_ENV=production & concurrently \"yarn run start\" \"yarn run client\"",
+    "dev":"nodemon --exec yarn restart",
+    "client":"cd ../client & yarn run start",
+    "server": "SET NODE_ENV=development & nodemon dist/index.js",
     "test":"SET NODE_ENV=testing jest --forceExit --detectOpenHandles --silent",
     "test-models": "yarn test -t model",
     "test-auth": "yarn test -t Authentication:",
     "restart": "rimraf dist && yarn build && yarn start",
-    "start": "SET NODE_ENV=production & node dist/server.js"
+    "start": "SET NODE_ENV=production & node dist/index.js"
   },
   "repository": {
     "type": "git",

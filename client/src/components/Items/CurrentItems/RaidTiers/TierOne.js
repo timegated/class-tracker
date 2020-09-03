@@ -1,17 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TierOne = () => {
-  const [tierOne, setTierOne] = useState({
-    head: "",
-    shoulder: "",
-    chest: "",
-    legs: "",
-    wrist: "",
-    feet: "",
-    waist: "",
-    hands: "",
-  })
+const TierOne = ({ tierOne, setTierOne }) => {
+ 
   const { head, shoulder, chest, legs, wrist, feet, waist, hands } = tierOne;
+
   const onChange = (e) => {
       setTierOne({ ...tierOne, [e.target.name]: e.target.value });
   }

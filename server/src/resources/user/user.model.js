@@ -15,11 +15,6 @@ const userSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
-    realm: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     password: {
       type: String,
       required: true,

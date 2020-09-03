@@ -3,10 +3,8 @@ import CurrentDropDown from "./CurrentDropDown";
 import TierOne from "./RaidTiers/TierOne";
 import TierTwo from "./RaidTiers/TierTwo";
 import AQ from "./RaidTiers/AQ";
-// import CurrentContext from "../../../context/current/currentContext"
 import CharContext from "../../../context/character/characterContext";
 
-// snagged
 const CurrentItems = () => {
     const charContext = useContext(CharContext);
     const { characters, loadCharacters } = charContext;
@@ -16,6 +14,36 @@ const CurrentItems = () => {
         raidThree: "Temple of Ahn'Qiraj"
     });
 
+    const [aqSet, setAq] = useState({
+        head: "",
+        legs: "",
+        feet: "",
+        chest: "",
+        shoulder: "",
+        hands: ""
+    });
+    
+    const [tierOne, setTierOne] = useState({
+        head: "",
+        shoulder: "",
+        chest: "",
+        legs: "",
+        wrist: "",
+        feet: "",
+        waist: "",
+        hands: "",
+    });
+    
+    const [tierTwo, setTierTwo] = useState({
+        head: "",
+        shoulder: "",
+        chest: "",
+        legs: "",
+        wrist: "",
+        feet: "",
+        waist: "",
+        hands: "",
+    });
     useEffect(() => {
         loadCharacters();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -26,12 +54,14 @@ const CurrentItems = () => {
     const onChange = (e) => {
         setRaidTier(e.target.value);
     };
-    console.log(characters);
+
+    const onSubmit = (e) => {
+        console.log('current state to submit', )
+    };
     return (
-        // select raid tier first before all else
         <div className="form-container">
             <h1>Current Items</h1>
-            <form>
+            <form onSubmit={onSubmit}>
                 <CurrentDropDown characters={characters}/>
                 <label className="form-text" htmlFor="Raid Tier">Raid Tier</label>
                 <select value={raidTier} onChange={onChange}>
@@ -40,9 +70,9 @@ const CurrentItems = () => {
                     <option value={raidTwo}>Blackwing Lair</option>
                     <option value={raidThree}>Temple of Ahn'Qiraj</option>
                 </select>
-                {raidTier === "Molten Core" ? <TierOne /> : console.log("nothing here yet")}
-                {raidTier === "Blackwing Lair" ? <TierTwo /> : console.log("nothing here yet")}
-                {raidTier === "Temple of Ahn'Qiraj" ? <AQ /> : console.log("nothing here yet")}
+                {raidTier === "Molten Core" ? <TierOne tierOne={tierOne} setTierOne={setTierOne} /> : console.log("nothing here yet")}
+                {raidTier === "Blackwing Lair" ? <TierTwo tierTwo={tierTwo} setTierTwo={setTierTwo} /> : console.log("nothing here yet")}
+                {raidTier === "Temple of Ahn'Qiraj" ? <AQ aqSet={aqSet} setAq={setAq} /> : console.log("nothing here yet")}
                 <button type="submit" className="btn" style={{margin: "1rem auto", display:"block", width:"100%"}}>Submit</button>
             </form>
         </div>

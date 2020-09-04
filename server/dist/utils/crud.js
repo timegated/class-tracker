@@ -54,7 +54,7 @@ const getMany = model => async (req, res) => {
       docs
     });
   } catch (error) {
-    console.error(error);
+    console.error(error.message);
     res.status(400).end();
   }
 };
@@ -68,7 +68,9 @@ const createItems = model => async (req, res) => {
     const doc = await model.create(_objectSpread(_objectSpread({}, req.body), {}, {
       createdBy
     }));
-  } catch (error) {}
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 exports.createItems = createItems;

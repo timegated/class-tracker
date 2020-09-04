@@ -10,10 +10,10 @@
   "scripts": {
     "build": "rimraf dist && babel src --out-dir dist",
     "dev:client": "SET NODE_ENV=production & concurrently \"yarn run start\" \"yarn run client\"",
-    "dev":"nodemon --exec yarn restart",
-    "client":"cd ../client & yarn run start",
+    "dev": "nodemon --exec yarn restart",
+    "client": "cd ../client & yarn run start",
     "server": "SET NODE_ENV=development & nodemon dist/index.js",
-    "test":"SET NODE_ENV=testing jest --forceExit --detectOpenHandles --silent",
+    "test": "SET NODE_ENV=testing jest --forceExit --detectOpenHandles --silent",
     "test-models": "yarn test -t model",
     "test-auth": "yarn test -t Authentication:",
     "restart": "rimraf dist && yarn build && yarn start",

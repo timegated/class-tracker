@@ -17,8 +17,8 @@ export const verifyToken = (token) =>
   });
 
 export const signup = async (req, res) => {
-  const { name, email, realm, password } = req.body;
-  if (!name || !email || !realm || !password) {
+  const { name, email, password } = req.body;
+  if (!name || !email || !password) {
     return res.status(400).send({ message: "No fields can be blank" });
   }
   try {

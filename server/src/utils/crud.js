@@ -31,16 +31,17 @@ export const getMany = (model) => async (req, res) => {
     const docs = await model.find({ createdBy: req.user._id }).lean().exec();
     res.status(200).json({ docs });
   } catch (error) {
-    console.error(error);
+    console.error(error.message);
     res.status(400).end();
   }
 };
+
 export const createItems = (model) => async (req, res) => {
   const createdBy = req.user_id;
   try {
     const doc = await model.create({...req.body, createdBy})
   } catch (error) {
-    
+    console.error(error.message);
   }
 };
 

@@ -84,7 +84,7 @@ const Navbar = () => {
         <>
             <NavItem>Hello {user && user.name}</NavItem>
             <NavItem>
-                <NavLink activeClassName="current-page" to="/"> Home </NavLink>
+                <NavLink activeClassName="current-page" to="/"> Characters </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink to="/priority">Priority</NavLink>

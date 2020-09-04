@@ -4,10 +4,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.config = void 0;
+
+var _dotenv = _interopRequireDefault(require("dotenv"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 const config = {
   secrets: {
     jwt: "secrets"
   },
-  dbUrl: 'mongodb+srv://cheuser:us8tN2NuLmE8fM2@cluster0-g64dw.mongodb.net/class-tracker?retryWrites=true&w=majority'
+  dbUrl: _dotenv.default.config().parsed.MONGODB_URI
 };
 exports.config = config;

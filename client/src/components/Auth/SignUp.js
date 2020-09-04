@@ -60,10 +60,6 @@ const SignUp = props => {
                     <input type="text" name="email" onChange={onChange} required />
                 </div>
                 <div className={classes.formGroup}>
-                    <label className={classes.formLabel} htmlFor="realm">Realm</label>
-                    <input type="text" name="realm" onChange={onChange} required />
-                </div>
-                <div className={classes.formGroup}>
                     <label className={classes.formLabel} htmlFor="password">Password</label>
                     <input type="password" name="password" onChange={onChange} required minLength="6" autoComplete="new password" />
                 </div>

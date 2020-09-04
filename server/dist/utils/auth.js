@@ -36,11 +36,10 @@ const signup = async (req, res) => {
   const {
     name,
     email,
-    realm,
     password
   } = req.body;
 
-  if (!name || !email || !realm || !password) {
+  if (!name || !email || !password) {
     return res.status(400).send({
       message: "No fields can be blank"
     });

@@ -24,11 +24,6 @@ const userSchema = new _mongoose.default.Schema({
     unique: true,
     trim: true
   },
-  realm: {
-    type: String,
-    required: true,
-    trim: true
-  },
   password: {
     type: String,
     required: true

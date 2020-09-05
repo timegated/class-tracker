@@ -7,11 +7,6 @@ exports.default = void 0;
 
 var _lodash = require("lodash");
 
-var _dotenv = _interopRequireDefault(require("dotenv"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-console.log(_dotenv.default.config().parsed.MONGODB_URI);
 const env = process.env.NODE_ENV.trim() || 'development';
 const PORT = process.env.PORT || 5000;
 const baseConfig = {

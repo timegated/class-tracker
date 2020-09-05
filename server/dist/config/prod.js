@@ -13,6 +13,6 @@ const config = {
   secrets: {
     jwt: "secrets"
   },
-  dbUrl: _dotenv.default.config().parsed.MONGODB_URI
+  dbUrl: process.env.MONGODB_URI || _dotenv.default.config().parsed.MONGODB_URI
 };
 exports.config = config;

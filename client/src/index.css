@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 :root {
-    --color-bg-1: #2c2c2c;
-    --color-dark-1: #000000;
-    --font-color-1: #FFD100;
+   --primary-color-red-1: hsl(15, 86%, 30%);
+   --primary-color-red-2: hsl(22, 82%, 39%);
+   --primary-color-red-3: hsl(29, 80%, 44%);
+   --primary-color-yellow-1: hsl(42, 87%, 55%);
+   --primary-color-yellow-2: hsl(44, 92%, 63%);
+   --primary-color-yellow-3: hsl(48, 94%, 68%);
+   --primary-color-yellow-4: hsl(45, 95%, 76%);
+   --neutral-color-grey-1: hsl(0, 0%, 13%);
+   --neutral-color-grey-2: hsl(0, 0%, 23%);
 }
 
 html, body {

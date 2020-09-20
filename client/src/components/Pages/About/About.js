@@ -46,9 +46,6 @@ const About = () => {
             </Hero>
             <Grid>
                 <Row>
-                    <Col size={12} className="dark"></Col>
-                </Row>
-                <Row>
                     <Col size={4}>
                     <Title>Why</Title>
                         <Description>

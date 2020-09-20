@@ -12,7 +12,7 @@ const NavBar = styled.nav`
     top: 0;
     overflow-x: visible;
     transition: left 0.6s ease;
-    background: #000;
+    background: var(--neutral-color-grey-2);
     align-items: center;
     width: 100%;
 `
@@ -28,18 +28,18 @@ const NavItem = styled.li`
         font-weight: bold;
         line-height: 1;
         text-decoration: none;
-        color: #FFD100;
+        color: var(--primary-color-yellow-1);
         padding: 0.25rem;
     }
     & > a.cta {
-        border: 1px solid #FFD100;
+        border: 1px solid var(--primary-color-yellow-1);
         border-radius: 10px;
         font-size: 1.8rem;
         padding: 0.5rem;
     }
 
     & > a.cta:hover {
-        background: #FFD100;
+        background: var(--primary-color-yellow-1);
         color: #000;
     }
     
@@ -60,7 +60,7 @@ const NavLink = styled(Link)`
 const NavTitle = styled.h1`
     & a {
         text-decoration: none;
-        color: #FFD100;
+        color: var(--primary-color-yellow-1);
         font-size: 1.9rem
     }
 `

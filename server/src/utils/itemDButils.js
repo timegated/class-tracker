@@ -28,7 +28,8 @@ export const makeSearchWork = (string) => {
 // weapons
 export const weaponFilter = item.filter(i => i.requiredLevel === 60 && i.itemLevel >= 66 && i.itemLevel <= 100 && i.quality === 'Epic' || i.class === 'Weapon').sort((a, b) => {
   return a.itemLevel - b.itemLevel;
-})
+});
+
 // armor
 export const armorFilter = item.filter(i => i.requiredLevel === 60 && i.itemLevel >= 66 && i.itemLevel <= 88 && i.quality === 'Epic' && i.class === 'Armor').sort((a, b) => {
   return a.itemLevel - b.itemLevel;

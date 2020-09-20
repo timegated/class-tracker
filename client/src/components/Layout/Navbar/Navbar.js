@@ -44,16 +44,16 @@ const NavItem = styled.li`
     }
     
     & > a:hover {
-        border-bottom: 2px solid #ebebeb;
+        border-bottom: 2px solid var(--primary-color-yellow-3);
     }
 
     & > a:active {
-        border-bottom: 2px solid #ebebeb;
+        border-bottom: 2px solid var(--primary-color-yellow-3);
     }
 `
 const NavLink = styled(Link)`
     &.current-page {
-        border-bottom: 2px solid #ebebeb;
+        border-bottom: 2px solid var(--primary-color-yellow-3);
     }
    
 `   

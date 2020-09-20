@@ -20,11 +20,12 @@ const ItemState = props => {
 
   const loadFromDB = async () => {
     try {
-
+      console.log('This is a function I should use to load item data from a third party API');
     } catch (error) {
-      
+      console.error(error.message);
     }
-  }
+  };
+
   const loadItems = async () => {
     try {
       const res = await axios.get("/api/items");
@@ -45,13 +46,13 @@ const ItemState = props => {
       headers: {
         "Content-Type": "application/json"
       }
-    }
+    };
     try {
       const res = axios.post("/api/items", formData, config);
       dispatch({
         type: ADD_ITEM_SUCCESS,
         payload: res.data
-      })
+      });
     } catch (error) {
       console.error(error);
       dispatch({
@@ -71,7 +72,7 @@ const ItemState = props => {
       dispatch({
         type: CURRENT_ITEM_ADD,
         payload: res.data
-      })
+      });
     } catch (error) {
       console.error(error);
     }
@@ -83,6 +84,7 @@ const ItemState = props => {
       value={{
         items: state.items,
         loadItems,
+        loadFromDB,
         addCurrentItem,
         addItem,
       }}

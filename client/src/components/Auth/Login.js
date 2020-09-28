@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from 'react-router-dom';
 import AuthContext from "../../context/auth/authContext";
-// import AlertContext from "../../context/alert/alertContext";
 import classes from "./Auth.module.css";
 
 const Login = props => {

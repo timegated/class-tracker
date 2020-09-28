@@ -1,5 +1,5 @@
 
-import { makeSearchWork, mapItems, armorFilter, weaponFilter, itemFilter } from '../../utils/itemDButils';
+import { makeSearchWork, mapItems, armorFilter, weaponFilter } from '../../utils/itemDButils';
 
 
 
@@ -21,6 +21,7 @@ export const searchItemSlots = (subClass, slot) => {
   return searchSlots
 };
 
+// find weapons by subclass
 export const searchWeapons = (weapons) => {
   const items = mapItems(weaponFilter);
   const subClass = makeSearchWork(weapons);

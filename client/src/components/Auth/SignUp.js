@@ -1,19 +1,19 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
-import classes from './Auth.module.css';
+// import classes from './Auth.module.css';
 
 const SignUp = props => {
     const [user, setUser] = useState({
         name: "",
         email: "",
         password: "",
-        passwordTwo: ""
+        passwordAgain: ""
     });
     const authContext = useContext(AuthContext);
     // const alertContext = useContext(AlertContext);
 
     const { register, error, clearErrors, isAuthenticated } = authContext;
-    const { name, email, password, passwordTwo } = user;
+    const { name, email, password, passwordAgain } = user;
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -32,9 +32,9 @@ const SignUp = props => {
     };
 
     const onSubmit = (e) => {
-        if (name === "" || email === "" || password === "" || passwordTwo === "") {
+        if (name === "" || email === "" || password === "" || passwordAgain === "") {
             console.error('Passwords must match');
-        } else if (password !== passwordTwo) {
+        } else if (password !== passwordAgain) {
             console.error("Error")
         } else {
             register({
@@ -47,26 +47,26 @@ const SignUp = props => {
     };
 
     return (
-        <div className={classes.formContainer}>
+        <div >
             <h1>Sign Up</h1>
             <form onSubmit={onSubmit}>
-                <div className={classes.formGroup}>
-                    <label className={classes.formLabel} htmlFor="name">User Name</label>
+                <div >
+                    <label  htmlFor="name">User Name</label>
                     <input type="text" name="name" onChange={onChange} required />
                 </div>
-                <div className={classes.formGroup}>
-                    <label className={classes.formLabel} htmlFor="email">E-Mail</label>
+                <div >
+                    <label htmlFor="email">E-Mail</label>
                     <input type="text" name="email" onChange={onChange} required />
                 </div>
-                <div className={classes.formGroup}>
-                    <label className={classes.formLabel} htmlFor="password">Password</label>
+                <div >
+                    <label htmlFor="password">Password</label>
                     <input type="password" name="password" onChange={onChange} required minLength="6" autoComplete="new password" />
                 </div>
-                <div className={classes.formGroup}>
-                    <label className={classes.formLabel} htmlFor="passwordTwo">Enter Password Again</label>
-                    <input type="password" name="passwordTwo" onChange={onChange} required minLength="6" autoComplete="current password" />
+                <div >
+                    <label htmlFor="passwordAgain">Enter Password Again</label>
+                    <input type="password" name="passwordAgain" onChange={onChange} required minLength="6" autoComplete="current password" />
                 </div>
-                <input type="submit" value="Sign Up" className={classes.submitButton} />
+                <input type="submit" value="Sign Up" />
             </form>
         </div>
     );

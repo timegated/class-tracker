@@ -2,14 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from 'react-router-dom';
 import AuthContext from "../../context/auth/authContext";
 import styled from "styled-components";
+import bgImgOne from "../../assets/images/bg-trees.jpg";
 
 const SplitScreen = styled.div`
     display: flex;
     align-items: center;
-    max-width: 1200px;
-    border: 1px solid #FFFFFF;
-    padding: 15px;
+    border: 1px solid var(--primary-color-yellow-1);
     margin: 5rem auto;
+    max-width: 1200px;
     border-radius: 30px;
 `;
 
@@ -17,35 +17,50 @@ const LoginContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 10% auto;
+    height: 75vh;
+    margin: 0 auto;
     flex: 1 0 50%;
+    background: #000;
+    border-radius: 0 30px 30px 0;
 `;
+
 const ImgContainer = styled.div`
-    width: 500px;
-    height: 500px;
-    border-radius: 30px;
-    margin-right: 10%;
-    background-color: #FFD102;
-    flex: 1 0 30%;
+    width:100%;
+    height: 75vh;
+    border-radius: 30px 0 0 30px;
+    background-color: var(--primary-color-yellow-1);
+    background-image: url(${bgImgOne});
+    background-position: center;
+    background-size: cover;
+    flex: 1 0 50%;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 50vw;
-  border: 1px solid #FFFFFF;
   padding: 15px;
   border-radius: 30px;
 
   & h1 {
       color: #FFD102;
       text-align: center;
+      margin-bottom: 1.75rem;
   }
 `;
 
 const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+`;
+
+const Label = styled.label`
+    font-size: 24px;
+    font-weight: 500;
+    color: #FFD102;
+    margin: 0 auto;
+    max-width: 50%;
 `;
 
 const Input = styled.input`
@@ -55,14 +70,6 @@ const Input = styled.input`
   padding: 5px;
   border: none;
   border-radius: 30px;
-`;
-
-const Label = styled.label`
-    font-size: 24px;
-    font-weight: 500;
-    color: #FFD102;
-    margin: 0 auto;
-    max-width: 50%;
 `;
 
 const Submit = styled.button`
@@ -84,6 +91,8 @@ const Submit = styled.button`
 `;
 
 const CreateLink = styled.div`
+    padding: 15px;
+    text-align: center;
     & h4 {
         color: #FFD102;
     }

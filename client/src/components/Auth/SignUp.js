@@ -140,6 +140,7 @@ const SignUp = props => {
                 </ImgContainer>
                 <SignUpContainer>
                     <Form onSubmit={onSubmit}>
+                        <h1>Sign Up</h1>
                         <FormGroup>
                             <Label>Email</Label>
                             <Input onChange={onChange} type="text" htmlFor="email" />

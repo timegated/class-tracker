@@ -7,7 +7,6 @@ import bgImgOne from "../../assets/images/bg-trees.jpg";
 const SplitScreen = styled.div`
     display: flex;
     align-items: center;
-    border: 1px solid var(--primary-color-yellow-1);
     margin: 5rem auto;
     max-width: 1200px;
     border-radius: 30px;

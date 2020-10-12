@@ -135,7 +135,7 @@ const Login = props => {
 
     const onSubmit = (e) => {
         if (email === "" || password === "") {
-            console.log("email and password cannot be empty")
+            console.error("email and password cannot be empty");
         } else {
             login({
                 email,
@@ -160,7 +160,7 @@ const Login = props => {
                     <Label>Password</Label>
                     <Input type="text" name="password" required />    
                     </FormGroup>
-                    <Submit onClick={onSubmit}>Sign Up</Submit>
+                    <Submit onClick={onSubmit}>Login</Submit>
                 </Form>
                 <CreateLink>
                 <h4>Don't have an account?</h4> <Link to="/signup">Create One</Link>

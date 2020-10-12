@@ -24,7 +24,7 @@ const SignUpContainer = styled.div`
 `;
 
 const ImgContainer = styled.div`
-    width:100%;
+    width: 100%;
     height: 75vh;
     border-radius: 0 30px 30px 0;
     background-color: var(--primary-color-yellow-1);
@@ -63,7 +63,7 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  font-size: 32px;
+  font-size: 24px;
   max-width: 50%;
   margin: .5rem auto;
   padding: 5px;
@@ -91,7 +91,6 @@ const Submit = styled.button`
 
 const SignUp = props => {
     const [user, setUser] = useState({
-        name: "",
         email: "",
         password: "",
         passwordAgain: ""
@@ -100,7 +99,7 @@ const SignUp = props => {
     // const alertContext = useContext(AlertContext);
 
     const { register, error, clearErrors, isAuthenticated } = authContext;
-    const { name, email, password, passwordAgain } = user;
+    const { email, password, passwordAgain } = user;
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -119,13 +118,14 @@ const SignUp = props => {
     };
 
     const onSubmit = (e) => {
-        if (name === "" || email === "" || password === "" || passwordAgain === "") {
+        if (email === "" || password === "" || passwordAgain === "") {
+            console.log(password);
+            console.log(passwordAgain);
             console.error('Passwords must match');
         } else if (password !== passwordAgain) {
             console.error("Error")
         } else {
             register({
-                name,
                 email,
                 password
             });
@@ -143,15 +143,15 @@ const SignUp = props => {
                         <h1>Sign Up</h1>
                         <FormGroup>
                             <Label>Email</Label>
-                            <Input onChange={onChange} type="text" htmlFor="email" />
+                            <Input onChange={onChange} type="text" htmlFor="email" autoComplete="email" />
                         </FormGroup>
                         <FormGroup>
                             <Label>Password</Label>
-                            <Input onChange={onChange} type="text" htmlFor="password" name="password" />
+                            <Input onChange={onChange} type="password" htmlFor="password" name="password" autoComplete="new-password" />
                         </FormGroup>
                         <FormGroup>
                             <Label>Enter Password Again</Label>
-                            <Input onChange={onChange} type="text" htmlFor="password" name="passwordAgain" />
+                            <Input onChange={onChange} type="password" htmlFor="password" name="passwordAgain" autoComplete="new-password" />
                         </FormGroup>
                         <Submit>Sign Up</Submit>
                     </Form>

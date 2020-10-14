@@ -24,7 +24,8 @@ const searchItemSlots = (subClass, slot) => {
   const s = (0, _itemDButils.makeSearchWork)(slot);
   const searchSlots = items.filter(i => i.subclass === sC && i.slot === s);
   return searchSlots;
-};
+}; // find weapons by subclass
+
 
 exports.searchItemSlots = searchItemSlots;
 

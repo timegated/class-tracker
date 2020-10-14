@@ -35,18 +35,18 @@ const makeSearchWork = string => {
 
   return string.charAt(0).toUpperCase() + string.slice(1);
 }; // item filters
-// weapons
+// Find weapons within a specific item range that are of epic quality 
 
 
 exports.makeSearchWork = makeSearchWork;
 const weaponFilter = item.filter(i => i.requiredLevel === 60 && i.itemLevel >= 66 && i.itemLevel <= 100 && i.quality === 'Epic' || i.class === 'Weapon').sort((a, b) => {
   return a.itemLevel - b.itemLevel;
-}); // armor
+}); // Find armor within a specific item range that are of epic quality
 
 exports.weaponFilter = weaponFilter;
 const armorFilter = item.filter(i => i.requiredLevel === 60 && i.itemLevel >= 66 && i.itemLevel <= 88 && i.quality === 'Epic' && i.class === 'Armor').sort((a, b) => {
   return a.itemLevel - b.itemLevel;
-}); // general
+}); // Find any item within a specific item range that are of epic quality
 
 exports.armorFilter = armorFilter;
 const itemFilter = item.filter(i => i.requiredLevel === 60 && i.itemLevel >= 66 && i.itemLevel <= 88 && i.quality === 'Epic');

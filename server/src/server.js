@@ -38,7 +38,7 @@ app.use("/api/characters", charRouter);
 app.use("/api/currentitems", currentRouter);
 app.use("/api/items", itemRouter);
 app.use("/api/itemDB", itemDBRouter);
-console.log('Port from config',config.port)
+
 export const start = async () => {
   try {
     await connect()

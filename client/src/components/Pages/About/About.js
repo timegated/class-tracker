@@ -35,6 +35,7 @@ const CardContainer = styled.div`
     padding: 2rem;
 
     &.ctaCard {
+        border-top: 3px solid var(--primary-color-red-2);
         height: 100%;
         min-height: 250px;
     }

@@ -27,8 +27,7 @@ const AuthState = props => {
 
     const loadUser = async () => {
         setAuthToken(localStorage.token);
-        // I don't have a get route for /login lul
-        // need to actually set one up here on the backend to retrieve the user data
+        
         try {
             const res = await axios.get("/api/user");
             dispatch({

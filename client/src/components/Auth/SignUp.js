@@ -7,9 +7,10 @@ const SplitScreen = styled.div`
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    margin: 5rem auto;
+    margin: 8rem auto;
     max-width: 1200px;
     border-radius: 30px;
+    box-shadow:2px 2px 2px var(--neutral-color-grey-1);
 `;
 
 const SignUpContainer = styled.div`
@@ -132,9 +133,8 @@ const SignUp = props => {
         };
         e.preventDefault();
     };
-
+    
     return (
-        <>
             <SplitScreen>
                 <ImgContainer>
                 </ImgContainer>
@@ -143,7 +143,7 @@ const SignUp = props => {
                         <h1>Sign Up</h1>
                         <FormGroup>
                             <Label>Email</Label>
-                            <Input onChange={onChange} type="text" htmlFor="email" autoComplete="email" />
+                            <Input onChange={onChange} type="text" htmlFor="email" name="email" autoComplete="email" />
                         </FormGroup>
                         <FormGroup>
                             <Label>Password</Label>
@@ -156,9 +156,7 @@ const SignUp = props => {
                         <Submit>Sign Up</Submit>
                     </Form>
                 </SignUpContainer>
-                
             </SplitScreen>
-        </>
     );
 };
 

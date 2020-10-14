@@ -34,12 +34,11 @@ exports.verifyToken = verifyToken;
 
 const signup = async (req, res) => {
   const {
-    name,
     email,
     password
   } = req.body;
 
-  if (!name || !email || !password) {
+  if (!email || !password) {
     return res.status(400).send({
       message: "No fields can be blank"
     });
@@ -52,7 +51,9 @@ const signup = async (req, res) => {
       token
     });
   } catch (error) {
-    return res.status(500).end();
+    return res.status(500).send({
+      message: '500 request from inside sign up in auth.js'
+    }).end();
   }
 };
 

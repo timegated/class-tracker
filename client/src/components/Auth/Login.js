@@ -7,9 +7,10 @@ import bgImgOne from "../../assets/images/bg-trees.jpg";
 const SplitScreen = styled.div`
     display: flex;
     align-items: center;
-    margin: 5rem auto;
+    margin: 8rem auto;
     max-width: 1200px;
     border-radius: 30px;
+    box-shadow:2px 2px 2px var(--neutral-color-grey-1);
 `;
 
 const LoginContainer = styled.div`
@@ -154,11 +155,11 @@ const Login = props => {
                     <h1>Login</h1>
                     <FormGroup>
                     <Label>Email</Label>
-                    <Input type="text" name="email" onChange={onChange} required />
+                    <Input type="text" name="email" onChange={onChange} autoComplete="email" required />
                     </FormGroup>
                     <FormGroup>
                     <Label>Password</Label>
-                    <Input type="text" name="password" required />    
+                    <Input type="password" name="password" autoComplete="password" required />    
                     </FormGroup>
                     <Submit onClick={onSubmit}>Login</Submit>
                 </Form>

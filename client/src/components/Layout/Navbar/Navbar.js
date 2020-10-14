@@ -12,7 +12,7 @@ const NavBar = styled.nav`
     top: 0;
     overflow-x: visible;
     transition: left 0.6s ease;
-    background: var(--neutral-color-grey-2);
+    background: var(--neutral-color-grey-1);
     align-items: center;
     width: 100%;
 `
@@ -25,17 +25,17 @@ const NavItem = styled.li`
 
     & > a {
         font-size: 1.5rem;
-        font-weight: bold;
+        font-weight: 500;
         line-height: 1;
         text-decoration: none;
-        color: var(--primary-color-yellow-1);
+        color: var(--primary-color-yellow-2);
         padding: 0.25rem;
     }
     & > a.cta {
         border: 1px solid var(--primary-color-yellow-1);
         border-radius: 10px;
-        font-size: 1.8rem;
         padding: 0.5rem;
+        font-weight: 600;
     }
 
     & > a.cta:hover {

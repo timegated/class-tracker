@@ -17,8 +17,8 @@ export const verifyToken = (token) =>
   });
 
 export const signup = async (req, res) => {
-  const { name, email, password } = req.body;
-  if (!name || !email || !password) {
+  const { email, password } = req.body;
+  if (!email || !password) {
     return res.status(400).send({ message: "No fields can be blank" });
   }
   try {
@@ -26,7 +26,7 @@ export const signup = async (req, res) => {
     const token = newToken(user);
     return res.status(201).send({ token });
   } catch (error) {
-    return res.status(500).end();
+    return res.status(500).send({message: '500 request from inside sign up in auth.js'}).end();
   }
 };
 

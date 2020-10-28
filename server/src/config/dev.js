@@ -1,6 +1,8 @@
+import dotenv from 'dotenv'
+
 export const config = {
   secrets: {
     jwt: "secrets",
   },
-  dbUrl: 'mongodb://localhost:27017/class-tracker',
+  dbUrl: process.env.MONGODB_URI || dotenv.config().parsed.MONGODB_URI,
 };

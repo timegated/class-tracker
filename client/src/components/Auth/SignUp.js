@@ -33,9 +33,6 @@ const SignUp = props => {
 
     const onSubmit = (e) => {
         if (email === "" || password === "" || passwordAgain === "") {
-            console.log(password);
-            console.log(passwordAgain);
-            console.error('Passwords must match');
         } else if (password !== passwordAgain) {
             console.error("Error")
         } else {

@@ -54,7 +54,7 @@ const Login = props => {
                     <Label>Password</Label>
                     <Input type="password" name="password" autoComplete="password" required />    
                     </FormGroup>
-                    <Submit onClick={onSubmit}>Login</Submit>
+                    <Submit>Login</Submit>
                 </Form>
                 <CreateLink>
                 <h4>Don't have an account?</h4> <Link to="/signup">Create One</Link>

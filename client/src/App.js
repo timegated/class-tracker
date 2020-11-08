@@ -12,7 +12,6 @@ import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
 import PrivateRoute from "./components/Routing/PrivateRoute";
 import ItemState from "./context/items/ItemState";
-import CurrentState from "./context/current/CurrentState";
 import CharacterState from "./context/character/CharacterState";
 import AuthState from "./context/auth/AuthState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -21,7 +20,6 @@ const App = () => {
   return (
     <AuthState>
       <CharacterState>
-        <CurrentState>
           <ItemState>
           <Router>
             <Navbar />
@@ -40,7 +38,6 @@ const App = () => {
             </div>
             </Router>
           </ItemState>
-        </CurrentState>
       </CharacterState>
     </AuthState>
   );

@@ -32,8 +32,9 @@ const SignUp = props => {
     };
 
     const onSubmit = (e) => {
+        console.group(email, password);
         if (email === "" || password === "" || passwordAgain === "") {
-        } else if (password !== passwordAgain) {
+        } if (password !== passwordAgain) {
             console.error("Error")
         } else {
             register({

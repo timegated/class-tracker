@@ -61,10 +61,10 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  font-size: 32px;
+  font-size: 24px;
   max-width: 50%;
   margin: .5rem auto;
-  padding: 5px;
+  padding: .5rem;
   border: none;
   border-radius: 30px;
 `;
